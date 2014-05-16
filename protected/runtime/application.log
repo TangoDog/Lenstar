@@ -1,0 +1,75 @@
+2014/05/15 15:32:22 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "index".' in /var/framework/web/CController.php:483
+Stack trace:
+#0 /var/framework/web/CController.php(270): CController->missingAction('')
+#1 /var/framework/web/CWebApplication.php(282): CController->run('')
+#2 /var/framework/web/CWebApplication.php(141): CWebApplication->runController('record')
+#3 /var/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#4 /var/www/lenstar/index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/lenstar/index.php/record
+HTTP_REFERER=http://localhost/lenstar/index.php/gii/controller/index
+---
+2014/05/16 09:39:46 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "index".' in /var/framework/web/CController.php:483
+Stack trace:
+#0 /var/framework/web/CController.php(270): CController->missingAction('')
+#1 /var/framework/web/CWebApplication.php(282): CController->run('')
+#2 /var/framework/web/CWebApplication.php(141): CWebApplication->runController('record')
+#3 /var/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#4 /var/www/lenstar/index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/lenstar/index.php/record/
+---
+2014/05/16 09:39:57 [error] [php] Undefined index: file (/var/www/lenstar/protected/controllers/RecordController.php:53)
+Stack trace:
+#0 /var/framework/web/CController.php(286): RecordController->runAction()
+#1 /var/framework/web/CController.php(265): RecordController->runActionWithFilters()
+#2 /var/framework/web/CWebApplication.php(282): RecordController->run()
+#3 /var/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#4 /var/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#5 /var/www/lenstar/index.php(13): CWebApplication->run()
+REQUEST_URI=/lenstar/index.php/record/preop
+in /var/www/lenstar/protected/controllers/RecordController.php (53)
+in /var/www/lenstar/index.php (13)
+2014/05/16 09:40:36 [error] [php] Undefined index: file (/var/www/lenstar/protected/controllers/RecordController.php:53)
+Stack trace:
+#0 /var/framework/web/CController.php(286): RecordController->runAction()
+#1 /var/framework/web/CController.php(265): RecordController->runActionWithFilters()
+#2 /var/framework/web/CWebApplication.php(282): RecordController->run()
+#3 /var/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#4 /var/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#5 /var/www/lenstar/index.php(13): CWebApplication->run()
+REQUEST_URI=/lenstar/index.php/record/preop
+in /var/www/lenstar/protected/controllers/RecordController.php (53)
+in /var/www/lenstar/index.php (13)
+2014/05/16 09:41:43 [error] [php] Undefined index: file (/var/www/lenstar/protected/controllers/RecordController.php:53)
+Stack trace:
+#0 /var/framework/web/CController.php(286): RecordController->runAction()
+#1 /var/framework/web/CController.php(265): RecordController->runActionWithFilters()
+#2 /var/framework/web/CWebApplication.php(282): RecordController->run()
+#3 /var/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#4 /var/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#5 /var/www/lenstar/index.php(13): CWebApplication->run()
+REQUEST_URI=/lenstar/index.php/record/preop
+in /var/www/lenstar/protected/controllers/RecordController.php (53)
+in /var/www/lenstar/index.php (13)
+2014/05/16 09:41:49 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "index".' in /var/framework/web/CController.php:483
+Stack trace:
+#0 /var/framework/web/CController.php(270): CController->missingAction('')
+#1 /var/framework/web/CWebApplication.php(282): CController->run('')
+#2 /var/framework/web/CWebApplication.php(141): CWebApplication->runController('record')
+#3 /var/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#4 /var/www/lenstar/index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/lenstar/index.php/record/
+---
+2014/05/16 09:41:56 [error] [php] Undefined index: file (/var/www/lenstar/protected/controllers/RecordController.php:53)
+Stack trace:
+#0 /var/framework/web/CController.php(286): RecordController->runAction()
+#1 /var/framework/web/CController.php(265): RecordController->runActionWithFilters()
+#2 /var/framework/web/CWebApplication.php(282): RecordController->run()
+#3 /var/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#4 /var/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#5 /var/www/lenstar/index.php(13): CWebApplication->run()
+REQUEST_URI=/lenstar/index.php/record/preop
+in /var/www/lenstar/protected/controllers/RecordController.php (53)
+in /var/www/lenstar/index.php (13)
