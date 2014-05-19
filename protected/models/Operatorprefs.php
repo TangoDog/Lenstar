@@ -6,22 +6,15 @@
  * The followings are the available columns in table 'operatorprefs':
  * @property integer $ID
  * @property string $Name
- * @property integer $Hints
- * @property integer $Meters
- * @property integer $Prefer_ShapeFactor
  * @property double $EntryErrToleranceSdev
  * @property integer $Validate
  * @property string $EMail
  * @property string $Password
  * @property double $glblTolerance
- * @property integer $preferLattice
- * @property integer $preferGGPlot
- * @property integer $preferLattice2
  * @property integer $group
  * @property integer $dbowner
  * @property integer $CreatorID
  * @property string $groupID
- * @property integer $jumpPreop
  * @property string $guid
  */
 class Operatorprefs extends CActiveRecord
@@ -43,14 +36,14 @@ class Operatorprefs extends CActiveRecord
 		// will receive user inputs.
 		return array(
 			array('Name, CreatorID', 'required'),
-			array('Hints, Meters, Prefer_ShapeFactor, Validate, preferLattice, preferGGPlot, preferLattice2, group, dbowner, CreatorID, jumpPreop', 'numerical', 'integerOnly'=>true),
+			array(' group, dbowner, CreatorID, jumpPreop', 'numerical', 'integerOnly'=>true),
 			array('EntryErrToleranceSdev, glblTolerance', 'numerical'),
 			array('Name, EMail, Password', 'length', 'max'=>255),
 			array('groupID', 'length', 'max'=>20),
 			array('guid', 'safe'),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
-			array('ID, Name, Hints, Meters, Prefer_ShapeFactor, EntryErrToleranceSdev, Validate, EMail, Password, glblTolerance, preferLattice, preferGGPlot, preferLattice2, group, dbowner, CreatorID, groupID, jumpPreop, guid', 'safe', 'on'=>'search'),
+			//array('ID, Name, Hints, Meters, Prefer_ShapeFactor, EntryErrToleranceSdev, Validate, EMail, Password, glblTolerance, preferLattice, preferGGPlot, preferLattice2, group, dbowner, CreatorID, groupID, jumpPreop, guid', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -113,22 +106,6 @@ class Operatorprefs extends CActiveRecord
 
 		$criteria->compare('ID',$this->ID);
 		$criteria->compare('Name',$this->Name,true);
-		$criteria->compare('Hints',$this->Hints);
-		$criteria->compare('Meters',$this->Meters);
-		$criteria->compare('Prefer_ShapeFactor',$this->Prefer_ShapeFactor);
-		$criteria->compare('EntryErrToleranceSdev',$this->EntryErrToleranceSdev);
-		$criteria->compare('Validate',$this->Validate);
-		$criteria->compare('EMail',$this->EMail,true);
-		$criteria->compare('Password',$this->Password,true);
-		$criteria->compare('glblTolerance',$this->glblTolerance);
-		$criteria->compare('preferLattice',$this->preferLattice);
-		$criteria->compare('preferGGPlot',$this->preferGGPlot);
-		$criteria->compare('preferLattice2',$this->preferLattice2);
-		$criteria->compare('group',$this->group);
-		$criteria->compare('dbowner',$this->dbowner);
-		$criteria->compare('CreatorID',$this->CreatorID);
-		$criteria->compare('groupID',$this->groupID,true);
-		$criteria->compare('jumpPreop',$this->jumpPreop);
 		$criteria->compare('guid',$this->guid,true);
 
 		return new CActiveDataProvider($this, array(

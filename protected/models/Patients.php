@@ -21,7 +21,7 @@
  * @property integer $CalcLeftEye
  * @property integer $dbowner
  */
-class Patients extends CActiveRecord
+class Patient extends CActiveRecord
 {
 	/**
 	 * @return string the associated database table name

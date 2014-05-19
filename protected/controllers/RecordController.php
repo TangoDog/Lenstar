@@ -22,42 +22,7 @@ class RecordController extends Controller
 			),
 		);
 	}
-        private function html2txt($document){
-                $search = array('@<script[^>]*?>.*?</script>@si',  // Strip out javascript
-                               '@<[\/\!]*?[^<>]*?>@si',            // Strip out HTML tags
-                               '@<style[^>]*?>.*?</style>@siU',    // Strip style tags properly
-                               '@<![\s\S]*?--[ \t\n\r]*>@'         // Strip multi-line comments including CDATA
-                );
-                $text = preg_replace($search, '', $document);
-                return $text;
-       }  // end function html2txt
 
-        private function preprint($str) { echo "\n".$str;}
-        private function emptyToNull($val) {
-                    return(empty($val)?'NULL':$val);
-                }
-        private function dashToNull($value) {return ( is_numeric($value)? $value :'NULL');}
-        private function getFirstNameMI(){
-            $space = strpos($FirstName," ");
-        
-                if ($space!=false) {  // there is a middle initial 
-                        $FirstName1 = strrev( strchr(strrev($FirstName)," ") );  //ABE J. => .J EBA
-                        print_r('FirstName1: '.$FirstName1."\n");
-                        $FirstName1 = str_ireplace(".","",$FirstName1);
-                        print_r('FirstName1: '.$FirstName1."\n");
-                        $FirstName1 = str_ireplace(" ","",$FirstName1);
-                        print_r('FirstName1: '.$FirstName1."\n");
-                        $FirstName1 = html2txt($FirstName1);
-                        print_r('FirstName1: '.$FirstName1."\n");
-
-                        $Mi2 =  strstr($FirstName," ") ;  // gives false if no space, or space plus rest  --like " S." if exists
-                        if ($Mi2) $Mi = str_ireplace(" ","",$Mi2);
-                        $Mi = str_ireplace(".","",$Mi);
-                        $Mi = str_ireplace(",","",$Mi);
-                        print_r( "MI = ".$Mi ."\n");
-                        $FirstName = $FirstName1;
-                } // do not change and don't strip out the Middle Init
-        }
 
         public function actionPostop() {
                         

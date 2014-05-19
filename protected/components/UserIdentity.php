@@ -29,7 +29,7 @@ class UserIdentity extends CUserIdentity
 		} else { // Okay!
 			$this->_id=$user->id;
 			$this->_dbowner=$user->dbowner;
-			$this->username=$user->email;
+			$this->username=$user->name;
 			$this->setState('lastLogin', date("m/d/y g:i A", strtotime($user->last_login_time)));
 			$this->setState('dbowner', $user->dbowner);
 			$this->setState('userid', $user->id);
@@ -37,9 +37,9 @@ class UserIdentity extends CUserIdentity
 			//Yii::app()->session['dbowner'] = $user->dbowner;
 			//Yii::app()->session['userid'] = $user->id;
                         //var_dump($this);
-			$user->saveAttributes(array(
-					'last_login_time'=>date("Y-m-d H:i:s", time()),
-			));
+//			$user->saveAttributes(array(
+//					'last_login_time'=>date("Y-m-d H:i:s", time()),
+//			));
 			$this->errorCode=self::ERROR_NONE;
 		}
 	return !$this->errorCode;
