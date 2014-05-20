@@ -30,8 +30,8 @@ class xmlFile extends CFormModel {
     public $Technician;//=(string) $xml->Login['Technician'];
     public $Office;//string) $xml->Login['Office'];
     public $Surgeon ;// (string) $xml->Login['Surgeon'];
-    public $preop;  // array of left and/or right eyes preop values
-    public $postop;// array of left and/or right eyes preop values
+    public $preop = array();  // array of left and/or right eyes preop values
+    public $postop = array();// array of left and/or right eyes preop values
     
     public function init(){
         // overrides CFormModel init
@@ -103,11 +103,65 @@ class xmlFile extends CFormModel {
     }
     
     public function setPreop () {
-        
+                 // 
+            // <Exam Eye="OD" Time="2013/07/25 13:40" MeasurementMode="Phakic" R1="8.13" R2="7.74" R1Axis="97" FlatK1="41.50" SteepK1="43.61" Astigmatism="2.12 " AxisAstig="7" n="1.3375" CCT="567" AD="2.99" LT="4.62" AL="26.42" WTW="12.31" Pupil="-----" />
+            //  <Exam Eye="OS" Time="2013/07/25 13:40" MeasurementMode="Phakic" R1="8.06" R2="7.75" R1Axis="84" FlatK1="41.85" SteepK1="43.53" Astigmatism="1.68 " AxisAstig="174" n="1.3375" CCT="566" AD="2.99" LT="4.65" AL="26.40" WTW="12.28" Pupil="-----" /> 
+            if (isset($xml->Patient->Exam[0])) {
+                    $json_string = json_encode($xml->Patient->Exam[0]);
+                    // the string looks like this - need to remove {"@attributes: and closing "}"
+
+            //{"@attributes":{"Eye":"OD","Time":"2013\/07\/25 13:40","MeasurementMode":"Phakic","R1":"8.13","R2":"7.74","R1Axis":"97","FlatK1":"41.50","SteepK1":"43.61","Astigmatism":"2.12 ","AxisAstig":"7","n":"1.3375","CCT":"567","AD":"2.99","LT":"4.62","AL":"26.42","WTW":"12.31","Pupil":"-----"}}
+
+                    $result_array1 =  substr_replace($json_string, '', $start=0,$length=15);
+                    $result_array1 =  substr_replace($result_array1, '', $start=-1);
+
+                    $result_array1 = json_decode($result_array1, TRUE);
+                    $preop[] = $result_array1;
+                    //print_r($result_array1);
+
+            }
+            if (isset($xml->Patient->Exam[1])) {
+                    $json_string = json_encode($xml->Patient->Exam[1]);
+                    // remove the @attribute tag, and the final}
+                    $result_array2 =  substr_replace($json_string, '', $start=0,$length=15);
+                    $result_array2 =  substr_replace($result_array2, '', $start=-1);
+
+                    $result_array2 = json_decode($result_array2, TRUE);
+                    // print_r($result_array2);
+                   $preop[] = $result_array2;
+ 
+            }
     }
     
     public function setPostop () {
-        
+                        // 
+            // <Exam Eye="OD" Time="2013/07/25 13:40" MeasurementMode="Phakic" R1="8.13" R2="7.74" R1Axis="97" FlatK1="41.50" SteepK1="43.61" Astigmatism="2.12 " AxisAstig="7" n="1.3375" CCT="567" AD="2.99" LT="4.62" AL="26.42" WTW="12.31" Pupil="-----" />
+            //  <Exam Eye="OS" Time="2013/07/25 13:40" MeasurementMode="Phakic" R1="8.06" R2="7.75" R1Axis="84" FlatK1="41.85" SteepK1="43.53" Astigmatism="1.68 " AxisAstig="174" n="1.3375" CCT="566" AD="2.99" LT="4.65" AL="26.40" WTW="12.28" Pupil="-----" /> 
+            if (isset($xml->Patient->Exam[0])) {
+                    $json_string = json_encode($xml->Patient->Exam[0]);
+                    // the string looks like this - need to remove {"@attributes: and closing "}"
+
+            //{"@attributes":{"Eye":"OD","Time":"2013\/07\/25 13:40","MeasurementMode":"Phakic","R1":"8.13","R2":"7.74","R1Axis":"97","FlatK1":"41.50","SteepK1":"43.61","Astigmatism":"2.12 ","AxisAstig":"7","n":"1.3375","CCT":"567","AD":"2.99","LT":"4.62","AL":"26.42","WTW":"12.31","Pupil":"-----"}}
+
+                    $result_array1 =  substr_replace($json_string, '', $start=0,$length=15);
+                    $result_array1 =  substr_replace($result_array1, '', $start=-1);
+
+                    $result_array1 = json_decode($result_array1, TRUE);
+                    $postop[] = $result_array1;
+                    //print_r($result_array1);
+
+            }
+            if (isset($xml->Patient->Exam[1])) {
+                    $json_string = json_encode($xml->Patient->Exam[1]);
+                    // remove the @attribute tag, and the final}
+                    $result_array2 =  substr_replace($json_string, '', $start=0,$length=15);
+                    $result_array2 =  substr_replace($result_array2, '', $start=-1);
+
+                    $result_array2 = json_decode($result_array2, TRUE);
+                    // print_r($result_array2);
+                    $postop[] = $result_array2;
+ 
+            }
     }
     private function html2txt($document){
                 $search = array('@<script[^>]*?>.*?</script>@si',  // Strip out javascript

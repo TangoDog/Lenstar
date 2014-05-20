@@ -1,6 +1,6 @@
 <?php
 
-class PatientsController extends Controller
+class PatientController extends Controller
 {
 	/**
 	 * @var string the default layout for the views. Defaults to '//layouts/column2', meaning
@@ -62,14 +62,14 @@ class PatientsController extends Controller
 	 */
 	public function actionCreate()
 	{
-		$model=new Patients;
+		$model=new Patient;
 
 		// Uncomment the following line if AJAX validation is needed
 		// $this->performAjaxValidation($model);
 
-		if(isset($_POST['Patients']))
+		if(isset($_POST['Patient']))
 		{
-			$model->attributes=$_POST['Patients'];
+			$model->attributes=$_POST['Patient'];
 			if($model->save())
 				$this->redirect(array('view','id'=>$model->ID));
 		}
@@ -91,9 +91,9 @@ class PatientsController extends Controller
 		// Uncomment the following line if AJAX validation is needed
 		// $this->performAjaxValidation($model);
 
-		if(isset($_POST['Patients']))
+		if(isset($_POST['Patient']))
 		{
-			$model->attributes=$_POST['Patients'];
+			$model->attributes=$_POST['Patient'];
 			if($model->save())
 				$this->redirect(array('view','id'=>$model->ID));
 		}
@@ -122,7 +122,7 @@ class PatientsController extends Controller
 	 */
 	public function actionIndex()
 	{
-		$dataProvider=new CActiveDataProvider('Patients');
+		$dataProvider=new CActiveDataProvider('Patient');
 		$this->render('index',array(
 			'dataProvider'=>$dataProvider,
 		));
@@ -133,10 +133,10 @@ class PatientsController extends Controller
 	 */
 	public function actionAdmin()
 	{
-		$model=new Patients('search');
+		$model=new Patient('search');
 		$model->unsetAttributes();  // clear any default values
-		if(isset($_GET['Patients']))
-			$model->attributes=$_GET['Patients'];
+		if(isset($_GET['Patient']))
+			$model->attributes=$_GET['Patient'];
 
 		$this->render('admin',array(
 			'model'=>$model,
@@ -147,12 +147,12 @@ class PatientsController extends Controller
 	 * Returns the data model based on the primary key given in the GET variable.
 	 * If the data model is not found, an HTTP exception will be raised.
 	 * @param integer $id the ID of the model to be loaded
-	 * @return Patients the loaded model
+	 * @return Patient the loaded model
 	 * @throws CHttpException
 	 */
 	public function loadModel($id)
 	{
-		$model=Patients::model()->findByPk($id);
+		$model=Patient::model()->findByPk($id);
 		if($model===null)
 			throw new CHttpException(404,'The requested page does not exist.');
 		return $model;
@@ -160,7 +160,7 @@ class PatientsController extends Controller
 
 	/**
 	 * Performs the AJAX validation.
-	 * @param Patients $model the model to be validated
+	 * @param Patient $model the model to be validated
 	 */
 	protected function performAjaxValidation($model)
 	{
