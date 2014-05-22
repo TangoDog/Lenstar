@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<Haag-Streit Target="FullMonteIOL" Source="Lenstar">{DECIMALPOINT}
+ <Login User="mdittmer" Pwd="Cosmod123" Technician="1" Office="1" Surgeon="5"></Login>
+ <Patient ID="{ID}" LastName="{NAME}" FirstName="{FIRSTNAME}" Birthday="{BIRTHDAYYEAR}/{BIRTHDAYMONTH}/{BIRTHDAYDAY}" Ethnicity="{ETHNICITY}" Sex="{GENDER}">
+  <Exam Eye="OD" Time="{YEAR}/{MONTH}/{DAY} {HOUR}:{MINUTE}" MeasurementMode="{OD_MODE}" R1="{OD_R1}" R2="{OD_R2}" R1Axis="{OD_AXIS}" FlatK1="{OD_KFLAT}" SteepK1="{OD_KSTEEP}" Astigmatism="{OD_AST}" AxisAstig="{OD_AXISAST}" n="{OD_KINDEX}" CCT="{OD_CCT}" AD="{OD_AD}" ACD="{OD_ACD}" LT="{OD_LT}" AL="{OD_AL}" WTW="{OD_WTW}" Pupil="{OD_PD}" /> 
+  <Exam Eye="OS" Time="{YEAR}/{MONTH}/{DAY} {HOUR}:{MINUTE}" MeasurementMode="{OS_MODE}" R1="{OS_R1}" R2="{OS_R2}" R1Axis="{OS_AXIS}" FlatK1="{OS_KFLAT}" SteepK1="{OS_KSTEEP}" Astigmatism="{OS_AST}" AxisAstig="{OS_AXISAST}" n="{OS_KINDEX}" CCT="{OS_CCT}" AD="{OS_AD}" ACD="{OS_ACD}" LT="{OS_LT}" AL="{OS_AL}" WTW="{OS_WTW}" Pupil="{OS_PD}" /> 
+ </Patient>
+</Haag-Streit>

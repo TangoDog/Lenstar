@@ -1,0 +1,1 @@
+curl -k --verbose -F "file=@LensStar.XML" https://beta.fullmonteiol.com/aqua/lenStarPreop.php 

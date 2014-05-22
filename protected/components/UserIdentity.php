@@ -15,24 +15,30 @@ class UserIdentity extends CUserIdentity
 	 * against some persistent user identity storage (e.g. database).
 	 * @return boolean whether authentication succeeds.
 	 */
-	public function authenticate()
+        public $_id;
+        public $_dbowner;
+        public $username;
+
+
+        public function authenticate()
 	{
-		$user = User::model()->findByAttributes(array('email'=>$this->username));
+		$user = Operatorprefs::model()->findByAttributes(array('Name'=>$this->username));
 		//@todo - need to make LOWER
 		if ($user === null) {
 		// No user found!
 			$this->errorCode=self::ERROR_USERNAME_INVALID;
-		} else if ($user->password !==	hash_hmac('sha256', $this->password,
-				                           Yii::app()->params['encryptionKey']) ) {
+                        // password and username are already DES encrypted in the template sent over
+		} else if ($user->Password !==	 $this->password) { //else if ($user->password !==	hash_hmac('sha256', $this->password,
+		//		                           Yii::app()->params['encryptionKey']) ) {
 		// Invalid password!
-		$this->errorCode=self::ERROR_PASSWORD_INVALID;
+                    $this->errorCode=self::ERROR_PASSWORD_INVALID;
 		} else { // Okay!
-			$this->_id=$user->id;
+			$this->_id=$user->ID;
 			$this->_dbowner=$user->dbowner;
-			$this->username=$user->name;
-			$this->setState('lastLogin', date("m/d/y g:i A", strtotime($user->last_login_time)));
+			$this->username=$user->Name;
+			//$this->setState('lastLogin', date("m/d/y g:i A", strtotime($user->last_login_time)));
 			$this->setState('dbowner', $user->dbowner);
-			$this->setState('userid', $user->id);
+			$this->setState('userid', $user->ID);
                         //var_dump($user);
 			//Yii::app()->session['dbowner'] = $user->dbowner;
 			//Yii::app()->session['userid'] = $user->id;

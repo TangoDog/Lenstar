@@ -11,7 +11,8 @@
  *
  * @author gerald
  */
-class xmlFile extends CFormModel {
+
+class XmlFile extends CFormModel {
     //put your code here
     // attributes
     public $xmlfile; // where the file is uploaded
@@ -32,13 +33,28 @@ class xmlFile extends CFormModel {
     public $Surgeon ;// (string) $xml->Login['Surgeon'];
     public $preop = array();  // array of left and/or right eyes preop values
     public $postop = array();// array of left and/or right eyes preop values
-    
-    public function init(){
+ /*   
+    public function __construct(){
         // overrides CFormModel init
         // gets the posted xml file and stores it in attributes of this model
+        Yii::trace('Entering xmlFile.__construct','application.models.xmlFile');
+       // parent::init();// does nothing anyway
+        parent::__construct();
         if (isset($_FILES)) {
-            $upload = $_FILES['file']['tmp_name'];
-                //
+           Yii::trace('$_FILES is set','application.models.xmlFile');
+ 
+           $upload = $_FILES['file']['tmp_name'];
+
+            $xml = file_get_contents($upload);
+            $this->xmlfile = simplexml_load_string($xml); 
+            var_dump($this->xmlfile);
+        } else 
+        { Yii::log('Error in $xmlFile::__construct','Error','app.models.xmlFile');
+            throw new Exception('No File Uploaded- Process halted');
+        }
+        //return(true);  // if success
+    }
+                    //
                 // changed to allow posting - only can be done with curl on SSL with -k
                 // the curl command line is 
                 // curl -k --verbose -F "file=@kozel.xml" https:iols24-7.com/FM_IOL_03ex/lensStar.php >kozel.html
@@ -55,47 +71,40 @@ class xmlFile extends CFormModel {
                 //readfile($upload);
                 //$upload = "C:\FullMonteIOL\lensStar.xml";
         
-            $xml = file_get_contents($upload);
-            $xmlfile = simplexml_load_string($xml); 
-        } else throw new Exception('No File Uploaded- Process halted');
-        parent::init();
-        return(true);  // if success
-    }
-    
     public function setPatient() {
-        if (isset($xmlfile)){
-                $DateTime = new DateTime('NOW');
-                Yii::trace( $DateTime->format('c')); // ISO8601 formated datetime
+        if (isset($this->xmlfile)){
+                $this->DateTime = new DateTime('NOW');
+                Yii::trace( $this->DateTime->format('c')); // ISO8601 formated datetime
                 //$result_array = json_decode($json_string, TRUE);
-                $ChartID = (string) $xml->Patient['ID'];
+                $this->ChartID = (string) $xml->Patient['ID'];
                 Yii::trace('Lenstar PatientID: '.$ChartID);
-                $LastName = $xmlfile->Patient['LastName'];
-                $LastName = str_ireplace(".","",$LastName);
-                $LastName = str_ireplace(" ","",$LastName);
-                $LastName = html2txt($LastName); //removes offensive tags
-                Yii::trace('LastName: '.$LastName."");
+                $this->LastName = $xmlfile->Patient['LastName'];
+                $this->LastName = str_ireplace(".","",$this->LastName);
+                $this->LastName = str_ireplace(" ","",$this->LastName);
+                $this->LastName = html2txt($LastName); //removes offensive tags
+                Yii::trace('LastName: '.$this->LastName."");
 
-                $FirstName = (string) $xmlfile->Patient['FirstName'];
+                $this->FirstName = (string) $xmlfile->Patient['FirstName'];
                 Yii::trace('FirstName: '.$FirstName);
 
                 // strip off any MI
-                $Mi = "";
+                $this->Mi = "";
                 // find a space -
-                Yii::trace('FirstName: '.$FirstName."\n");
-                $FirstNameMI = getFirstNameMI($FirstName);
-                $FirstName =  $FirstNameMI[0];           
-                $MI =  $FirstNameMI[1];           
-                $ChartID = (string) $xmlfile->Patient['ID'];
+                Yii::trace('FirstName: '.$this->FirstName."\n");
+                $FirstNameMI = getFirstNameMI($this->FirstName);
+                $this->FirstName =  $FirstNameMI[0];           
+                $this->Mi =  $FirstNameMI[1];           
+                $this->ChartID = (string) $xmlfile->Patient['ID'];
 
-                $Birthday = (string) $xmlfile->Patient['Birthday'];
-                $Ethnicity = (string) $xmlfile->Patient['Ethnicity'];
-                $Sex = (string) $xmlfile->Patient['Sex'];
-                $Sex = strtoupper(substr($Sex, 0, 1));
-                $Thisuser = (string) $xmlfile->Login['User'];
-                $Thispwd = (string) $xmlfile->Login['Pwd'];
-                $Technician=(string) $xmlfile->Login['Technician'];
-                $Office=(string) $xmlfile->Login['Office'];
-                $Surgeon = (string) $xmlfile->Login['Surgeon'];
+                $this->Birthday = (string) $xmlfile->Patient['Birthday'];
+                $this->Ethnicity = (string) $xmlfile->Patient['Ethnicity'];
+                $this->Sex = (string) $xmlfile->Patient['Sex'];
+                $this->Sex = strtoupper(substr($this->Sex, 0, 1));
+                $this->Thisuser = (string) $xmlfile->Login['User'];
+                $this->Thispwd = (string) $xmlfile->Login['Pwd'];
+                $this->Technician=(string) $xmlfile->Login['Technician'];
+                $this->Office=(string) $xmlfile->Login['Office'];
+                $this->Surgeon = (string) $xmlfile->Login['Surgeon'];
                 return(true);
         }
        else return(false);
@@ -106,8 +115,8 @@ class xmlFile extends CFormModel {
                  // 
             // <Exam Eye="OD" Time="2013/07/25 13:40" MeasurementMode="Phakic" R1="8.13" R2="7.74" R1Axis="97" FlatK1="41.50" SteepK1="43.61" Astigmatism="2.12 " AxisAstig="7" n="1.3375" CCT="567" AD="2.99" LT="4.62" AL="26.42" WTW="12.31" Pupil="-----" />
             //  <Exam Eye="OS" Time="2013/07/25 13:40" MeasurementMode="Phakic" R1="8.06" R2="7.75" R1Axis="84" FlatK1="41.85" SteepK1="43.53" Astigmatism="1.68 " AxisAstig="174" n="1.3375" CCT="566" AD="2.99" LT="4.65" AL="26.40" WTW="12.28" Pupil="-----" /> 
-            if (isset($xml->Patient->Exam[0])) {
-                    $json_string = json_encode($xml->Patient->Exam[0]);
+            if (isset($this->xmlfile->Patient->Exam[0])) {
+                    $json_string = json_encode($this->xmlfile->Patient->Exam[0]);
                     // the string looks like this - need to remove {"@attributes: and closing "}"
 
             //{"@attributes":{"Eye":"OD","Time":"2013\/07\/25 13:40","MeasurementMode":"Phakic","R1":"8.13","R2":"7.74","R1Axis":"97","FlatK1":"41.50","SteepK1":"43.61","Astigmatism":"2.12 ","AxisAstig":"7","n":"1.3375","CCT":"567","AD":"2.99","LT":"4.62","AL":"26.42","WTW":"12.31","Pupil":"-----"}}
@@ -116,7 +125,7 @@ class xmlFile extends CFormModel {
                     $result_array1 =  substr_replace($result_array1, '', $start=-1);
 
                     $result_array1 = json_decode($result_array1, TRUE);
-                    $preop[] = $result_array1;
+                    $this->preop[] = $result_array1;
                     //print_r($result_array1);
 
             }
@@ -128,7 +137,7 @@ class xmlFile extends CFormModel {
 
                     $result_array2 = json_decode($result_array2, TRUE);
                     // print_r($result_array2);
-                   $preop[] = $result_array2;
+                   $this->$preop[] = $result_array2;
  
             }
     }
@@ -147,19 +156,19 @@ class xmlFile extends CFormModel {
                     $result_array1 =  substr_replace($result_array1, '', $start=-1);
 
                     $result_array1 = json_decode($result_array1, TRUE);
-                    $postop[] = $result_array1;
+                    $this->postop[] = $result_array1;
                     //print_r($result_array1);
 
             }
             if (isset($xml->Patient->Exam[1])) {
-                    $json_string = json_encode($xml->Patient->Exam[1]);
+                    $json_string = json_encode($this->xmlfile->Patient->Exam[1]);
                     // remove the @attribute tag, and the final}
                     $result_array2 =  substr_replace($json_string, '', $start=0,$length=15);
                     $result_array2 =  substr_replace($result_array2, '', $start=-1);
 
                     $result_array2 = json_decode($result_array2, TRUE);
                     // print_r($result_array2);
-                    $postop[] = $result_array2;
+                    $this->postop[] = $result_array2;
  
             }
     }
@@ -202,5 +211,5 @@ class xmlFile extends CFormModel {
                         ));
             } // do not change and don't strip out the Middle Init
     }
-    
+    */
 }  // end class xmlfile

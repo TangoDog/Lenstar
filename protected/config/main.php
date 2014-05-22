@@ -2,7 +2,10 @@
 
 // uncomment the following to define a path alias
 // Yii::setPathOfAlias('local','path/to/local-folder');
+//$xmlSource = dirname(__FILE__) . '/../components/XmlFile.php';
+//require_once('/var/www/protected/models/LoginForm.php');
 
+//require_once( $xmlSource);
 // This is the main Web application configuration. Any writable
 // CWebApplication properties can be configured here.
 return array(
@@ -10,8 +13,7 @@ return array(
 	'name'=>'LenStar API',
 
 	// preloading 'log' component
-	'preload'=>array('log'),
-
+        'preload'=>array('log', 'session'),
 	// autoloading model and component classes
 	'import'=>array(
 		'application.models.*',
@@ -48,12 +50,12 @@ return array(
 			),
 		),
 		
-		'db'=>array(
-			'connectionString' => 'sqlite:'.dirname(__FILE__).'/../data/testdrive.db',
-		),
+//		'db'=>array(
+//			'connectionString' => 'sqlite:'.dirname(__FILE__).'/../data/testdrive.db',
+//		),
 		// uncomment the following to use a MySQL database
 		
-		'db'=>array(
+		'db'=>array(    
 			'connectionString' => 'mysql:host=localhost;dbname=yii_oldfm',
 			'emulatePrepare' => true,
 			'username' => 'gpclarke',
@@ -67,30 +69,41 @@ return array(
 			// use 'site/error' action to display errors
 			'errorAction'=>'site/error',
 		),
-		'log'=>array(
-			'class'=>'CLogRouter',
-			'routes'=>array(
-				array(
-					'class'=>'CFileLogRoute',
-					'levels'=>'error, warning,trace',
-                                        'levels'=>'trace',
-                                            //
-                                            // I include *vardump* but you
+                'log'=>array(
+                        'class'=>'CLogRouter',
+                        'routes'=>array(
+                            array(
+                                'class'=>'CWebLogRoute',
+                                'levels'=>'trace,info,error,warning',
+                                'filter' => array(
+                                    'class' => 'CLogFilter',
+                                    'prefixSession' => true,
+                                    'prefixUser' => false,
+                                    'logUser' => true,
+                                    'logVars' => array(),
+                                ),
+                            ),
+                            array(
+                                'class'=>'CFileLogRoute',
+                                'levels'=>'info, trace,error,warning',
+                                'logFile'=>'infoMessages.log',
+                            ),
+//                'class'=>'CFileLogRoute',
+//					'levels'=>'error, warning,trace',
+//                                        'levels'=>'trace',
+//                                            //
+//                                            // I include *vardump* but you
                                             // can include more separated by commas
-                                        'categories'=>'vardump',
+               // 'categories'=>'vardump',
                                             //
                                             // This is self-explanatory right?
      //                                   'showInFireBug'=>true
 				),
 				// uncomment the following to show log messages on web pages
-				/*
-				array(
-					'class'=>'CWebLogRoute',
-				),
-				*/
+
 			),
 		),
-	),
+	
 
 	// application-level parameters that can be accessed
 	// using Yii::app()->params['paramName']

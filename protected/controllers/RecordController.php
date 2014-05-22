@@ -59,21 +59,22 @@ class RecordController extends Controller
                 //$xml = simplexml_load_string($string); 
                 //Yii::trace($xml);
                 //$json_string = json_encode($xml);
-                echo "Entered LenStarPostop.php Version 1.0 20131107";
+                echo "Entered LenStarPostop.php Version 2.0 20140521\n";
                 $objDateTime = new DateTime('NOW');
                 echo $objDateTime->format('c'); // ISO8601 formated datetime
                 echo "\n";
                 //$result_array = json_decode($json_string, TRUE);
                 $ChartID = (string) $xml->Patient['ID'];
-                preprint('Lenstar PatientID: '.$ChartID);
+                echo('Lenstar PatientID: '.$ChartID);
+                var_dump($xml);
                 $LastName = $xml->Patient['LastName'];
                 $LastName = str_ireplace(".","",$LastName);
                 $LastName = str_ireplace(" ","",$LastName);
                 $LastName = html2txt($LastName); //removes offensive tags
-                preprint('LastName: '.$LastName."");
+                echo('LastName: '.$LastName."");
 
                 $FirstName = (string) $xml->Patient['FirstName'];
-                preprint('FirstName: '.$FirstName);
+                echo('FirstName: '.$FirstName);
 
                 // strip off any MI
                 $Mi = "";
@@ -108,7 +109,7 @@ class RecordController extends Controller
 
                         $result_array1 = json_decode($result_array1, TRUE);
                         $result_array1['Pupil'] = $result_array1['Pupil']==='-----'?'':$result_array1['Pupil'];
-                        preprint($result_array1);
+                        echo($result_array1);
 
                 }
                 if (isset($xml->Patient->Exam[1])) {
@@ -120,19 +121,19 @@ class RecordController extends Controller
                         $result_array2 = json_decode($result_array2, TRUE);
                         $result_array2['Pupil'] = $result_array2['Pupil']==='-----'?'':$result_array2['Pupil'];
 
-                         preprint($result_array2);
+                         echo($result_array2);
 
                 }
-                preprint( "Logging in...");
+                echo( "Logging in...");
                 //
                 include "lenstarLogin.php";  // does the login logic, borrowed from standard code
                 //$dbowner should be set from here
                 //$conn = mysqli_connect('localhost','gpclarke','Pen7dejo','fm_ioln4');
                 //$_SESSION['OwnerID']=1;
                 //$loginSuccess = TRUE;
-                //preprint('dbowner='.$_SESSION('OwnerID'));
+                //echo('dbowner='.$_SESSION('OwnerID'));
                 if ($loginSuccess) {
-                        preprint( "Login Success..");
+                        echo( "Login Success..");
                         // CREATE A NEW RECORD, OR UPDATE AN OLD ONE
                     // First check to see if the patient is in the record
                     $findNameQry = "Select * from patients where `LastName` = cast(hex(DES_ENCRYPT( '".$conn->real_escape_string($LastName)."','99220a8fde41445eab441169c1d80e2c')) as char)
@@ -195,21 +196,21 @@ class RecordController extends Controller
                 // right eye first
                     if (count($result_array1)>0  && is_numeric($result_array1['FlatK1'])){  // update this record
                                         $findPostOp = "Select * from postop where PatientID = ".$patientID ." AND Eye='".$result_array1['Eye']."'"; // this should exist if postop was created from template
-                                preprint($findPostOp);
+                                echo($findPostOp);
                                         $postops = mysqli_query($conn, $findPostOp);
                                         if ($postops) {
                                            // records exist this should be an update
                                                 if ($record = mysqli_fetch_array($postops)) {
-                                                        preprint('Entering Update Postop');
+                                                        echo('Entering Update Postop');
                                                         $postopUpdate = "UPDATE postop set `PostopFlatK` = ".dashToNull($result_array1['FlatK1']).",`PostopSteepK` = ".dashToNull($result_array1['SteepK1']).",`PostopAxisK` = ".dashToNull($result_array1['AxisAstig']);
                                                         $postopUpdate .= " Where postop.ID = ".$record['ID'];
-                                                        preprint($postopUpdate);
+                                                        echo($postopUpdate);
                                                         $updateSuccess =  mysqli_query($conn, $postopUpdate);	   
                                                         if ($updateSuccess){
-                                                                preprint("Postop Update succeeded");
+                                                                echo("Postop Update succeeded");
                                                         }
                                                                 else {
-                                                                preprint("Postop Update failed") ;
+                                                                echo("Postop Update failed") ;
                                                         }	// end updateSuccess	
                                                 }  //($record = mysqli_fetch_array($postops))
                                                 else {		// must be an insertion
@@ -218,23 +219,23 @@ class RecordController extends Controller
                                                         if (is_numeric($result_array1['R1']) && is_numeric($result_array1['R1']))
                                                                 $AvgRc = ($result_array1['R1']+$result_array1['R2'])/2;
                                                         else $AvgRC = 'NULL';
-                                                        preprint('Entering Insert Postop');
+                                                        echo('Entering Insert Postop');
                                                         $preopInsert = "INSERT INTO postop (PatientID,BaseSurgeonID,SurgeonID,Eye,PostopFlatK,PostopSteepK,PostopAxisK,`Axial Length`,CCT,ACD,LensThick,WTW,Biometry,Rc,`Exam Date`,Pupil,dbowner,Keratometry)";
                                                         $preopInsert .=" values (".$patientID.",". $Surgeon.",".$Surgeon.",'".$result_array1['Eye']."',".dashToNull($result_array1['FlatK1']);
                                                         $preopInsert .=",".dashToNull($result_array1['SteepK1']).",".dashToNull($result_array1['AxisAstig']).",".dashToNull($result_array1['AL']);
                                                         $preopInsert .=",".dashToNull($result_array1['CCT']).",".dashToNull($result_array1['ACD']).",".dashToNull($result_array1['LT']).",".dashToNull($result_array1['WTW']).",13,".$AvgRc.",CONVERT('".$result_array1['Time']."',datetime),".emptyToNull($result_array1['Pupil']).",".$_SESSION['OwnerID']."," .$KeraID .")";
                                                         //,SteepAxis,`Axial Length`,CCT,ACD,LensThick,WTW$.$result_array1
-                                                        preprint($preopInsert);
+                                                        echo($preopInsert);
                                                         $insert =  mysqli_query($conn, $preopInsert);
 
-                                                        preprint("\n............\n");
+                                                        echo("\n............\n");
 
                                                         if ($insert){
-                                                                preprint("Data1 Insertion succeeded\n");
+                                                                echo("Data1 Insertion succeeded\n");
                                                         }
                                                         else {
-                                                                                                                preprint("Data1 Insertion failed\n") ;
-                                                                                                                preprint($conn->errno."  ". $conn->error);
+                                                                                                                echo("Data1 Insertion failed\n") ;
+                                                                                                                echo($conn->errno."  ". $conn->error);
                                                                 }
                                                 }  // must be an insertion
                                         }// if $postops
@@ -242,45 +243,45 @@ class RecordController extends Controller
 
                     if (count($preop[1])>0  && is_numeric($preop[1]['FlatK1'])){  // insert this record or update found postop
                                         $findPostOp2 = "Select * from postop where PatientID = ".$patientID ." AND Eye='".$preop[1]['Eye']."'";// this should exist if postop was created from template
-                                        preprint($findPostOp2);
+                                        echo($findPostOp2);
                                         $postops = mysqli_query($conn, $findPostOp2);
                                         if ($postops) {
                                            // records exist this should be an update
                                                 if ($record = mysqli_fetch_array($postops)) {
-                                                        preprint('Entering Update Postop');
+                                                        echo('Entering Update Postop');
                                                         $postopUpdate = "UPDATE postop set `PostopFlatK` = ".dashToNull($preop[1]['FlatK1']).",`PostopSteepK` = ".emptyToNull($preop[1]['SteepK1']).",`PostopAxisK` = ".emptyToNull($preop[1]['AxisAstig']);
                                                         $postopUpdate .= " Where postop.ID = ".$record['ID'];
-                                                        preprint($postopUpdate);
+                                                        echo($postopUpdate);
                                                         $updateSuccess =  mysqli_query($conn, $postopUpdate);	   
                                                         if ($updateSuccess){
-                                                                preprint("Postop Update succeeded");
+                                                                echo("Postop Update succeeded");
                                                         }
                                                                 else {
-                                                                preprint("Postop Update failed") ;
+                                                                echo("Postop Update failed") ;
                                                         }	// end updateSuccess	
                                                 }
                                                 else {		// must be an insertion
 
                                                         // no postop exists so create one based on this data - however now the user's obligation to edit this to look like preop
                                                         $AvgRc = ($preop[1]['R1']+$preop[1]['R2'])/2;
-                                                                                        preprint('Entering Insert Postop');
+                                                                                        echo('Entering Insert Postop');
                                                         $preopInsert = "INSERT INTO postop (PatientID,BaseSurgeonID,SurgeonID,Eye,PostopFlatK,PostopSteepK,PostopAxisK,`Axial Length`,CCT,ACD,LensThick,WTW,Biometry,Rc,`Exam Date`,Pupil,dbowner,Keratometry)";
                                                         $preopInsert .=" values (".$patientID.",". $Surgeon.",".$Surgeon.",'".$preop[1]['Eye']."',".dashToNull($preop[1]['FlatK1']);
                                                         $preopInsert .=",".dashToNull($preop[1]['SteepK1']).",".dashToNull($preop[1]['AxisAstig']).",".dashToNull($preop[1]['AL']);
                                                         $preopInsert .=",".dashToNull($preop[1]['CCT']).",".dashToNull($preop[1]['ACD']).",".dashToNull($preop[1]['LT']).",".dashToNull($preop[1]['WTW']).",13,".$AvgRc.",CONVERT('".
                                                                                         $preop[1]['Time']."',datetime),".emptyToNull($preop[1]['Pupil']).",".$_SESSION['OwnerID']."," .$KeraID .")";
                                                         //,SteepAxis,`Axial Length`,CCT,ACD,LensThick,WTW$.$preop[1]
-                                                        preprint($preopInsert);
+                                                        echo($preopInsert);
                                                         $insert =  mysqli_query($conn, $preopInsert);
 
-                                                        preprint("\n............\n");
+                                                        echo("\n............\n");
 
                                                         if ($insert){
-                                                                preprint("Data2 Insertion succeeded\n");
+                                                                echo("Data2 Insertion succeeded\n");
                                                         }
                                                         else {
-                                                                preprint("Data1 Insertion failed\n") ;
-                                                                preprint($conn->errno."  ". $conn->error);
+                                                                echo("Data1 Insertion failed\n") ;
+                                                                echo($conn->errno."  ". $conn->error);
                                                                 }
                                                 }  // must be an insertion
                                                     //if ($record = mysqli_fetch_array($postops))
@@ -298,23 +299,38 @@ class RecordController extends Controller
 
 	public function actionPreop()
 	{
-            $xml = new xmlFile; // this will initialze the XML file structure
+            echo "Logged Messages:entering Preop\n";
+            Yii::trace('Entering actionPreop','application.controllers.RecordController');
+           // $available =  get_declared_classes();
+ //           $existsClass = class_exists('XmlFile');
+ //           if ($existsClass) Yii::trace('XmlFile Class exists','application.controllers.classes');
+            //Yii::trace(CVarDumper::dump($available),'application.controllers.classes');
+            
+            $xml = new XmlFile(); // this will initialze the XML file structure
+            //$xml::__construct();
+//   echo "Logged Messages:<br><br>";
+//   CVarDumper::dump(Yii::getLogger()->getLogs());
             // now parse the patient portion;
             if (isset($xml)) $Ptsuccess = $xml->setPatient();
-           // changed to allow posting - only can be done with curl on SSL with -k
-            // the curl command line is 4
-            // curl -k --verbose -F "file=@kozel.xml" https:iols24-7.com/FM_IOL_03ex/lensStar.php >kozel.html
-            // the data looks like:
-            // 2013_07_25_13_40_33_Adams_Warren_S.XML
-            // change the template file in EyeSuite directory - to reflect User/Pwd/Office/Technician
-            // user needs to create the FullMonteIOL directory under c:\
-            // add curl to this directory
-            // change the template to above noted
-            // add an export task with the curl function about
-            // send a test file
-            //Yii::trace($_FILES);
-            //Yii::trace("...........\n");
-            //readfile($upload);
+//   echo "Logged Messages:<br><br>";
+//   CVarDumper::dump(Yii::getLogger()->getLogs());
+           /*
+             *             changed to allow posting - only can be done with curl on SSL with -k
+             the curl command line is 4
+             curl -k --verbose -F "file=@kozel.xml" https:iols24-7.com/FM_IOL_03ex/lensStar.php >kozel.html
+             the data looks like:
+             2013_07_25_13_40_33_Adams_Warren_S.XML
+             change the template file in EyeSuite directory - to reflect User/Pwd/Office/Technician
+             user needs to create the FullMonteIOL directory under c:\
+             add curl to this directory
+             change the template to above noted
+             add an export task with the curl function about
+             send a test file
+            Yii::trace($_FILES);
+            Yii::trace("...........\n");
+            readfile($upload);
+
+             */
   
 
             // get the two exams:
@@ -323,17 +339,19 @@ class RecordController extends Controller
                 $Preop2 = $xml->setPreop(1);
                 
             }
-   
+   echo "Logged Messages:<br><br>";
+   CVarDumper::dump(Yii::getLogger()->getLogs());
             //echo "Logging in...\n";
             Yii::trace('Logging in ...');
             /*
              * New Login using guid and user name - no passwords are passed
              */
             $logger = new LoginForm;
-            $logger->username = $Thisuser;
-            $logger->password = $Thispwd;
+            $logger->username = $xmlFile->Thisuser;
+            $logger->password = $xmlFile->Thispwd;
             if ($logger->validate() && $logger->login()){
                 $loginSuccess = true;
+                Yii::log('User Logged in'.$xmlFile->Thisuser, 'Trace','Controllers.Record.preop');
             } else {
                 Yii::trace('Login Failed');
                 $message = 'Login Failed';

@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<Haag-Streit Target="FullMonteIOL" Source="Lenstar">
+ <Login User="mdittmer" Pwd="Cosmod123" Technician="1" Office="1" Surgeon="5"></Login>
+ <Patient ID="44346" LastName="Bell" FirstName="George" Birthday="1943/11/16" Ethnicity="undefined" Sex="male">
+  <Exam Eye="OD" Time="2014/05/20 08:49" MeasurementMode="Pseudophakic silicone" R1="8.37" R2="8.22" R1Axis="26" FlatK1="40.31" SteepK1="41.06" Astigmatism="0.76 " AxisAstig="116" n="1.3375" CCT="547" AD="-----" ACD="-----" LT="-----" AL="25.49" WTW="12.58" Pupil="3.75" /> 
+  <Exam Eye="OS" Time="2014/05/20 08:49" MeasurementMode="Phakic" R1="7.87" R2="7.70" R1Axis="61" FlatK1="42.87" SteepK1="43.84" Astigmatism="0.97 " AxisAstig="151" n="1.3375" CCT="541" AD="3.15" ACD="3.69" LT="4.55" AL="25.00" WTW="12.56" Pupil="3.91" /> 
+ </Patient>
+</Haag-Streit>
