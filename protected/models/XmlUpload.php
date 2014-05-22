@@ -8,7 +8,7 @@
  * @property string $xmlFile
  * @property string $created_at
  * @property string $updated_at
- * @property string $fastName
+ * @property string $lastName
  * @property string $firstName
  * @property string $mi
  * @property string $birthDate
@@ -22,11 +22,40 @@
  * @property integer $office
  * @property string $preop
  * @property string $postop
- * @property integer $userid
+ * @property integer $user_id
  */
 class XmlUpload extends CActiveRecord
 {
 	/**
+         * override __construct of CActiveRecord
+         * get the xml file sent to this script
+         * parse the file, login, set values of the XmlUpload ActiveRecord modeld
+         * 
+         *          
+         * 
+         */
+//         public function __construct() {
+//             Yii::trace('Entering xmlFile.__construct','application.models.xmlFile');
+//             parent::__construct();
+//         }
+         
+         public function uploadPreop() {
+             Yii::trace('Entering xmlFile.uploadPreop','application.models.XmlUpload');
+             if (isset($_FILES['file']['tmp_name'])) {
+                        Yii::trace('$_FILES is set','application.models.xmlFile');
+ 
+                        $upload = $_FILES['file']['tmp_name'];
+
+                        $xml = file_get_contents($upload);
+                        $this->xmlFile = simplexml_load_string($xml); 
+                        var_dump($this->xmlFile);
+             } else  {
+                 Yii::log('Error in $xmlFile::__construct','Error','app.models.xmlFile');
+                 throw new Exception('No File Uploaded- Process halted');
+             }           
+         }
+
+         /**
 	 * @return string the associated database table name
 	 */
 	public function tableName()
@@ -42,15 +71,15 @@ class XmlUpload extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('xmlFile, created_at, updated_at, fastName, firstName, mi, birthDate, chartID, ethnicity, thisUser, thisPwd, technician, surgeon, dbowner, office', 'required'),
-			array('technician, surgeon, dbowner, office,user_id', 'numerical', 'integerOnly'=>true),
-			array('fastName, firstName', 'length', 'max'=>100),
+			array('xmlFile, created_at, updated_at, lastName, firstName, mi, birthDate, chartID, ethnicity, thisUser, thisPwd, technician, surgeon, dbowner, office, preop, postop, user_id', 'required'),
+			array('technician, surgeon, dbowner, office, user_id', 'numerical', 'integerOnly'=>true),
+			array('lastName, firstName', 'length', 'max'=>100),
 			array('mi', 'length', 'max'=>2),
 			array('chartID, ethnicity, thisUser', 'length', 'max'=>20),
 			array('thisPwd', 'length', 'max'=>60),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
-			array('id, xmlFile, created_at, updated_at, fastName, firstName, mi, cirthDate, chartID, ethnicity, thisUser, thisPwd, technician, surgeon, dbowner, office, preop, postop', 'safe', 'on'=>'search'),
+			array('id, xmlFile, created_at, updated_at, lastName, firstName, mi, birthDate, chartID, ethnicity, thisUser, thisPwd, technician, surgeon, dbowner, office, preop, postop, user_id', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -75,10 +104,10 @@ class XmlUpload extends CActiveRecord
 			'xmlFile' => 'Xml File',
 			'created_at' => 'Created At',
 			'updated_at' => 'Updated At',
-			'fastName' => 'Fast Name',
+			'lastName' => 'Last Name',
 			'firstName' => 'First Name',
 			'mi' => 'Mi',
-			'cirthDate' => 'Cirth Date',
+			'birthDate' => 'Birth Date',
 			'chartID' => 'Chart',
 			'ethnicity' => 'Ethnicity',
 			'thisUser' => 'This User',
@@ -89,6 +118,7 @@ class XmlUpload extends CActiveRecord
 			'office' => 'Office',
 			'preop' => 'Preop',
 			'postop' => 'Postop',
+			'user_id' => 'User',
 		);
 	}
 
@@ -114,10 +144,10 @@ class XmlUpload extends CActiveRecord
 		$criteria->compare('xmlFile',$this->xmlFile,true);
 		$criteria->compare('created_at',$this->created_at,true);
 		$criteria->compare('updated_at',$this->updated_at,true);
-		$criteria->compare('fastName',$this->fastName,true);
+		$criteria->compare('lastName',$this->lastName,true);
 		$criteria->compare('firstName',$this->firstName,true);
 		$criteria->compare('mi',$this->mi,true);
-		$criteria->compare('cirthDate',$this->cirthDate,true);
+		$criteria->compare('birthDate',$this->birthDate,true);
 		$criteria->compare('chartID',$this->chartID,true);
 		$criteria->compare('ethnicity',$this->ethnicity,true);
 		$criteria->compare('thisUser',$this->thisUser,true);
@@ -128,6 +158,7 @@ class XmlUpload extends CActiveRecord
 		$criteria->compare('office',$this->office);
 		$criteria->compare('preop',$this->preop,true);
 		$criteria->compare('postop',$this->postop,true);
+		$criteria->compare('user_id',$this->user_id);
 
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,

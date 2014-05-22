@@ -1975,3 +1975,1103 @@ in /var/www/lenstar/index.php (13)
 2014/05/21 20:15:06 [trace] [system.db.CDbCommand] Querying SQL: SHOW CREATE TABLE `xmlUpload`
 in /var/www/lenstar/protected/controllers/XmlUploadController.php (65)
 in /var/www/lenstar/index.php (13)
+2014/05/21 20:48:39 [trace] [system.CModule] Loading "log" application component
+in /var/www/lenstar/index.php (13)
+2014/05/21 20:48:39 [trace] [system.CModule] Loading "session" application component
+in /var/www/lenstar/index.php (13)
+2014/05/21 20:48:39 [trace] [system.CModule] Loading "request" application component
+in /var/www/lenstar/index.php (13)
+2014/05/21 20:48:39 [trace] [system.CModule] Loading "urlManager" application component
+in /var/www/lenstar/index.php (13)
+2014/05/21 20:48:39 [trace] [system.base.CModule] Loading "gii" module
+in /var/www/lenstar/index.php (13)
+2014/05/21 20:48:39 [trace] [system.CModule] Loading "user" application component
+in /var/www/lenstar/index.php (13)
+2014/05/21 20:48:39 [trace] [system.CModule] Loading "db" application component
+in /var/www/lenstar/index.php (13)
+2014/05/21 20:48:39 [trace] [system.db.CDbConnection] Opening DB connection
+in /var/www/lenstar/index.php (13)
+2014/05/21 20:48:39 [trace] [system.CModule] Loading "clientScript" application component
+in /var/www/lenstar/index.php (13)
+2014/05/21 20:48:39 [trace] [system.CModule] Loading "widgetFactory" application component
+in /var/www/lenstar/index.php (13)
+2014/05/21 20:48:39 [trace] [system.CModule] Loading "assetManager" application component
+in /var/www/lenstar/index.php (13)
+2014/05/21 20:48:39 [trace] [system.CModule] Loading "coreMessages" application component
+in /var/www/lenstar/index.php (13)
+2014/05/21 20:49:05 [trace] [system.CModule] Loading "log" application component
+in /var/www/lenstar/index.php (13)
+2014/05/21 20:49:05 [trace] [system.CModule] Loading "session" application component
+in /var/www/lenstar/index.php (13)
+2014/05/21 20:49:05 [trace] [system.CModule] Loading "request" application component
+in /var/www/lenstar/index.php (13)
+2014/05/21 20:49:05 [trace] [system.CModule] Loading "urlManager" application component
+in /var/www/lenstar/index.php (13)
+2014/05/21 20:49:05 [trace] [system.base.CModule] Loading "gii" module
+in /var/www/lenstar/index.php (13)
+2014/05/21 20:49:05 [trace] [system.CModule] Loading "user" application component
+in /var/www/lenstar/index.php (13)
+2014/05/21 20:49:05 [trace] [system.CModule] Loading "db" application component
+in /var/www/lenstar/index.php (13)
+2014/05/21 20:49:05 [trace] [system.db.CDbConnection] Opening DB connection
+in /var/www/lenstar/index.php (13)
+2014/05/21 20:49:05 [trace] [system.db.CDbCommand] Querying SQL: SHOW FULL COLUMNS FROM `xmlUpload`
+in /var/www/lenstar/index.php (13)
+2014/05/21 20:49:05 [trace] [system.db.CDbCommand] Querying SQL: SHOW CREATE TABLE `xmlUpload`
+in /var/www/lenstar/index.php (13)
+2014/05/21 20:49:05 [trace] [system.CModule] Loading "clientScript" application component
+in /var/www/lenstar/index.php (13)
+2014/05/21 20:49:05 [trace] [system.CModule] Loading "widgetFactory" application component
+in /var/www/lenstar/index.php (13)
+2014/05/21 20:49:05 [trace] [system.CModule] Loading "assetManager" application component
+in /var/www/lenstar/index.php (13)
+2014/05/21 20:49:05 [trace] [system.CModule] Loading "coreMessages" application component
+in /var/www/lenstar/index.php (13)
+2014/05/21 20:49:18 [trace] [system.CModule] Loading "log" application component
+in /var/www/lenstar/index.php (13)
+2014/05/21 20:49:18 [trace] [system.CModule] Loading "session" application component
+in /var/www/lenstar/index.php (13)
+2014/05/21 20:49:18 [trace] [system.CModule] Loading "request" application component
+in /var/www/lenstar/index.php (13)
+2014/05/21 20:49:18 [trace] [system.CModule] Loading "urlManager" application component
+in /var/www/lenstar/index.php (13)
+2014/05/21 20:49:18 [trace] [system.base.CModule] Loading "gii" module
+in /var/www/lenstar/index.php (13)
+2014/05/21 20:49:18 [trace] [system.CModule] Loading "user" application component
+in /var/www/lenstar/index.php (13)
+2014/05/21 20:49:18 [trace] [system.CModule] Loading "db" application component
+in /var/www/lenstar/index.php (13)
+2014/05/21 20:49:18 [trace] [system.db.CDbConnection] Opening DB connection
+in /var/www/lenstar/index.php (13)
+2014/05/21 20:49:18 [trace] [system.db.CDbCommand] Querying SQL: SHOW FULL COLUMNS FROM `xmlUpload`
+in /var/www/lenstar/index.php (13)
+2014/05/21 20:49:18 [trace] [system.db.CDbCommand] Querying SQL: SHOW CREATE TABLE `xmlUpload`
+in /var/www/lenstar/index.php (13)
+2014/05/21 20:49:18 [trace] [system.CModule] Loading "clientScript" application component
+in /var/www/lenstar/index.php (13)
+2014/05/21 20:49:18 [trace] [system.CModule] Loading "widgetFactory" application component
+in /var/www/lenstar/index.php (13)
+2014/05/21 20:49:18 [trace] [system.CModule] Loading "assetManager" application component
+in /var/www/lenstar/index.php (13)
+2014/05/21 20:49:18 [trace] [system.CModule] Loading "coreMessages" application component
+in /var/www/lenstar/index.php (13)
+2014/05/21 20:49:28 [trace] [system.CModule] Loading "log" application component
+in /var/www/lenstar/index.php (13)
+2014/05/21 20:49:28 [trace] [system.CModule] Loading "session" application component
+in /var/www/lenstar/index.php (13)
+2014/05/21 20:49:28 [trace] [system.CModule] Loading "request" application component
+in /var/www/lenstar/index.php (13)
+2014/05/21 20:49:28 [trace] [system.CModule] Loading "urlManager" application component
+in /var/www/lenstar/index.php (13)
+2014/05/21 20:49:28 [trace] [system.base.CModule] Loading "gii" module
+in /var/www/lenstar/index.php (13)
+2014/05/21 20:49:28 [trace] [system.CModule] Loading "user" application component
+in /var/www/lenstar/index.php (13)
+2014/05/21 20:49:28 [trace] [system.CModule] Loading "db" application component
+in /var/www/lenstar/index.php (13)
+2014/05/21 20:49:28 [trace] [system.db.CDbConnection] Opening DB connection
+in /var/www/lenstar/index.php (13)
+2014/05/21 20:49:28 [trace] [system.CModule] Loading "clientScript" application component
+in /var/www/lenstar/index.php (13)
+2014/05/21 20:49:28 [trace] [system.CModule] Loading "widgetFactory" application component
+in /var/www/lenstar/index.php (13)
+2014/05/21 20:49:28 [trace] [system.db.CDbCommand] Querying SQL: SHOW TABLES
+in /var/www/lenstar/index.php (13)
+2014/05/21 20:49:28 [trace] [system.db.CDbCommand] Querying SQL: SHOW FULL COLUMNS FROM `operatorprefs`
+in /var/www/lenstar/index.php (13)
+2014/05/21 20:49:28 [trace] [system.db.CDbCommand] Querying SQL: SHOW CREATE TABLE `operatorprefs`
+in /var/www/lenstar/index.php (13)
+2014/05/21 20:49:28 [trace] [system.db.CDbCommand] Querying SQL: SHOW FULL COLUMNS FROM `patients`
+in /var/www/lenstar/index.php (13)
+2014/05/21 20:49:28 [trace] [system.db.CDbCommand] Querying SQL: SHOW CREATE TABLE `patients`
+in /var/www/lenstar/index.php (13)
+2014/05/21 20:49:28 [trace] [system.db.CDbCommand] Querying SQL: SHOW FULL COLUMNS FROM `postop`
+in /var/www/lenstar/index.php (13)
+2014/05/21 20:49:28 [trace] [system.db.CDbCommand] Querying SQL: SHOW CREATE TABLE `postop`
+in /var/www/lenstar/index.php (13)
+2014/05/21 20:49:28 [trace] [system.db.CDbCommand] Querying SQL: SHOW FULL COLUMNS FROM `preop`
+in /var/www/lenstar/index.php (13)
+2014/05/21 20:49:28 [trace] [system.db.CDbCommand] Querying SQL: SHOW CREATE TABLE `preop`
+in /var/www/lenstar/index.php (13)
+2014/05/21 20:49:28 [trace] [system.db.CDbCommand] Querying SQL: SHOW FULL COLUMNS FROM `xmlUpload`
+in /var/www/lenstar/index.php (13)
+2014/05/21 20:49:28 [trace] [system.db.CDbCommand] Querying SQL: SHOW CREATE TABLE `xmlUpload`
+in /var/www/lenstar/index.php (13)
+2014/05/21 20:49:28 [trace] [system.CModule] Loading "assetManager" application component
+in /var/www/lenstar/index.php (13)
+2014/05/21 20:49:28 [trace] [system.CModule] Loading "coreMessages" application component
+in /var/www/lenstar/index.php (13)
+2014/05/21 20:49:43 [trace] [system.CModule] Loading "log" application component
+in /var/www/lenstar/index.php (13)
+2014/05/21 20:49:43 [trace] [system.CModule] Loading "session" application component
+in /var/www/lenstar/index.php (13)
+2014/05/21 20:49:43 [trace] [system.CModule] Loading "request" application component
+in /var/www/lenstar/index.php (13)
+2014/05/21 20:49:43 [trace] [system.CModule] Loading "urlManager" application component
+in /var/www/lenstar/index.php (13)
+2014/05/21 20:49:43 [trace] [system.base.CModule] Loading "gii" module
+in /var/www/lenstar/index.php (13)
+2014/05/21 20:49:43 [trace] [system.CModule] Loading "user" application component
+in /var/www/lenstar/index.php (13)
+2014/05/21 20:49:43 [trace] [system.CModule] Loading "db" application component
+in /var/www/lenstar/index.php (13)
+2014/05/21 20:49:43 [trace] [system.db.CDbConnection] Opening DB connection
+in /var/www/lenstar/index.php (13)
+2014/05/21 20:49:43 [trace] [system.db.CDbCommand] Querying SQL: SHOW FULL COLUMNS FROM `xmlUpload`
+in /var/www/lenstar/index.php (13)
+2014/05/21 20:49:43 [trace] [system.db.CDbCommand] Querying SQL: SHOW CREATE TABLE `xmlUpload`
+in /var/www/lenstar/index.php (13)
+2014/05/21 20:49:43 [trace] [system.db.CDbCommand] Querying SQL: SHOW TABLES
+in /var/www/lenstar/index.php (13)
+2014/05/21 20:49:43 [trace] [system.db.CDbCommand] Querying SQL: SHOW FULL COLUMNS FROM `operatorprefs`
+in /var/www/lenstar/index.php (13)
+2014/05/21 20:49:43 [trace] [system.db.CDbCommand] Querying SQL: SHOW CREATE TABLE `operatorprefs`
+in /var/www/lenstar/index.php (13)
+2014/05/21 20:49:43 [trace] [system.db.CDbCommand] Querying SQL: SHOW FULL COLUMNS FROM `patients`
+in /var/www/lenstar/index.php (13)
+2014/05/21 20:49:43 [trace] [system.db.CDbCommand] Querying SQL: SHOW CREATE TABLE `patients`
+in /var/www/lenstar/index.php (13)
+2014/05/21 20:49:43 [trace] [system.db.CDbCommand] Querying SQL: SHOW FULL COLUMNS FROM `postop`
+in /var/www/lenstar/index.php (13)
+2014/05/21 20:49:43 [trace] [system.db.CDbCommand] Querying SQL: SHOW CREATE TABLE `postop`
+in /var/www/lenstar/index.php (13)
+2014/05/21 20:49:43 [trace] [system.db.CDbCommand] Querying SQL: SHOW FULL COLUMNS FROM `preop`
+in /var/www/lenstar/index.php (13)
+2014/05/21 20:49:43 [trace] [system.db.CDbCommand] Querying SQL: SHOW CREATE TABLE `preop`
+in /var/www/lenstar/index.php (13)
+2014/05/21 20:49:43 [trace] [system.CModule] Loading "clientScript" application component
+in /var/www/lenstar/index.php (13)
+2014/05/21 20:49:43 [trace] [system.CModule] Loading "widgetFactory" application component
+in /var/www/lenstar/index.php (13)
+2014/05/21 20:49:43 [trace] [system.CModule] Loading "assetManager" application component
+in /var/www/lenstar/index.php (13)
+2014/05/21 20:49:43 [trace] [system.CModule] Loading "coreMessages" application component
+in /var/www/lenstar/index.php (13)
+2014/05/21 20:49:48 [trace] [system.CModule] Loading "log" application component
+in /var/www/lenstar/index.php (13)
+2014/05/21 20:49:48 [trace] [system.CModule] Loading "session" application component
+in /var/www/lenstar/index.php (13)
+2014/05/21 20:49:48 [trace] [system.CModule] Loading "request" application component
+in /var/www/lenstar/index.php (13)
+2014/05/21 20:49:48 [trace] [system.CModule] Loading "urlManager" application component
+in /var/www/lenstar/index.php (13)
+2014/05/21 20:49:48 [trace] [system.base.CModule] Loading "gii" module
+in /var/www/lenstar/index.php (13)
+2014/05/21 20:49:48 [trace] [system.CModule] Loading "user" application component
+in /var/www/lenstar/index.php (13)
+2014/05/21 20:49:48 [trace] [system.CModule] Loading "db" application component
+in /var/www/lenstar/index.php (13)
+2014/05/21 20:49:48 [trace] [system.db.CDbConnection] Opening DB connection
+in /var/www/lenstar/index.php (13)
+2014/05/21 20:49:48 [trace] [system.db.CDbCommand] Querying SQL: SHOW FULL COLUMNS FROM `xmlUpload`
+in /var/www/lenstar/index.php (13)
+2014/05/21 20:49:48 [trace] [system.db.CDbCommand] Querying SQL: SHOW CREATE TABLE `xmlUpload`
+in /var/www/lenstar/index.php (13)
+2014/05/21 20:49:48 [trace] [system.db.CDbCommand] Querying SQL: SHOW TABLES
+in /var/www/lenstar/index.php (13)
+2014/05/21 20:49:48 [trace] [system.db.CDbCommand] Querying SQL: SHOW FULL COLUMNS FROM `operatorprefs`
+in /var/www/lenstar/index.php (13)
+2014/05/21 20:49:48 [trace] [system.db.CDbCommand] Querying SQL: SHOW CREATE TABLE `operatorprefs`
+in /var/www/lenstar/index.php (13)
+2014/05/21 20:49:48 [trace] [system.db.CDbCommand] Querying SQL: SHOW FULL COLUMNS FROM `patients`
+in /var/www/lenstar/index.php (13)
+2014/05/21 20:49:48 [trace] [system.db.CDbCommand] Querying SQL: SHOW CREATE TABLE `patients`
+in /var/www/lenstar/index.php (13)
+2014/05/21 20:49:48 [trace] [system.db.CDbCommand] Querying SQL: SHOW FULL COLUMNS FROM `postop`
+in /var/www/lenstar/index.php (13)
+2014/05/21 20:49:48 [trace] [system.db.CDbCommand] Querying SQL: SHOW CREATE TABLE `postop`
+in /var/www/lenstar/index.php (13)
+2014/05/21 20:49:48 [trace] [system.db.CDbCommand] Querying SQL: SHOW FULL COLUMNS FROM `preop`
+in /var/www/lenstar/index.php (13)
+2014/05/21 20:49:48 [trace] [system.db.CDbCommand] Querying SQL: SHOW CREATE TABLE `preop`
+in /var/www/lenstar/index.php (13)
+2014/05/21 20:49:57 [trace] [system.CModule] Loading "log" application component
+in /var/www/lenstar/index.php (13)
+2014/05/21 20:49:57 [trace] [system.CModule] Loading "session" application component
+in /var/www/lenstar/index.php (13)
+2014/05/21 20:49:57 [trace] [system.CModule] Loading "request" application component
+in /var/www/lenstar/index.php (13)
+2014/05/21 20:49:57 [trace] [system.CModule] Loading "urlManager" application component
+in /var/www/lenstar/index.php (13)
+2014/05/21 20:49:57 [trace] [system.base.CModule] Loading "gii" module
+in /var/www/lenstar/index.php (13)
+2014/05/21 20:49:57 [trace] [system.CModule] Loading "user" application component
+in /var/www/lenstar/index.php (13)
+2014/05/21 20:49:57 [trace] [system.CModule] Loading "db" application component
+in /var/www/lenstar/index.php (13)
+2014/05/21 20:49:57 [trace] [system.db.CDbConnection] Opening DB connection
+in /var/www/lenstar/index.php (13)
+2014/05/21 20:49:57 [trace] [system.db.CDbCommand] Querying SQL: SHOW FULL COLUMNS FROM `xmlUpload`
+in /var/www/lenstar/index.php (13)
+2014/05/21 20:49:57 [trace] [system.db.CDbCommand] Querying SQL: SHOW CREATE TABLE `xmlUpload`
+in /var/www/lenstar/index.php (13)
+2014/05/21 20:49:57 [trace] [system.db.CDbCommand] Querying SQL: SHOW TABLES
+in /var/www/lenstar/index.php (13)
+2014/05/21 20:49:57 [trace] [system.db.CDbCommand] Querying SQL: SHOW FULL COLUMNS FROM `operatorprefs`
+in /var/www/lenstar/index.php (13)
+2014/05/21 20:49:57 [trace] [system.db.CDbCommand] Querying SQL: SHOW CREATE TABLE `operatorprefs`
+in /var/www/lenstar/index.php (13)
+2014/05/21 20:49:57 [trace] [system.db.CDbCommand] Querying SQL: SHOW FULL COLUMNS FROM `patients`
+in /var/www/lenstar/index.php (13)
+2014/05/21 20:49:57 [trace] [system.db.CDbCommand] Querying SQL: SHOW CREATE TABLE `patients`
+in /var/www/lenstar/index.php (13)
+2014/05/21 20:49:57 [trace] [system.db.CDbCommand] Querying SQL: SHOW FULL COLUMNS FROM `postop`
+in /var/www/lenstar/index.php (13)
+2014/05/21 20:49:57 [trace] [system.db.CDbCommand] Querying SQL: SHOW CREATE TABLE `postop`
+in /var/www/lenstar/index.php (13)
+2014/05/21 20:49:57 [trace] [system.db.CDbCommand] Querying SQL: SHOW FULL COLUMNS FROM `preop`
+in /var/www/lenstar/index.php (13)
+2014/05/21 20:49:57 [trace] [system.db.CDbCommand] Querying SQL: SHOW CREATE TABLE `preop`
+in /var/www/lenstar/index.php (13)
+2014/05/21 20:49:57 [trace] [system.CModule] Loading "clientScript" application component
+in /var/www/lenstar/index.php (13)
+2014/05/21 20:49:57 [trace] [system.CModule] Loading "widgetFactory" application component
+in /var/www/lenstar/index.php (13)
+2014/05/21 20:49:57 [trace] [system.CModule] Loading "assetManager" application component
+in /var/www/lenstar/index.php (13)
+2014/05/21 20:49:57 [trace] [system.CModule] Loading "coreMessages" application component
+in /var/www/lenstar/index.php (13)
+2014/05/21 20:50:38 [trace] [system.CModule] Loading "log" application component
+in /var/www/lenstar/index.php (13)
+2014/05/21 20:50:38 [trace] [system.CModule] Loading "session" application component
+in /var/www/lenstar/index.php (13)
+2014/05/21 20:50:38 [trace] [system.CModule] Loading "request" application component
+in /var/www/lenstar/index.php (13)
+2014/05/21 20:50:38 [trace] [system.CModule] Loading "urlManager" application component
+in /var/www/lenstar/index.php (13)
+2014/05/21 20:50:38 [trace] [system.base.CModule] Loading "gii" module
+in /var/www/lenstar/index.php (13)
+2014/05/21 20:50:38 [trace] [system.CModule] Loading "user" application component
+in /var/www/lenstar/index.php (13)
+2014/05/21 20:50:38 [trace] [system.CModule] Loading "db" application component
+in /var/www/lenstar/index.php (13)
+2014/05/21 20:50:38 [trace] [system.db.CDbConnection] Opening DB connection
+in /var/www/lenstar/index.php (13)
+2014/05/21 20:50:38 [trace] [system.db.CDbCommand] Querying SQL: SHOW FULL COLUMNS FROM `xmlUpload`
+in /var/www/lenstar/index.php (13)
+2014/05/21 20:50:38 [trace] [system.db.CDbCommand] Querying SQL: SHOW CREATE TABLE `xmlUpload`
+in /var/www/lenstar/index.php (13)
+2014/05/21 20:50:38 [trace] [system.db.CDbCommand] Querying SQL: SHOW TABLES
+in /var/www/lenstar/index.php (13)
+2014/05/21 20:50:38 [trace] [system.db.CDbCommand] Querying SQL: SHOW FULL COLUMNS FROM `operatorprefs`
+in /var/www/lenstar/index.php (13)
+2014/05/21 20:50:38 [trace] [system.db.CDbCommand] Querying SQL: SHOW CREATE TABLE `operatorprefs`
+in /var/www/lenstar/index.php (13)
+2014/05/21 20:50:38 [trace] [system.db.CDbCommand] Querying SQL: SHOW FULL COLUMNS FROM `patients`
+in /var/www/lenstar/index.php (13)
+2014/05/21 20:50:38 [trace] [system.db.CDbCommand] Querying SQL: SHOW CREATE TABLE `patients`
+in /var/www/lenstar/index.php (13)
+2014/05/21 20:50:38 [trace] [system.db.CDbCommand] Querying SQL: SHOW FULL COLUMNS FROM `postop`
+in /var/www/lenstar/index.php (13)
+2014/05/21 20:50:38 [trace] [system.db.CDbCommand] Querying SQL: SHOW CREATE TABLE `postop`
+in /var/www/lenstar/index.php (13)
+2014/05/21 20:50:38 [trace] [system.db.CDbCommand] Querying SQL: SHOW FULL COLUMNS FROM `preop`
+in /var/www/lenstar/index.php (13)
+2014/05/21 20:50:38 [trace] [system.db.CDbCommand] Querying SQL: SHOW CREATE TABLE `preop`
+in /var/www/lenstar/index.php (13)
+2014/05/21 20:50:38 [trace] [system.CModule] Loading "clientScript" application component
+in /var/www/lenstar/index.php (13)
+2014/05/21 20:50:38 [trace] [system.CModule] Loading "widgetFactory" application component
+in /var/www/lenstar/index.php (13)
+2014/05/21 20:50:38 [trace] [system.CModule] Loading "assetManager" application component
+in /var/www/lenstar/index.php (13)
+2014/05/21 20:50:38 [trace] [system.CModule] Loading "coreMessages" application component
+in /var/www/lenstar/index.php (13)
+2014/05/21 20:50:41 [trace] [system.CModule] Loading "log" application component
+in /var/www/lenstar/index.php (13)
+2014/05/21 20:50:41 [trace] [system.CModule] Loading "session" application component
+in /var/www/lenstar/index.php (13)
+2014/05/21 20:50:41 [trace] [system.CModule] Loading "request" application component
+in /var/www/lenstar/index.php (13)
+2014/05/21 20:50:41 [trace] [system.CModule] Loading "urlManager" application component
+in /var/www/lenstar/index.php (13)
+2014/05/21 20:50:41 [trace] [system.base.CModule] Loading "gii" module
+in /var/www/lenstar/index.php (13)
+2014/05/21 20:50:41 [trace] [system.CModule] Loading "user" application component
+in /var/www/lenstar/index.php (13)
+2014/05/21 20:50:41 [trace] [system.CModule] Loading "db" application component
+in /var/www/lenstar/index.php (13)
+2014/05/21 20:50:41 [trace] [system.db.CDbConnection] Opening DB connection
+in /var/www/lenstar/index.php (13)
+2014/05/21 20:50:41 [trace] [system.db.CDbCommand] Querying SQL: SHOW FULL COLUMNS FROM `xmlUpload`
+in /var/www/lenstar/index.php (13)
+2014/05/21 20:50:41 [trace] [system.db.CDbCommand] Querying SQL: SHOW CREATE TABLE `xmlUpload`
+in /var/www/lenstar/index.php (13)
+2014/05/21 20:50:41 [trace] [system.db.CDbCommand] Querying SQL: SHOW TABLES
+in /var/www/lenstar/index.php (13)
+2014/05/21 20:50:41 [trace] [system.db.CDbCommand] Querying SQL: SHOW FULL COLUMNS FROM `operatorprefs`
+in /var/www/lenstar/index.php (13)
+2014/05/21 20:50:41 [trace] [system.db.CDbCommand] Querying SQL: SHOW CREATE TABLE `operatorprefs`
+in /var/www/lenstar/index.php (13)
+2014/05/21 20:50:41 [trace] [system.db.CDbCommand] Querying SQL: SHOW FULL COLUMNS FROM `patients`
+in /var/www/lenstar/index.php (13)
+2014/05/21 20:50:41 [trace] [system.db.CDbCommand] Querying SQL: SHOW CREATE TABLE `patients`
+in /var/www/lenstar/index.php (13)
+2014/05/21 20:50:41 [trace] [system.db.CDbCommand] Querying SQL: SHOW FULL COLUMNS FROM `postop`
+in /var/www/lenstar/index.php (13)
+2014/05/21 20:50:41 [trace] [system.db.CDbCommand] Querying SQL: SHOW CREATE TABLE `postop`
+in /var/www/lenstar/index.php (13)
+2014/05/21 20:50:41 [trace] [system.db.CDbCommand] Querying SQL: SHOW FULL COLUMNS FROM `preop`
+in /var/www/lenstar/index.php (13)
+2014/05/21 20:50:41 [trace] [system.db.CDbCommand] Querying SQL: SHOW CREATE TABLE `preop`
+in /var/www/lenstar/index.php (13)
+2014/05/21 20:51:13 [trace] [system.CModule] Loading "log" application component
+in /var/www/lenstar/index.php (13)
+2014/05/21 20:51:13 [trace] [system.CModule] Loading "session" application component
+in /var/www/lenstar/index.php (13)
+2014/05/21 20:51:13 [trace] [system.CModule] Loading "request" application component
+in /var/www/lenstar/index.php (13)
+2014/05/21 20:51:13 [trace] [system.CModule] Loading "urlManager" application component
+in /var/www/lenstar/index.php (13)
+2014/05/21 20:51:13 [trace] [system.base.CModule] Loading "gii" module
+in /var/www/lenstar/index.php (13)
+2014/05/21 20:51:13 [trace] [system.CModule] Loading "user" application component
+in /var/www/lenstar/index.php (13)
+2014/05/21 20:51:13 [trace] [system.CModule] Loading "db" application component
+in /var/www/lenstar/index.php (13)
+2014/05/21 20:51:13 [trace] [system.db.CDbConnection] Opening DB connection
+in /var/www/lenstar/index.php (13)
+2014/05/21 20:51:13 [trace] [system.db.CDbCommand] Querying SQL: SHOW FULL COLUMNS FROM `xmlUpload`
+in /var/www/lenstar/index.php (13)
+2014/05/21 20:51:13 [trace] [system.db.CDbCommand] Querying SQL: SHOW CREATE TABLE `xmlUpload`
+in /var/www/lenstar/index.php (13)
+2014/05/21 20:51:13 [trace] [system.db.CDbCommand] Querying SQL: SHOW TABLES
+in /var/www/lenstar/index.php (13)
+2014/05/21 20:51:13 [trace] [system.db.CDbCommand] Querying SQL: SHOW FULL COLUMNS FROM `operatorprefs`
+in /var/www/lenstar/index.php (13)
+2014/05/21 20:51:13 [trace] [system.db.CDbCommand] Querying SQL: SHOW CREATE TABLE `operatorprefs`
+in /var/www/lenstar/index.php (13)
+2014/05/21 20:51:13 [trace] [system.db.CDbCommand] Querying SQL: SHOW FULL COLUMNS FROM `patients`
+in /var/www/lenstar/index.php (13)
+2014/05/21 20:51:13 [trace] [system.db.CDbCommand] Querying SQL: SHOW CREATE TABLE `patients`
+in /var/www/lenstar/index.php (13)
+2014/05/21 20:51:13 [trace] [system.db.CDbCommand] Querying SQL: SHOW FULL COLUMNS FROM `postop`
+in /var/www/lenstar/index.php (13)
+2014/05/21 20:51:13 [trace] [system.db.CDbCommand] Querying SQL: SHOW CREATE TABLE `postop`
+in /var/www/lenstar/index.php (13)
+2014/05/21 20:51:13 [trace] [system.db.CDbCommand] Querying SQL: SHOW FULL COLUMNS FROM `preop`
+in /var/www/lenstar/index.php (13)
+2014/05/21 20:51:13 [trace] [system.db.CDbCommand] Querying SQL: SHOW CREATE TABLE `preop`
+in /var/www/lenstar/index.php (13)
+2014/05/21 20:51:13 [trace] [system.CModule] Loading "clientScript" application component
+in /var/www/lenstar/index.php (13)
+2014/05/21 20:51:13 [trace] [system.CModule] Loading "widgetFactory" application component
+in /var/www/lenstar/index.php (13)
+2014/05/21 20:51:13 [trace] [system.CModule] Loading "assetManager" application component
+in /var/www/lenstar/index.php (13)
+2014/05/21 20:51:13 [trace] [system.CModule] Loading "coreMessages" application component
+in /var/www/lenstar/index.php (13)
+2014/05/21 20:58:46 [trace] [system.CModule] Loading "log" application component
+in /var/www/lenstar/index.php (13)
+2014/05/21 20:58:46 [trace] [system.CModule] Loading "session" application component
+in /var/www/lenstar/index.php (13)
+2014/05/21 20:58:46 [trace] [system.CModule] Loading "request" application component
+in /var/www/lenstar/index.php (13)
+2014/05/21 20:58:46 [trace] [system.CModule] Loading "urlManager" application component
+in /var/www/lenstar/index.php (13)
+2014/05/21 20:58:46 [trace] [system.CModule] Loading "coreMessages" application component
+in /var/www/lenstar/index.php (13)
+2014/05/21 20:58:46 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "create".' in /var/framework/web/CController.php:483
+Stack trace:
+#0 /var/framework/web/CController.php(270): CController->missingAction('create')
+#1 /var/framework/web/CWebApplication.php(282): CController->run('create')
+#2 /var/framework/web/CWebApplication.php(141): CWebApplication->runController('xmlUpload/creat...')
+#3 /var/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#4 /var/www/lenstar/index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/lenstar/index.php/xmlUpload/create
+HTTP_REFERER=http://localhost/lenstar/index.php/xmlUpload
+---
+2014/05/21 20:58:46 [trace] [system.CModule] Loading "errorHandler" application component
+2014/05/21 20:58:46 [trace] [system.CModule] Loading "widgetFactory" application component
+in /var/www/lenstar/protected/views/layouts/column1.php (2)
+in /var/www/lenstar/protected/controllers/SiteController.php (45)
+2014/05/21 20:58:46 [trace] [system.CModule] Loading "user" application component
+in /var/www/lenstar/protected/views/layouts/main.php (35)
+in /var/www/lenstar/protected/views/layouts/column1.php (6)
+in /var/www/lenstar/protected/controllers/SiteController.php (45)
+2014/05/21 20:58:46 [trace] [system.CModule] Loading "clientScript" application component
+in /var/www/lenstar/protected/controllers/SiteController.php (45)
+2014/05/21 20:58:58 [trace] [system.CModule] Loading "log" application component
+in /var/www/lenstar/index.php (13)
+2014/05/21 20:58:58 [trace] [system.CModule] Loading "session" application component
+in /var/www/lenstar/index.php (13)
+2014/05/21 20:58:58 [trace] [system.CModule] Loading "request" application component
+in /var/www/lenstar/index.php (13)
+2014/05/21 20:58:58 [trace] [system.CModule] Loading "urlManager" application component
+in /var/www/lenstar/index.php (13)
+2014/05/21 20:58:58 [trace] [system.web.filters.CFilterChain] Running filter XmlUploadController.filteraccessControl()
+in /var/www/lenstar/index.php (13)
+2014/05/21 20:58:58 [trace] [system.CModule] Loading "user" application component
+in /var/www/lenstar/index.php (13)
+2014/05/21 20:58:58 [trace] [system.CModule] Loading "coreMessages" application component
+in /var/www/lenstar/index.php (13)
+2014/05/21 20:58:58 [trace] [system.CModule] Loading "log" application component
+in /var/www/lenstar/index.php (13)
+2014/05/21 20:58:58 [trace] [system.CModule] Loading "session" application component
+in /var/www/lenstar/index.php (13)
+2014/05/21 20:58:58 [trace] [system.CModule] Loading "request" application component
+in /var/www/lenstar/index.php (13)
+2014/05/21 20:58:58 [trace] [system.CModule] Loading "urlManager" application component
+in /var/www/lenstar/index.php (13)
+2014/05/21 20:58:58 [trace] [system.CModule] Loading "widgetFactory" application component
+in /var/www/lenstar/protected/views/site/login.php (23)
+in /var/www/lenstar/protected/controllers/SiteController.php (98)
+in /var/www/lenstar/index.php (13)
+2014/05/21 20:58:58 [trace] [system.CModule] Loading "coreMessages" application component
+in /var/www/lenstar/protected/views/site/login.php (30)
+in /var/www/lenstar/protected/controllers/SiteController.php (98)
+in /var/www/lenstar/index.php (13)
+2014/05/21 20:58:58 [trace] [system.CModule] Loading "clientScript" application component
+in /var/www/lenstar/protected/views/site/login.php (52)
+in /var/www/lenstar/protected/controllers/SiteController.php (98)
+in /var/www/lenstar/index.php (13)
+2014/05/21 20:58:58 [trace] [system.CModule] Loading "user" application component
+in /var/www/lenstar/protected/views/layouts/main.php (35)
+in /var/www/lenstar/protected/views/layouts/column1.php (6)
+in /var/www/lenstar/protected/controllers/SiteController.php (98)
+2014/05/21 20:58:58 [trace] [system.CModule] Loading "assetManager" application component
+in /var/www/lenstar/protected/controllers/SiteController.php (98)
+in /var/www/lenstar/index.php (13)
+2014/05/21 20:59:54 [trace] [system.CModule] Loading "log" application component
+in /var/www/lenstar/index.php (13)
+2014/05/21 20:59:54 [trace] [system.CModule] Loading "session" application component
+in /var/www/lenstar/index.php (13)
+2014/05/21 20:59:54 [trace] [system.CModule] Loading "request" application component
+in /var/www/lenstar/index.php (13)
+2014/05/21 20:59:54 [trace] [system.CModule] Loading "urlManager" application component
+in /var/www/lenstar/index.php (13)
+2014/05/21 20:59:54 [trace] [system.db.ar.CActiveRecord] Operatorprefs.findByAttributes()
+in /var/www/lenstar/protected/components/UserIdentity.php (25)
+in /var/www/lenstar/protected/models/LoginForm.php (52)
+in /var/www/lenstar/protected/controllers/SiteController.php (94)
+2014/05/21 20:59:54 [trace] [system.CModule] Loading "db" application component
+in /var/www/lenstar/protected/components/UserIdentity.php (25)
+in /var/www/lenstar/protected/models/LoginForm.php (52)
+in /var/www/lenstar/protected/controllers/SiteController.php (94)
+2014/05/21 20:59:54 [trace] [system.db.CDbConnection] Opening DB connection
+in /var/www/lenstar/protected/components/UserIdentity.php (25)
+in /var/www/lenstar/protected/models/LoginForm.php (52)
+in /var/www/lenstar/protected/controllers/SiteController.php (94)
+2014/05/21 20:59:54 [trace] [system.db.CDbCommand] Querying SQL: SHOW FULL COLUMNS FROM `operatorprefs`
+in /var/www/lenstar/protected/components/UserIdentity.php (25)
+in /var/www/lenstar/protected/models/LoginForm.php (52)
+in /var/www/lenstar/protected/controllers/SiteController.php (94)
+2014/05/21 20:59:54 [trace] [system.db.CDbCommand] Querying SQL: SHOW CREATE TABLE `operatorprefs`
+in /var/www/lenstar/protected/components/UserIdentity.php (25)
+in /var/www/lenstar/protected/models/LoginForm.php (52)
+in /var/www/lenstar/protected/controllers/SiteController.php (94)
+2014/05/21 20:59:54 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `operatorprefs` `t` WHERE `t`.`Name`=:yp0 LIMIT 1. Bound with :yp0='FF1ACAE6E573DD06F474EBEA9317C25505'
+in /var/www/lenstar/protected/components/UserIdentity.php (25)
+in /var/www/lenstar/protected/models/LoginForm.php (52)
+in /var/www/lenstar/protected/controllers/SiteController.php (94)
+2014/05/21 20:59:54 [trace] [system.CModule] Loading "widgetFactory" application component
+in /var/www/lenstar/protected/views/site/login.php (23)
+in /var/www/lenstar/protected/controllers/SiteController.php (98)
+in /var/www/lenstar/index.php (13)
+2014/05/21 20:59:54 [trace] [system.CModule] Loading "coreMessages" application component
+in /var/www/lenstar/protected/views/site/login.php (30)
+in /var/www/lenstar/protected/controllers/SiteController.php (98)
+in /var/www/lenstar/index.php (13)
+2014/05/21 20:59:54 [trace] [system.CModule] Loading "clientScript" application component
+in /var/www/lenstar/protected/views/site/login.php (52)
+in /var/www/lenstar/protected/controllers/SiteController.php (98)
+in /var/www/lenstar/index.php (13)
+2014/05/21 20:59:54 [trace] [system.CModule] Loading "user" application component
+in /var/www/lenstar/protected/views/layouts/main.php (35)
+in /var/www/lenstar/protected/views/layouts/column1.php (6)
+in /var/www/lenstar/protected/controllers/SiteController.php (98)
+2014/05/21 20:59:54 [trace] [system.CModule] Loading "assetManager" application component
+in /var/www/lenstar/protected/controllers/SiteController.php (98)
+in /var/www/lenstar/index.php (13)
+2014/05/21 21:00:22 [trace] [system.CModule] Loading "log" application component
+in /var/www/lenstar/index.php (13)
+2014/05/21 21:00:22 [trace] [system.CModule] Loading "session" application component
+in /var/www/lenstar/index.php (13)
+2014/05/21 21:00:22 [trace] [system.CModule] Loading "request" application component
+in /var/www/lenstar/index.php (13)
+2014/05/21 21:00:22 [trace] [system.CModule] Loading "urlManager" application component
+in /var/www/lenstar/index.php (13)
+2014/05/21 21:00:22 [trace] [system.db.ar.CActiveRecord] Operatorprefs.findByAttributes()
+in /var/www/lenstar/protected/components/UserIdentity.php (25)
+in /var/www/lenstar/protected/models/LoginForm.php (52)
+in /var/www/lenstar/protected/controllers/SiteController.php (94)
+2014/05/21 21:00:22 [trace] [system.CModule] Loading "db" application component
+in /var/www/lenstar/protected/components/UserIdentity.php (25)
+in /var/www/lenstar/protected/models/LoginForm.php (52)
+in /var/www/lenstar/protected/controllers/SiteController.php (94)
+2014/05/21 21:00:22 [trace] [system.db.CDbConnection] Opening DB connection
+in /var/www/lenstar/protected/components/UserIdentity.php (25)
+in /var/www/lenstar/protected/models/LoginForm.php (52)
+in /var/www/lenstar/protected/controllers/SiteController.php (94)
+2014/05/21 21:00:22 [trace] [system.db.CDbCommand] Querying SQL: SHOW FULL COLUMNS FROM `operatorprefs`
+in /var/www/lenstar/protected/components/UserIdentity.php (25)
+in /var/www/lenstar/protected/models/LoginForm.php (52)
+in /var/www/lenstar/protected/controllers/SiteController.php (94)
+2014/05/21 21:00:22 [trace] [system.db.CDbCommand] Querying SQL: SHOW CREATE TABLE `operatorprefs`
+in /var/www/lenstar/protected/components/UserIdentity.php (25)
+in /var/www/lenstar/protected/models/LoginForm.php (52)
+in /var/www/lenstar/protected/controllers/SiteController.php (94)
+2014/05/21 21:00:22 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `operatorprefs` `t` WHERE `t`.`Name`=:yp0 LIMIT 1. Bound with :yp0='FF1ACAE6E573DD06F474EBEA9317C25505'
+in /var/www/lenstar/protected/components/UserIdentity.php (25)
+in /var/www/lenstar/protected/models/LoginForm.php (52)
+in /var/www/lenstar/protected/controllers/SiteController.php (94)
+2014/05/21 21:00:22 [trace] [system.CModule] Loading "user" application component
+in /var/www/lenstar/protected/models/LoginForm.php (72)
+in /var/www/lenstar/protected/controllers/SiteController.php (94)
+in /var/www/lenstar/index.php (13)
+2014/05/21 21:00:22 [trace] [system.CModule] Loading "log" application component
+in /var/www/lenstar/index.php (13)
+2014/05/21 21:00:22 [trace] [system.CModule] Loading "session" application component
+in /var/www/lenstar/index.php (13)
+2014/05/21 21:00:22 [trace] [system.CModule] Loading "request" application component
+in /var/www/lenstar/index.php (13)
+2014/05/21 21:00:22 [trace] [system.CModule] Loading "urlManager" application component
+in /var/www/lenstar/index.php (13)
+2014/05/21 21:00:22 [trace] [system.web.filters.CFilterChain] Running filter XmlUploadController.filteraccessControl()
+in /var/www/lenstar/index.php (13)
+2014/05/21 21:00:22 [trace] [system.CModule] Loading "user" application component
+in /var/www/lenstar/index.php (13)
+2014/05/21 21:00:22 [trace] [system.CModule] Loading "coreMessages" application component
+in /var/www/lenstar/index.php (13)
+2014/05/21 21:00:22 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'You are not authorized to perform this action.' in /var/framework/web/auth/CAccessControlFilter.php:182
+Stack trace:
+#0 /var/framework/web/auth/CAccessControlFilter.php(145): CAccessControlFilter->accessDenied(Object(CWebUser), 'You are not aut...')
+#1 /var/framework/web/filters/CFilter.php(38): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 /var/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#3 /var/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#4 /var/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#5 /var/framework/web/CController.php(291): CFilterChain->run()
+#6 /var/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 /var/framework/web/CWebApplication.php(282): CController->run('createPreop')
+#8 /var/framework/web/CWebApplication.php(141): CWebApplication->runController('xmlUpload/creat...')
+#9 /var/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#10 /var/www/lenstar/index.php(13): CApplication->run()
+#11 {main}
+REQUEST_URI=/lenstar/index.php/xmlUpload/createPreop
+HTTP_REFERER=http://localhost/lenstar/index.php/site/login
+---
+2014/05/21 21:00:22 [trace] [system.CModule] Loading "errorHandler" application component
+2014/05/21 21:00:22 [trace] [system.CModule] Loading "widgetFactory" application component
+in /var/www/lenstar/protected/views/layouts/column1.php (2)
+in /var/www/lenstar/protected/controllers/SiteController.php (45)
+2014/05/21 21:00:22 [trace] [system.CModule] Loading "clientScript" application component
+in /var/www/lenstar/protected/controllers/SiteController.php (45)
+2014/05/21 21:01:04 [trace] [system.CModule] Loading "log" application component
+in /var/www/lenstar/index.php (13)
+2014/05/21 21:01:04 [trace] [system.CModule] Loading "session" application component
+in /var/www/lenstar/index.php (13)
+2014/05/21 21:01:04 [trace] [system.CModule] Loading "request" application component
+in /var/www/lenstar/index.php (13)
+2014/05/21 21:01:04 [trace] [system.CModule] Loading "urlManager" application component
+in /var/www/lenstar/index.php (13)
+2014/05/21 21:01:04 [trace] [system.web.filters.CFilterChain] Running filter XmlUploadController.filteraccessControl()
+in /var/www/lenstar/index.php (13)
+2014/05/21 21:01:04 [trace] [system.CModule] Loading "user" application component
+in /var/www/lenstar/index.php (13)
+2014/05/21 21:01:04 [trace] [system.CModule] Loading "widgetFactory" application component
+in /var/www/lenstar/protected/views/xmlUpload/_form.php (16)
+in /var/www/lenstar/protected/views/xmlUpload/create.php (18)
+in /var/www/lenstar/protected/controllers/XmlUploadController.php (79)
+2014/05/21 21:01:04 [trace] [system.CModule] Loading "db" application component
+in /var/www/lenstar/protected/views/xmlUpload/_form.php (24)
+in /var/www/lenstar/protected/views/xmlUpload/create.php (18)
+in /var/www/lenstar/protected/controllers/XmlUploadController.php (79)
+2014/05/21 21:01:04 [trace] [system.db.CDbConnection] Opening DB connection
+in /var/www/lenstar/protected/views/xmlUpload/_form.php (24)
+in /var/www/lenstar/protected/views/xmlUpload/create.php (18)
+in /var/www/lenstar/protected/controllers/XmlUploadController.php (79)
+2014/05/21 21:01:04 [trace] [system.db.CDbCommand] Querying SQL: SHOW FULL COLUMNS FROM `xmlUpload`
+in /var/www/lenstar/protected/views/xmlUpload/_form.php (24)
+in /var/www/lenstar/protected/views/xmlUpload/create.php (18)
+in /var/www/lenstar/protected/controllers/XmlUploadController.php (79)
+2014/05/21 21:01:04 [trace] [system.db.CDbCommand] Querying SQL: SHOW CREATE TABLE `xmlUpload`
+in /var/www/lenstar/protected/views/xmlUpload/_form.php (24)
+in /var/www/lenstar/protected/views/xmlUpload/create.php (18)
+in /var/www/lenstar/protected/controllers/XmlUploadController.php (79)
+2014/05/21 21:01:04 [trace] [system.CModule] Loading "clientScript" application component
+in /var/www/lenstar/protected/views/xmlUpload/_form.php (134)
+in /var/www/lenstar/protected/views/xmlUpload/create.php (18)
+in /var/www/lenstar/protected/controllers/XmlUploadController.php (79)
+2014/05/21 21:01:04 [trace] [system.CModule] Loading "coreMessages" application component
+in /var/www/lenstar/protected/views/layouts/main.php (43)
+in /var/www/lenstar/protected/views/layouts/column2.php (22)
+in /var/www/lenstar/protected/controllers/XmlUploadController.php (79)
+2014/05/21 21:02:04 [trace] [system.CModule] Loading "log" application component
+in /var/www/lenstar/index.php (13)
+2014/05/21 21:02:04 [trace] [system.CModule] Loading "session" application component
+in /var/www/lenstar/index.php (13)
+2014/05/21 21:02:04 [trace] [system.CModule] Loading "request" application component
+in /var/www/lenstar/index.php (13)
+2014/05/21 21:02:04 [trace] [system.CModule] Loading "urlManager" application component
+in /var/www/lenstar/index.php (13)
+2014/05/21 21:02:04 [trace] [system.web.filters.CFilterChain] Running filter XmlUploadController.filteraccessControl()
+in /var/www/lenstar/index.php (13)
+2014/05/21 21:02:04 [trace] [system.CModule] Loading "user" application component
+in /var/www/lenstar/index.php (13)
+2014/05/21 21:02:04 [trace] [system.CModule] Loading "db" application component
+in /var/www/lenstar/protected/models/XmlUpload.php (38)
+in /var/www/lenstar/protected/controllers/XmlUploadController.php (125)
+in /var/www/lenstar/index.php (13)
+2014/05/21 21:02:04 [trace] [system.db.CDbConnection] Opening DB connection
+in /var/www/lenstar/protected/models/XmlUpload.php (38)
+in /var/www/lenstar/protected/controllers/XmlUploadController.php (125)
+in /var/www/lenstar/index.php (13)
+2014/05/21 21:02:04 [trace] [system.db.CDbCommand] Querying SQL: SHOW FULL COLUMNS FROM `xmlUpload`
+in /var/www/lenstar/protected/models/XmlUpload.php (38)
+in /var/www/lenstar/protected/controllers/XmlUploadController.php (125)
+in /var/www/lenstar/index.php (13)
+2014/05/21 21:02:04 [trace] [system.db.CDbCommand] Querying SQL: SHOW CREATE TABLE `xmlUpload`
+in /var/www/lenstar/protected/models/XmlUpload.php (38)
+in /var/www/lenstar/protected/controllers/XmlUploadController.php (125)
+in /var/www/lenstar/index.php (13)
+2014/05/21 21:02:04 [trace] [system.CModule] Loading "widgetFactory" application component
+in /var/www/lenstar/protected/views/xmlUpload/index.php (20)
+in /var/www/lenstar/protected/controllers/XmlUploadController.php (128)
+in /var/www/lenstar/index.php (13)
+2014/05/21 21:02:04 [trace] [system.db.ar.CActiveRecord] XmlUpload.count()
+in /var/www/lenstar/protected/views/xmlUpload/index.php (20)
+in /var/www/lenstar/protected/controllers/XmlUploadController.php (128)
+in /var/www/lenstar/index.php (13)
+2014/05/21 21:02:04 [trace] [system.db.CDbCommand] Querying SQL: SELECT COUNT(*) FROM `xmlUpload` `t`
+in /var/www/lenstar/protected/views/xmlUpload/index.php (20)
+in /var/www/lenstar/protected/controllers/XmlUploadController.php (128)
+in /var/www/lenstar/index.php (13)
+2014/05/21 21:02:04 [trace] [system.db.ar.CActiveRecord] XmlUpload.findAll()
+in /var/www/lenstar/protected/views/xmlUpload/index.php (20)
+in /var/www/lenstar/protected/controllers/XmlUploadController.php (128)
+in /var/www/lenstar/index.php (13)
+2014/05/21 21:02:04 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `xmlUpload` `t` LIMIT 10
+in /var/www/lenstar/protected/views/xmlUpload/index.php (20)
+in /var/www/lenstar/protected/controllers/XmlUploadController.php (128)
+in /var/www/lenstar/index.php (13)
+2014/05/21 21:02:04 [trace] [system.CModule] Loading "assetManager" application component
+in /var/www/lenstar/protected/views/xmlUpload/index.php (20)
+in /var/www/lenstar/protected/controllers/XmlUploadController.php (128)
+in /var/www/lenstar/index.php (13)
+2014/05/21 21:02:04 [trace] [system.CModule] Loading "clientScript" application component
+in /var/www/lenstar/protected/views/xmlUpload/index.php (20)
+in /var/www/lenstar/protected/controllers/XmlUploadController.php (128)
+in /var/www/lenstar/index.php (13)
+2014/05/21 21:02:04 [trace] [system.CModule] Loading "coreMessages" application component
+in /var/www/lenstar/protected/views/xmlUpload/index.php (20)
+in /var/www/lenstar/protected/controllers/XmlUploadController.php (128)
+in /var/www/lenstar/index.php (13)
+2014/05/21 21:02:07 [trace] [system.CModule] Loading "log" application component
+in /var/www/lenstar/index.php (13)
+2014/05/21 21:02:07 [trace] [system.CModule] Loading "session" application component
+in /var/www/lenstar/index.php (13)
+2014/05/21 21:02:07 [trace] [system.CModule] Loading "request" application component
+in /var/www/lenstar/index.php (13)
+2014/05/21 21:02:07 [trace] [system.CModule] Loading "urlManager" application component
+in /var/www/lenstar/index.php (13)
+2014/05/21 21:02:07 [trace] [system.CModule] Loading "coreMessages" application component
+in /var/www/lenstar/index.php (13)
+2014/05/21 21:02:07 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "create".' in /var/framework/web/CController.php:483
+Stack trace:
+#0 /var/framework/web/CController.php(270): CController->missingAction('create')
+#1 /var/framework/web/CWebApplication.php(282): CController->run('create')
+#2 /var/framework/web/CWebApplication.php(141): CWebApplication->runController('xmlUpload/creat...')
+#3 /var/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#4 /var/www/lenstar/index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/lenstar/index.php/xmlUpload/create
+HTTP_REFERER=http://localhost/lenstar/index.php/xmlUpload/index
+---
+2014/05/21 21:02:07 [trace] [system.CModule] Loading "errorHandler" application component
+2014/05/21 21:02:07 [trace] [system.CModule] Loading "widgetFactory" application component
+in /var/www/lenstar/protected/views/layouts/column1.php (2)
+in /var/www/lenstar/protected/controllers/SiteController.php (45)
+2014/05/21 21:02:07 [trace] [system.CModule] Loading "user" application component
+in /var/www/lenstar/protected/views/layouts/main.php (35)
+in /var/www/lenstar/protected/views/layouts/column1.php (6)
+in /var/www/lenstar/protected/controllers/SiteController.php (45)
+2014/05/21 21:02:07 [trace] [system.CModule] Loading "clientScript" application component
+in /var/www/lenstar/protected/controllers/SiteController.php (45)
+2014/05/21 21:02:18 [trace] [system.CModule] Loading "log" application component
+in /var/www/lenstar/index.php (13)
+2014/05/21 21:02:18 [trace] [system.CModule] Loading "session" application component
+in /var/www/lenstar/index.php (13)
+2014/05/21 21:02:18 [trace] [system.CModule] Loading "request" application component
+in /var/www/lenstar/index.php (13)
+2014/05/21 21:02:18 [trace] [system.CModule] Loading "urlManager" application component
+in /var/www/lenstar/index.php (13)
+2014/05/21 21:02:18 [trace] [system.web.filters.CFilterChain] Running filter XmlUploadController.filteraccessControl()
+in /var/www/lenstar/index.php (13)
+2014/05/21 21:02:18 [trace] [system.CModule] Loading "user" application component
+in /var/www/lenstar/index.php (13)
+2014/05/21 21:02:18 [trace] [system.CModule] Loading "db" application component
+in /var/www/lenstar/protected/models/XmlUpload.php (38)
+in /var/www/lenstar/protected/controllers/XmlUploadController.php (65)
+in /var/www/lenstar/index.php (13)
+2014/05/21 21:02:18 [trace] [system.db.CDbConnection] Opening DB connection
+in /var/www/lenstar/protected/models/XmlUpload.php (38)
+in /var/www/lenstar/protected/controllers/XmlUploadController.php (65)
+in /var/www/lenstar/index.php (13)
+2014/05/21 21:02:18 [trace] [system.db.CDbCommand] Querying SQL: SHOW FULL COLUMNS FROM `xmlUpload`
+in /var/www/lenstar/protected/models/XmlUpload.php (38)
+in /var/www/lenstar/protected/controllers/XmlUploadController.php (65)
+in /var/www/lenstar/index.php (13)
+2014/05/21 21:02:18 [trace] [system.db.CDbCommand] Querying SQL: SHOW CREATE TABLE `xmlUpload`
+in /var/www/lenstar/protected/models/XmlUpload.php (38)
+in /var/www/lenstar/protected/controllers/XmlUploadController.php (65)
+in /var/www/lenstar/index.php (13)
+2014/05/21 21:02:18 [trace] [system.CModule] Loading "widgetFactory" application component
+in /var/www/lenstar/protected/views/xmlUpload/_form.php (16)
+in /var/www/lenstar/protected/views/xmlUpload/create.php (18)
+in /var/www/lenstar/protected/controllers/XmlUploadController.php (79)
+2014/05/21 21:02:18 [trace] [system.CModule] Loading "clientScript" application component
+in /var/www/lenstar/protected/views/xmlUpload/_form.php (134)
+in /var/www/lenstar/protected/views/xmlUpload/create.php (18)
+in /var/www/lenstar/protected/controllers/XmlUploadController.php (79)
+2014/05/21 21:02:18 [trace] [system.CModule] Loading "coreMessages" application component
+in /var/www/lenstar/protected/views/layouts/main.php (43)
+in /var/www/lenstar/protected/views/layouts/column2.php (22)
+in /var/www/lenstar/protected/controllers/XmlUploadController.php (79)
+2014/05/21 21:03:48 [trace] [system.CModule] Loading "log" application component
+in /var/www/lenstar/index.php (13)
+2014/05/21 21:03:48 [trace] [system.CModule] Loading "session" application component
+in /var/www/lenstar/index.php (13)
+2014/05/21 21:03:48 [trace] [system.CModule] Loading "request" application component
+in /var/www/lenstar/index.php (13)
+2014/05/21 21:03:48 [trace] [system.CModule] Loading "urlManager" application component
+in /var/www/lenstar/index.php (13)
+2014/05/21 21:03:48 [trace] [system.web.filters.CFilterChain] Running filter XmlUploadController.filteraccessControl()
+in /var/www/lenstar/index.php (13)
+2014/05/21 21:03:48 [trace] [system.CModule] Loading "user" application component
+in /var/www/lenstar/index.php (13)
+2014/05/21 21:03:48 [trace] [application.models.xmlFile] Entering xmlFile.__construct
+in /var/www/lenstar/protected/models/XmlUpload.php (38)
+in /var/www/lenstar/protected/controllers/XmlUploadController.php (125)
+in /var/www/lenstar/index.php (13)
+2014/05/21 21:03:48 [trace] [system.CModule] Loading "db" application component
+in /var/www/lenstar/protected/models/XmlUpload.php (39)
+in /var/www/lenstar/protected/controllers/XmlUploadController.php (125)
+in /var/www/lenstar/index.php (13)
+2014/05/21 21:03:48 [trace] [system.db.CDbConnection] Opening DB connection
+in /var/www/lenstar/protected/models/XmlUpload.php (39)
+in /var/www/lenstar/protected/controllers/XmlUploadController.php (125)
+in /var/www/lenstar/index.php (13)
+2014/05/21 21:03:48 [trace] [system.db.CDbCommand] Querying SQL: SHOW FULL COLUMNS FROM `xmlUpload`
+in /var/www/lenstar/protected/models/XmlUpload.php (39)
+in /var/www/lenstar/protected/controllers/XmlUploadController.php (125)
+in /var/www/lenstar/index.php (13)
+2014/05/21 21:03:48 [trace] [system.db.CDbCommand] Querying SQL: SHOW CREATE TABLE `xmlUpload`
+in /var/www/lenstar/protected/models/XmlUpload.php (39)
+in /var/www/lenstar/protected/controllers/XmlUploadController.php (125)
+in /var/www/lenstar/index.php (13)
+2014/05/21 21:03:48 [trace] [system.CModule] Loading "widgetFactory" application component
+in /var/www/lenstar/protected/views/xmlUpload/index.php (20)
+in /var/www/lenstar/protected/controllers/XmlUploadController.php (128)
+in /var/www/lenstar/index.php (13)
+2014/05/21 21:03:48 [trace] [system.db.ar.CActiveRecord] XmlUpload.count()
+in /var/www/lenstar/protected/views/xmlUpload/index.php (20)
+in /var/www/lenstar/protected/controllers/XmlUploadController.php (128)
+in /var/www/lenstar/index.php (13)
+2014/05/21 21:03:48 [trace] [system.db.CDbCommand] Querying SQL: SELECT COUNT(*) FROM `xmlUpload` `t`
+in /var/www/lenstar/protected/views/xmlUpload/index.php (20)
+in /var/www/lenstar/protected/controllers/XmlUploadController.php (128)
+in /var/www/lenstar/index.php (13)
+2014/05/21 21:03:48 [trace] [system.db.ar.CActiveRecord] XmlUpload.findAll()
+in /var/www/lenstar/protected/views/xmlUpload/index.php (20)
+in /var/www/lenstar/protected/controllers/XmlUploadController.php (128)
+in /var/www/lenstar/index.php (13)
+2014/05/21 21:03:48 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `xmlUpload` `t` LIMIT 10
+in /var/www/lenstar/protected/views/xmlUpload/index.php (20)
+in /var/www/lenstar/protected/controllers/XmlUploadController.php (128)
+in /var/www/lenstar/index.php (13)
+2014/05/21 21:03:48 [trace] [system.CModule] Loading "assetManager" application component
+in /var/www/lenstar/protected/views/xmlUpload/index.php (20)
+in /var/www/lenstar/protected/controllers/XmlUploadController.php (128)
+in /var/www/lenstar/index.php (13)
+2014/05/21 21:03:48 [trace] [system.CModule] Loading "clientScript" application component
+in /var/www/lenstar/protected/views/xmlUpload/index.php (20)
+in /var/www/lenstar/protected/controllers/XmlUploadController.php (128)
+in /var/www/lenstar/index.php (13)
+2014/05/21 21:03:48 [trace] [system.CModule] Loading "coreMessages" application component
+in /var/www/lenstar/protected/views/xmlUpload/index.php (20)
+in /var/www/lenstar/protected/controllers/XmlUploadController.php (128)
+in /var/www/lenstar/index.php (13)
+2014/05/21 21:03:51 [trace] [system.CModule] Loading "log" application component
+in /var/www/lenstar/index.php (13)
+2014/05/21 21:03:51 [trace] [system.CModule] Loading "session" application component
+in /var/www/lenstar/index.php (13)
+2014/05/21 21:03:51 [trace] [system.CModule] Loading "request" application component
+in /var/www/lenstar/index.php (13)
+2014/05/21 21:03:51 [trace] [system.CModule] Loading "urlManager" application component
+in /var/www/lenstar/index.php (13)
+2014/05/21 21:03:51 [trace] [system.CModule] Loading "coreMessages" application component
+in /var/www/lenstar/index.php (13)
+2014/05/21 21:03:51 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "create".' in /var/framework/web/CController.php:483
+Stack trace:
+#0 /var/framework/web/CController.php(270): CController->missingAction('create')
+#1 /var/framework/web/CWebApplication.php(282): CController->run('create')
+#2 /var/framework/web/CWebApplication.php(141): CWebApplication->runController('xmlUpload/creat...')
+#3 /var/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#4 /var/www/lenstar/index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/lenstar/index.php/xmlUpload/create
+HTTP_REFERER=http://localhost/lenstar/index.php/xmlUpload/index
+---
+2014/05/21 21:03:51 [trace] [system.CModule] Loading "errorHandler" application component
+2014/05/21 21:03:51 [trace] [system.CModule] Loading "widgetFactory" application component
+in /var/www/lenstar/protected/views/layouts/column1.php (2)
+in /var/www/lenstar/protected/controllers/SiteController.php (45)
+2014/05/21 21:03:51 [trace] [system.CModule] Loading "user" application component
+in /var/www/lenstar/protected/views/layouts/main.php (35)
+in /var/www/lenstar/protected/views/layouts/column1.php (6)
+in /var/www/lenstar/protected/controllers/SiteController.php (45)
+2014/05/21 21:03:51 [trace] [system.CModule] Loading "clientScript" application component
+in /var/www/lenstar/protected/controllers/SiteController.php (45)
+2014/05/21 21:03:56 [trace] [system.CModule] Loading "log" application component
+in /var/www/lenstar/index.php (13)
+2014/05/21 21:03:56 [trace] [system.CModule] Loading "session" application component
+in /var/www/lenstar/index.php (13)
+2014/05/21 21:03:56 [trace] [system.CModule] Loading "request" application component
+in /var/www/lenstar/index.php (13)
+2014/05/21 21:03:56 [trace] [system.CModule] Loading "urlManager" application component
+in /var/www/lenstar/index.php (13)
+2014/05/21 21:03:56 [trace] [system.web.filters.CFilterChain] Running filter XmlUploadController.filteraccessControl()
+in /var/www/lenstar/index.php (13)
+2014/05/21 21:03:56 [trace] [system.CModule] Loading "user" application component
+in /var/www/lenstar/index.php (13)
+2014/05/21 21:03:56 [trace] [application.models.xmlFile] Entering xmlFile.__construct
+in /var/www/lenstar/protected/models/XmlUpload.php (38)
+in /var/www/lenstar/protected/controllers/XmlUploadController.php (65)
+in /var/www/lenstar/index.php (13)
+2014/05/21 21:03:56 [trace] [system.CModule] Loading "db" application component
+in /var/www/lenstar/protected/models/XmlUpload.php (39)
+in /var/www/lenstar/protected/controllers/XmlUploadController.php (65)
+in /var/www/lenstar/index.php (13)
+2014/05/21 21:03:56 [trace] [system.db.CDbConnection] Opening DB connection
+in /var/www/lenstar/protected/models/XmlUpload.php (39)
+in /var/www/lenstar/protected/controllers/XmlUploadController.php (65)
+in /var/www/lenstar/index.php (13)
+2014/05/21 21:03:56 [trace] [system.db.CDbCommand] Querying SQL: SHOW FULL COLUMNS FROM `xmlUpload`
+in /var/www/lenstar/protected/models/XmlUpload.php (39)
+in /var/www/lenstar/protected/controllers/XmlUploadController.php (65)
+in /var/www/lenstar/index.php (13)
+2014/05/21 21:03:56 [trace] [system.db.CDbCommand] Querying SQL: SHOW CREATE TABLE `xmlUpload`
+in /var/www/lenstar/protected/models/XmlUpload.php (39)
+in /var/www/lenstar/protected/controllers/XmlUploadController.php (65)
+in /var/www/lenstar/index.php (13)
+2014/05/21 21:03:56 [trace] [system.CModule] Loading "widgetFactory" application component
+in /var/www/lenstar/protected/views/xmlUpload/_form.php (16)
+in /var/www/lenstar/protected/views/xmlUpload/create.php (18)
+in /var/www/lenstar/protected/controllers/XmlUploadController.php (79)
+2014/05/21 21:03:56 [trace] [system.CModule] Loading "clientScript" application component
+in /var/www/lenstar/protected/views/xmlUpload/_form.php (134)
+in /var/www/lenstar/protected/views/xmlUpload/create.php (18)
+in /var/www/lenstar/protected/controllers/XmlUploadController.php (79)
+2014/05/21 21:03:56 [trace] [system.CModule] Loading "coreMessages" application component
+in /var/www/lenstar/protected/views/layouts/main.php (43)
+in /var/www/lenstar/protected/views/layouts/column2.php (22)
+in /var/www/lenstar/protected/controllers/XmlUploadController.php (79)
+2014/05/21 21:11:05 [trace] [system.CModule] Loading "log" application component
+in /var/www/lenstar/index.php (13)
+2014/05/21 21:11:05 [trace] [system.CModule] Loading "session" application component
+in /var/www/lenstar/index.php (13)
+2014/05/21 21:11:05 [trace] [system.CModule] Loading "request" application component
+in /var/www/lenstar/index.php (13)
+2014/05/21 21:11:05 [trace] [system.CModule] Loading "urlManager" application component
+in /var/www/lenstar/index.php (13)
+2014/05/21 21:11:05 [trace] [system.CModule] Loading "widgetFactory" application component
+in /var/www/lenstar/protected/views/layouts/column1.php (2)
+in /var/www/lenstar/protected/controllers/SiteController.php (32)
+in /var/www/lenstar/index.php (13)
+2014/05/21 21:11:05 [trace] [system.CModule] Loading "user" application component
+in /var/www/lenstar/protected/views/layouts/main.php (35)
+in /var/www/lenstar/protected/views/layouts/column1.php (6)
+in /var/www/lenstar/protected/controllers/SiteController.php (32)
+2014/05/21 21:11:05 [trace] [system.CModule] Loading "coreMessages" application component
+in /var/www/lenstar/protected/views/layouts/main.php (53)
+in /var/www/lenstar/protected/views/layouts/column1.php (6)
+in /var/www/lenstar/protected/controllers/SiteController.php (32)
+2014/05/21 21:11:05 [trace] [system.CModule] Loading "clientScript" application component
+in /var/www/lenstar/protected/controllers/SiteController.php (32)
+in /var/www/lenstar/index.php (13)
+2014/05/21 21:12:02 [trace] [system.CModule] Loading "log" application component
+in /var/www/lenstar/index.php (13)
+2014/05/21 21:12:02 [trace] [system.CModule] Loading "session" application component
+in /var/www/lenstar/index.php (13)
+2014/05/21 21:12:02 [trace] [system.CModule] Loading "request" application component
+in /var/www/lenstar/index.php (13)
+2014/05/21 21:12:02 [trace] [system.CModule] Loading "urlManager" application component
+in /var/www/lenstar/index.php (13)
+2014/05/21 21:12:02 [trace] [system.CModule] Loading "coreMessages" application component
+in /var/www/lenstar/index.php (13)
+2014/05/21 21:12:02 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "xmlupload/createPreop".' in /var/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /var/framework/web/CWebApplication.php(141): CWebApplication->runController('xmlupload/creat...')
+#1 /var/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#2 /var/www/lenstar/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/lenstar/index.php/xmlupload/createPreop?XDEBUG_SESSION_START=netbeans-xdebug
+---
+2014/05/21 21:12:02 [trace] [system.CModule] Loading "errorHandler" application component
+2014/05/21 21:12:02 [trace] [system.CModule] Loading "widgetFactory" application component
+in /var/www/lenstar/protected/views/layouts/column1.php (2)
+in /var/www/lenstar/protected/controllers/SiteController.php (45)
+2014/05/21 21:12:02 [trace] [system.CModule] Loading "user" application component
+in /var/www/lenstar/protected/views/layouts/main.php (35)
+in /var/www/lenstar/protected/views/layouts/column1.php (6)
+in /var/www/lenstar/protected/controllers/SiteController.php (45)
+2014/05/21 21:12:02 [trace] [system.CModule] Loading "clientScript" application component
+in /var/www/lenstar/protected/controllers/SiteController.php (45)
+2014/05/21 21:13:24 [trace] [system.CModule] Loading "log" application component
+in /var/www/lenstar/index.php (13)
+2014/05/21 21:13:24 [trace] [system.CModule] Loading "session" application component
+in /var/www/lenstar/index.php (13)
+2014/05/21 21:13:24 [trace] [system.CModule] Loading "request" application component
+in /var/www/lenstar/index.php (13)
+2014/05/21 21:13:24 [trace] [system.CModule] Loading "urlManager" application component
+in /var/www/lenstar/index.php (13)
+2014/05/21 21:13:24 [trace] [system.web.filters.CFilterChain] Running filter XmlUploadController.filteraccessControl()
+in /var/www/lenstar/index.php (13)
+2014/05/21 21:13:24 [trace] [system.CModule] Loading "user" application component
+in /var/www/lenstar/index.php (13)
+2014/05/21 21:13:39 [trace] [system.CModule] Loading "db" application component
+in /var/www/lenstar/protected/controllers/XmlUploadController.php (65)
+in /var/www/lenstar/index.php (13)
+2014/05/21 21:13:39 [trace] [system.db.CDbConnection] Opening DB connection
+in /var/www/lenstar/protected/controllers/XmlUploadController.php (65)
+in /var/www/lenstar/index.php (13)
+2014/05/21 21:13:39 [trace] [system.db.CDbCommand] Querying SQL: SHOW FULL COLUMNS FROM `xmlUpload`
+in /var/www/lenstar/protected/controllers/XmlUploadController.php (65)
+in /var/www/lenstar/index.php (13)
+2014/05/21 21:13:39 [trace] [system.db.CDbCommand] Querying SQL: SHOW CREATE TABLE `xmlUpload`
+in /var/www/lenstar/protected/controllers/XmlUploadController.php (65)
+in /var/www/lenstar/index.php (13)
+2014/05/21 21:13:46 [trace] [application.models.XmlUpload] Entering xmlFile.uploadPreop
+in /var/www/lenstar/protected/models/XmlUpload.php (43)
+in /var/www/lenstar/protected/controllers/XmlUploadController.php (66)
+in /var/www/lenstar/index.php (13)
+2014/05/21 21:13:54 [trace] [application.models.xmlFile] $_FILES is set
+in /var/www/lenstar/protected/models/XmlUpload.php (45)
+in /var/www/lenstar/protected/controllers/XmlUploadController.php (66)
+in /var/www/lenstar/index.php (13)
+2014/05/21 21:13:58 [error] [php] Undefined index: file (/var/www/lenstar/protected/models/XmlUpload.php:47)
+Stack trace:
+#0 /var/framework/web/CController.php(308): CInlineAction->runWithParams()
+#1 /var/framework/web/filters/CFilterChain.php(133): XmlUploadController->runAction()
+#2 /var/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#3 /var/framework/web/CController.php(1145): CAccessControlFilter->filter()
+#4 /var/framework/web/filters/CInlineFilter.php(58): XmlUploadController->filterAccessControl()
+#5 /var/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter()
+#6 /var/framework/web/CController.php(291): CFilterChain->run()
+#7 /var/framework/web/CController.php(265): XmlUploadController->runActionWithFilters()
+#8 /var/framework/web/CWebApplication.php(282): XmlUploadController->run()
+#9 /var/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#10 /var/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#11 /var/www/lenstar/index.php(13): CWebApplication->run()
+REQUEST_URI=/lenstar/index.php/XmlUpload/createPreop?XDEBUG_SESSION_START=netbeans-xdebug
+in /var/www/lenstar/protected/models/XmlUpload.php (47)
+in /var/www/lenstar/protected/controllers/XmlUploadController.php (66)
+in /var/www/lenstar/index.php (13)
+2014/05/21 21:13:58 [trace] [system.CModule] Loading "errorHandler" application component
+in /var/www/lenstar/protected/models/XmlUpload.php (47)
+in /var/www/lenstar/protected/controllers/XmlUploadController.php (66)
+in /var/www/lenstar/index.php (13)
+2014/05/21 21:15:07 [trace] [system.CModule] Loading "log" application component
+in /var/www/lenstar/index.php (13)
+2014/05/21 21:15:07 [trace] [system.CModule] Loading "session" application component
+in /var/www/lenstar/index.php (13)
+2014/05/21 21:15:07 [trace] [system.CModule] Loading "request" application component
+in /var/www/lenstar/index.php (13)
+2014/05/21 21:15:07 [trace] [system.CModule] Loading "urlManager" application component
+in /var/www/lenstar/index.php (13)
+2014/05/21 21:15:07 [trace] [system.web.filters.CFilterChain] Running filter XmlUploadController.filteraccessControl()
+in /var/www/lenstar/index.php (13)
+2014/05/21 21:15:07 [trace] [system.CModule] Loading "user" application component
+in /var/www/lenstar/index.php (13)
+2014/05/21 21:15:14 [trace] [system.CModule] Loading "db" application component
+in /var/www/lenstar/protected/controllers/XmlUploadController.php (65)
+in /var/www/lenstar/index.php (13)
+2014/05/21 21:15:14 [trace] [system.db.CDbConnection] Opening DB connection
+in /var/www/lenstar/protected/controllers/XmlUploadController.php (65)
+in /var/www/lenstar/index.php (13)
+2014/05/21 21:15:14 [trace] [system.db.CDbCommand] Querying SQL: SHOW FULL COLUMNS FROM `xmlUpload`
+in /var/www/lenstar/protected/controllers/XmlUploadController.php (65)
+in /var/www/lenstar/index.php (13)
+2014/05/21 21:15:14 [trace] [system.db.CDbCommand] Querying SQL: SHOW CREATE TABLE `xmlUpload`
+in /var/www/lenstar/protected/controllers/XmlUploadController.php (65)
+in /var/www/lenstar/index.php (13)
+2014/05/21 21:15:20 [trace] [application.models.XmlUpload] Entering xmlFile.uploadPreop
+in /var/www/lenstar/protected/models/XmlUpload.php (43)
+in /var/www/lenstar/protected/controllers/XmlUploadController.php (66)
+in /var/www/lenstar/index.php (13)
+2014/05/21 21:17:29 [trace] [system.CModule] Loading "log" application component
+in /var/www/lenstar/index.php (13)
+2014/05/21 21:17:29 [trace] [system.CModule] Loading "session" application component
+in /var/www/lenstar/index.php (13)
+2014/05/21 21:17:29 [trace] [system.CModule] Loading "request" application component
+in /var/www/lenstar/index.php (13)
+2014/05/21 21:17:29 [trace] [system.CModule] Loading "urlManager" application component
+in /var/www/lenstar/index.php (13)
+2014/05/21 21:17:29 [trace] [system.CModule] Loading "widgetFactory" application component
+in /var/www/lenstar/protected/views/layouts/column1.php (2)
+in /var/www/lenstar/protected/controllers/SiteController.php (32)
+in /var/www/lenstar/index.php (13)
+2014/05/21 21:17:29 [trace] [system.CModule] Loading "user" application component
+in /var/www/lenstar/protected/views/layouts/main.php (35)
+in /var/www/lenstar/protected/views/layouts/column1.php (6)
+in /var/www/lenstar/protected/controllers/SiteController.php (32)
+2014/05/21 21:17:29 [trace] [system.CModule] Loading "coreMessages" application component
+in /var/www/lenstar/protected/views/layouts/main.php (53)
+in /var/www/lenstar/protected/views/layouts/column1.php (6)
+in /var/www/lenstar/protected/controllers/SiteController.php (32)
+2014/05/21 21:17:29 [trace] [system.CModule] Loading "clientScript" application component
+in /var/www/lenstar/protected/controllers/SiteController.php (32)
+in /var/www/lenstar/index.php (13)
+2014/05/21 21:17:55 [trace] [system.CModule] Loading "log" application component
+in /var/www/lenstar/index.php (13)
+2014/05/21 21:17:55 [trace] [system.CModule] Loading "session" application component
+in /var/www/lenstar/index.php (13)
+2014/05/21 21:17:55 [trace] [system.CModule] Loading "request" application component
+in /var/www/lenstar/index.php (13)
+2014/05/21 21:17:55 [trace] [system.CModule] Loading "urlManager" application component
+in /var/www/lenstar/index.php (13)
+2014/05/21 21:17:55 [trace] [system.web.filters.CFilterChain] Running filter XmlUploadController.filteraccessControl()
+in /var/www/lenstar/index.php (13)
+2014/05/21 21:17:55 [trace] [system.CModule] Loading "user" application component
+in /var/www/lenstar/index.php (13)
+2014/05/21 21:17:58 [trace] [system.CModule] Loading "db" application component
+in /var/www/lenstar/protected/controllers/XmlUploadController.php (65)
+in /var/www/lenstar/index.php (13)
+2014/05/21 21:17:58 [trace] [system.db.CDbConnection] Opening DB connection
+in /var/www/lenstar/protected/controllers/XmlUploadController.php (65)
+in /var/www/lenstar/index.php (13)
+2014/05/21 21:17:58 [trace] [system.db.CDbCommand] Querying SQL: SHOW FULL COLUMNS FROM `xmlUpload`
+in /var/www/lenstar/protected/controllers/XmlUploadController.php (65)
+in /var/www/lenstar/index.php (13)
+2014/05/21 21:17:58 [trace] [system.db.CDbCommand] Querying SQL: SHOW CREATE TABLE `xmlUpload`
+in /var/www/lenstar/protected/controllers/XmlUploadController.php (65)
+in /var/www/lenstar/index.php (13)
+2014/05/21 21:18:04 [trace] [application.models.XmlUpload] Entering xmlFile.uploadPreop
+in /var/www/lenstar/protected/models/XmlUpload.php (43)
+in /var/www/lenstar/protected/controllers/XmlUploadController.php (66)
+in /var/www/lenstar/index.php (13)
+2014/05/21 21:18:09 [Error] [app.models.xmlFile] Error in $xmlFile::__construct
+in /var/www/lenstar/protected/models/XmlUpload.php (53)
+in /var/www/lenstar/protected/controllers/XmlUploadController.php (66)
+in /var/www/lenstar/index.php (13)
+2014/05/21 21:18:22 [error] [exception.Exception] exception 'Exception' with message 'No File Uploaded- Process halted' in /var/www/lenstar/protected/models/XmlUpload.php:54
+Stack trace:
+#0 /var/www/lenstar/protected/controllers/XmlUploadController.php(66): XmlUpload->uploadPreop()
+#1 /var/framework/web/actions/CInlineAction.php(49): XmlUploadController->actionCreatePreop()
+#2 /var/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#3 /var/framework/web/filters/CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#4 /var/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#5 /var/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#6 /var/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#7 /var/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#8 /var/framework/web/CController.php(291): CFilterChain->run()
+#9 /var/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#10 /var/framework/web/CWebApplication.php(282): CController->run('createPreop')
+#11 /var/framework/web/CWebApplication.php(141): CWebApplication->runController('XmlUpload/creat...')
+#12 /var/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#13 /var/www/lenstar/index.php(13): CApplication->run()
+#14 {main}
+REQUEST_URI=/lenstar/index.php/XmlUpload/createPreop?XDEBUG_SESSION_START=netbeans-xdebug
+---
+2014/05/21 21:18:32 [trace] [system.CModule] Loading "errorHandler" application component

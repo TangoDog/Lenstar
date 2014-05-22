@@ -32,8 +32,8 @@
 	</div>
 
 	<div class="row">
-		<?php echo $form->label($model,'fastName'); ?>
-		<?php echo $form->textField($model,'fastName',array('size'=>60,'maxlength'=>100)); ?>
+		<?php echo $form->label($model,'lastName'); ?>
+		<?php echo $form->textField($model,'lastName',array('size'=>60,'maxlength'=>100)); ?>
 	</div>
 
 	<div class="row">

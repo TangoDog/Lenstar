@@ -32,7 +32,7 @@ class XmlUploadController extends Controller
 				'users'=>array('*'),
 			),
 			array('allow', // allow authenticated user to perform 'create' and 'update' actions
-				'actions'=>array('create','update'),
+				'actions'=>array('create','createPreop','update'),
 				'users'=>array('@'),
 			),
 			array('allow', // allow admin user to perform 'admin' and 'delete' actions
@@ -60,9 +60,10 @@ class XmlUploadController extends Controller
 	 * Creates a new model.
 	 * If creation is successful, the browser will be redirected to the 'view' page.
 	 */
-	public function actionCreate()
+	public function actionCreatePreop()
 	{
 		$model=new XmlUpload;
+                $model->uploadPreop();
 
 		// Uncomment the following line if AJAX validation is needed
 		// $this->performAjaxValidation($model);

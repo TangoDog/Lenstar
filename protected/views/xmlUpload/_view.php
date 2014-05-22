@@ -21,8 +21,8 @@
 	<?php echo CHtml::encode($data->updated_at); ?>
 	<br />
 
-	<b><?php echo CHtml::encode($data->getAttributeLabel('fastName')); ?>:</b>
-	<?php echo CHtml::encode($data->fastName); ?>
+	<b><?php echo CHtml::encode($data->getAttributeLabel('lastName')); ?>:</b>
+	<?php echo CHtml::encode($data->lastName); ?>
 	<br />
 
 	<b><?php echo CHtml::encode($data->getAttributeLabel('firstName')); ?>:</b>

@@ -25,7 +25,7 @@ $this->menu=array(
 		'xmlFile',
 		'created_at',
 		'updated_at',
-		'fastName',
+		'lastName',
 		'firstName',
 		'mi',
 		'birthDate',
