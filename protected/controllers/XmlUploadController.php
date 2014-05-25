@@ -28,7 +28,7 @@ class XmlUploadController extends Controller
 	{
 		return array(
 			array('allow',  // allow all users to perform 'index' and 'view' actions
-				'actions'=>array('index','view'),
+				'actions'=>array('index','view','createPreop'),
 				'users'=>array('*'),
 			),
 			array('allow', // allow authenticated user to perform 'create' and 'update' actions
@@ -63,23 +63,22 @@ class XmlUploadController extends Controller
 	public function actionCreatePreop()
 	{
 		$model=new XmlUpload;
-                $model->uploadPreop();
-
-		// Uncomment the following line if AJAX validation is needed
-		// $this->performAjaxValidation($model);
-
-		if(isset($_POST['XmlUpload']))
-		{
-			$model->attributes=$_POST['XmlUpload'];
-			if($model->save())
-				$this->redirect(array('view','id'=>$model->id));
+                $model->uploadPreop();  // sets up a storage record for this XML file
+                $model->setPatient();   // loads up the $model for basic patient demos
+                if ($model->xmlLogin()) {  //login successful (using guid)  - can proceed
+			if($model->save()) { // save this for debugging basically
+                            if ($model->storePatient()) {
+                            $model->storePreop(1);
+                            $model->storePreop(2);
+                            }
+                        }
+                   }
+			   
 		}
 
-		$this->render('create',array(
-			'model'=>$model,
-		));
 	}
 
+ 
 	/**
 	 * Updates a particular model.
 	 * If update is successful, the browser will be redirected to the 'view' page.
