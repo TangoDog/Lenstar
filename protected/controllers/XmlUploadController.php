@@ -67,16 +67,16 @@ class XmlUploadController extends Controller
                 $model->setPatient();   // loads up the $model for basic patient demos
                 if ($model->xmlLogin()) {  //login successful (using guid)  - can proceed
 			if($model->save()) { // save this for debugging basically
-                            if ($model->storePatient()) {
-                            $model->storePreop(1);
-                            $model->storePreop(2);
+                            if ($pat_id=$model->storePatient()) {
+                            $model->storePreop(0,$pat_id);
+                            $model->storePreop(1,$pat_id);
                             }
                         }
-                   }
+                }
 			   
-		}
-
 	}
+
+	
 
  
 	/**

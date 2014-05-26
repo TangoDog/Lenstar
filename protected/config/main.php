@@ -11,7 +11,7 @@
 return array(
 	'basePath'=>dirname(__FILE__).DIRECTORY_SEPARATOR.'..',
 	'name'=>'LenStar API',
-
+        'charset' => 'ISO-8859-1',
 	// preloading 'log' component
         'preload'=>array('log', 'session'),
 	// autoloading model and component classes
@@ -86,7 +86,7 @@ return array(
                             array(
                                 'class'=>'CFileLogRoute',
                                 'levels'=>'info, trace,error,warning',
-                                'logFile'=>'infoMessages.log',
+                                'logFile'=>'info.log',
                             ),
 //                'class'=>'CFileLogRoute',
 //					'levels'=>'error, warning,trace',

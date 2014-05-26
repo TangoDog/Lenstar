@@ -39,7 +39,7 @@ class Patient extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('Ethnicity, EntryDate', 'required'),
+			array('EntryDate', 'required'),
 			array('Surgeon, Office, Referral, CalcRightEye, CalcLeftEye, dbowner', 'numerical', 'integerOnly'=>true),
 			array('ChartID', 'length', 'max'=>20),
 			array('LastName, FirstName, MI, Phone', 'length', 'max'=>255),
@@ -48,7 +48,7 @@ class Patient extends CActiveRecord
 			array('BirthDate', 'safe'),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
-			array('ID, ChartID, LastName, FirstName, MI, BirthDate, Sex, Ethnicity, EntryDate, Surgeon, Office, Phone, Referral, CalcRightEye, CalcLeftEye, dbowner', 'safe', 'on'=>'search'),
+			//array('ID, ChartID, LastName, FirstName, MI, BirthDate, Sex, Ethnicity, EntryDate, Surgeon, Office, Phone, Referral, CalcRightEye, CalcLeftEye, dbowner', 'safe', 'on'=>'search'),
 		);
 	}
 

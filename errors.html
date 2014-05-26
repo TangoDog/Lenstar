@@ -1,0 +1,473 @@
+						<div class="minus">–</div>
+										&nbsp;/var/www/lenstar/protected/controllers/XmlUploadController.php(67): <strong>XmlUpload</strong>-><strong>setPatient</strong>()				</div>
+
+				<div class="code"><pre><span class="ln">62</span>      */
+<span class="ln">63</span>     public function actionCreatePreop()
+<span class="ln">64</span>     {
+<span class="ln">65</span>         $model=new XmlUpload;
+<span class="ln">66</span>                 $model-&gt;uploadPreop();  // sets up a storage record for this XML file
+<span class="error"><span class="ln error-ln">67</span>                 $model-&gt;setPatient();   // loads up the $model for basic patient demos
+</span><span class="ln">68</span>                 if ($model-&gt;xmlLogin()) {  //login successful (using guid)  - can proceed
+<span class="ln">69</span>             if($model-&gt;save()) { // save this for debugging basically
+<span class="ln">70</span>                             if ($pat_id=$model-&gt;storePatient()) {
+<span class="ln">71</span>                             $model-&gt;storePreop(0,$pat_id);
+<span class="ln">72</span>                             $model-&gt;storePreop(1,$pat_id);
+</pre></div>			</td>
+		</tr>
+						<tr class="trace core collapsed">
+			<td class="number">
+				#1			</td>
+			<td class="content">
+				<div class="trace-file">
+											<div class="plus">+</div>
+						<div class="minus">–</div>
+										&nbsp;/var/framework/web/actions/CInlineAction.php(49): <strong>XmlUploadController</strong>-><strong>actionCreatePreop</strong>()				</div>
+
+				<div class="code"><pre><span class="ln">44</span>         $controller=$this-&gt;getController();
+<span class="ln">45</span>         $method=new ReflectionMethod($controller, $methodName);
+<span class="ln">46</span>         if($method-&gt;getNumberOfParameters()&gt;0)
+<span class="ln">47</span>             return $this-&gt;runWithParamsInternal($controller, $method, $params);
+<span class="ln">48</span>         else
+<span class="error"><span class="ln error-ln">49</span>             return $controller-&gt;$methodName();
+</span><span class="ln">50</span>     }
+<span class="ln">51</span> 
+<span class="ln">52</span> }
+</pre></div>			</td>
+		</tr>
+						<tr class="trace core collapsed">
+			<td class="number">
+				#2			</td>
+			<td class="content">
+				<div class="trace-file">
+											<div class="plus">+</div>
+						<div class="minus">–</div>
+										&nbsp;/var/framework/web/CController.php(308): <strong>CInlineAction</strong>-><strong>runWithParams</strong>(array())				</div>
+
+				<div class="code"><pre><span class="ln">303</span>     {
+<span class="ln">304</span>         $priorAction=$this-&gt;_action;
+<span class="ln">305</span>         $this-&gt;_action=$action;
+<span class="ln">306</span>         if($this-&gt;beforeAction($action))
+<span class="ln">307</span>         {
+<span class="error"><span class="ln error-ln">308</span>             if($action-&gt;runWithParams($this-&gt;getActionParams())===false)
+</span><span class="ln">309</span>                 $this-&gt;invalidActionParams($action);
+<span class="ln">310</span>             else
+<span class="ln">311</span>                 $this-&gt;afterAction($action);
+<span class="ln">312</span>         }
+<span class="ln">313</span>         $this-&gt;_action=$priorAction;
+</pre></div>			</td>
+		</tr>
+						<tr class="trace core collapsed">
+			<td class="number">
+				#3			</td>
+			<td class="content">
+				<div class="trace-file">
+											<div class="plus">+</div>
+						<div class="minus">–</div>
+										&nbsp;/var/framework/web/filters/CFilterChain.php(133): <strong>CController</strong>-><strong>runAction</strong>(CInlineAction)				</div>
+
+				<div class="code"><pre><span class="ln">128</span>             $filter=$this-&gt;itemAt($this-&gt;filterIndex++);
+<span class="ln">129</span>             Yii::trace(&#039;Running filter &#039;.($filter instanceof CInlineFilter ? get_class($this-&gt;controller).&#039;.filter&#039;.$filter-&gt;name.&#039;()&#039;:get_class($filter).&#039;.filter()&#039;),&#039;system.web.filters.CFilterChain&#039;);
+<span class="ln">130</span>             $filter-&gt;filter($this);
+<span class="ln">131</span>         }
+<span class="ln">132</span>         else
+<span class="error"><span class="ln error-ln">133</span>             $this-&gt;controller-&gt;runAction($this-&gt;action);
+</span><span class="ln">134</span>     }
+<span class="ln">135</span> }</pre></div>			</td>
+		</tr>
+						<tr class="trace core collapsed">
+			<td class="number">
+				#4			</td>
+			<td class="content">
+				<div class="trace-file">
+											<div class="plus">+</div>
+						<div class="minus">–</div>
+										&nbsp;/var/framework/web/filters/CFilter.php(40): <strong>CFilterChain</strong>-><strong>run</strong>()				</div>
+
+				<div class="code"><pre><span class="ln">35</span>      */
+<span class="ln">36</span>     public function filter($filterChain)
+<span class="ln">37</span>     {
+<span class="ln">38</span>         if($this-&gt;preFilter($filterChain))
+<span class="ln">39</span>         {
+<span class="error"><span class="ln error-ln">40</span>             $filterChain-&gt;run();
+</span><span class="ln">41</span>             $this-&gt;postFilter($filterChain);
+<span class="ln">42</span>         }
+<span class="ln">43</span>     }
+<span class="ln">44</span> 
+<span class="ln">45</span>     /**
+</pre></div>			</td>
+		</tr>
+						<tr class="trace core collapsed">
+			<td class="number">
+				#5			</td>
+			<td class="content">
+				<div class="trace-file">
+											<div class="plus">+</div>
+						<div class="minus">–</div>
+										&nbsp;/var/framework/web/CController.php(1145): <strong>CFilter</strong>-><strong>filter</strong>(CFilterChain)				</div>
+
+				<div class="code"><pre><span class="ln">1140</span>      */
+<span class="ln">1141</span>     public function filterAccessControl($filterChain)
+<span class="ln">1142</span>     {
+<span class="ln">1143</span>         $filter=new CAccessControlFilter;
+<span class="ln">1144</span>         $filter-&gt;setRules($this-&gt;accessRules());
+<span class="error"><span class="ln error-ln">1145</span>         $filter-&gt;filter($filterChain);
+</span><span class="ln">1146</span>     }
+<span class="ln">1147</span> 
+<span class="ln">1148</span>     /**
+<span class="ln">1149</span>      * Returns a persistent page state value.
+<span class="ln">1150</span>      * A page state is a variable that is persistent across POST requests of the same page.
+</pre></div>			</td>
+		</tr>
+						<tr class="trace core collapsed">
+			<td class="number">
+				#6			</td>
+			<td class="content">
+				<div class="trace-file">
+											<div class="plus">+</div>
+						<div class="minus">–</div>
+										&nbsp;/var/framework/web/filters/CInlineFilter.php(58): <strong>CController</strong>-><strong>filterAccessControl</strong>(CFilterChain)				</div>
+
+				<div class="code"><pre><span class="ln">53</span>      * @param CFilterChain $filterChain the filter chain that the filter is on.
+<span class="ln">54</span>      */
+<span class="ln">55</span>     public function filter($filterChain)
+<span class="ln">56</span>     {
+<span class="ln">57</span>         $method=&#039;filter&#039;.$this-&gt;name;
+<span class="error"><span class="ln error-ln">58</span>         $filterChain-&gt;controller-&gt;$method($filterChain);
+</span><span class="ln">59</span>     }
+<span class="ln">60</span> }
+</pre></div>			</td>
+		</tr>
+						<tr class="trace core collapsed">
+			<td class="number">
+				#7			</td>
+			<td class="content">
+				<div class="trace-file">
+											<div class="plus">+</div>
+						<div class="minus">–</div>
+										&nbsp;/var/framework/web/filters/CFilterChain.php(130): <strong>CInlineFilter</strong>-><strong>filter</strong>(CFilterChain)				</div>
+
+				<div class="code"><pre><span class="ln">125</span>     {
+<span class="ln">126</span>         if($this-&gt;offsetExists($this-&gt;filterIndex))
+<span class="ln">127</span>         {
+<span class="ln">128</span>             $filter=$this-&gt;itemAt($this-&gt;filterIndex++);
+<span class="ln">129</span>             Yii::trace(&#039;Running filter &#039;.($filter instanceof CInlineFilter ? get_class($this-&gt;controller).&#039;.filter&#039;.$filter-&gt;name.&#039;()&#039;:get_class($filter).&#039;.filter()&#039;),&#039;system.web.filters.CFilterChain&#039;);
+<span class="error"><span class="ln error-ln">130</span>             $filter-&gt;filter($this);
+</span><span class="ln">131</span>         }
+<span class="ln">132</span>         else
+<span class="ln">133</span>             $this-&gt;controller-&gt;runAction($this-&gt;action);
+<span class="ln">134</span>     }
+<span class="ln">135</span> }</pre></div>			</td>
+		</tr>
+						<tr class="trace core collapsed">
+			<td class="number">
+				#8			</td>
+			<td class="content">
+				<div class="trace-file">
+											<div class="plus">+</div>
+						<div class="minus">–</div>
+										&nbsp;/var/framework/web/CController.php(291): <strong>CFilterChain</strong>-><strong>run</strong>()				</div>
+
+				<div class="code"><pre><span class="ln">286</span>             $this-&gt;runAction($action);
+<span class="ln">287</span>         else
+<span class="ln">288</span>         {
+<span class="ln">289</span>             $priorAction=$this-&gt;_action;
+<span class="ln">290</span>             $this-&gt;_action=$action;
+<span class="error"><span class="ln error-ln">291</span>             CFilterChain::create($this,$action,$filters)-&gt;run();
+</span><span class="ln">292</span>             $this-&gt;_action=$priorAction;
+<span class="ln">293</span>         }
+<span class="ln">294</span>     }
+<span class="ln">295</span> 
+<span class="ln">296</span>     /**
+</pre></div>			</td>
+		</tr>
+						<tr class="trace core collapsed">
+			<td class="number">
+				#9			</td>
+			<td class="content">
+				<div class="trace-file">
+											<div class="plus">+</div>
+						<div class="minus">–</div>
+										&nbsp;/var/framework/web/CController.php(265): <strong>CController</strong>-><strong>runActionWithFilters</strong>(CInlineAction, array(&quot;accessControl&quot;, &quot;postOnly + delete&quot;))				</div>
+
+				<div class="code"><pre><span class="ln">260</span>         {
+<span class="ln">261</span>             if(($parent=$this-&gt;getModule())===null)
+<span class="ln">262</span>                 $parent=Yii::app();
+<span class="ln">263</span>             if($parent-&gt;beforeControllerAction($this,$action))
+<span class="ln">264</span>             {
+<span class="error"><span class="ln error-ln">265</span>                 $this-&gt;runActionWithFilters($action,$this-&gt;filters());
+</span><span class="ln">266</span>                 $parent-&gt;afterControllerAction($this,$action);
+<span class="ln">267</span>             }
+<span class="ln">268</span>         }
+<span class="ln">269</span>         else
+<span class="ln">270</span>             $this-&gt;missingAction($actionID);
+</pre></div>			</td>
+		</tr>
+						<tr class="trace core collapsed">
+			<td class="number">
+				#10			</td>
+			<td class="content">
+				<div class="trace-file">
+											<div class="plus">+</div>
+						<div class="minus">–</div>
+										&nbsp;/var/framework/web/CWebApplication.php(282): <strong>CController</strong>-><strong>run</strong>(&quot;createPreop&quot;)				</div>
+
+				<div class="code"><pre><span class="ln">277</span>         {
+<span class="ln">278</span>             list($controller,$actionID)=$ca;
+<span class="ln">279</span>             $oldController=$this-&gt;_controller;
+<span class="ln">280</span>             $this-&gt;_controller=$controller;
+<span class="ln">281</span>             $controller-&gt;init();
+<span class="error"><span class="ln error-ln">282</span>             $controller-&gt;run($actionID);
+</span><span class="ln">283</span>             $this-&gt;_controller=$oldController;
+<span class="ln">284</span>         }
+<span class="ln">285</span>         else
+<span class="ln">286</span>             throw new CHttpException(404,Yii::t(&#039;yii&#039;,&#039;Unable to resolve the request &quot;{route}&quot;.&#039;,
+<span class="ln">287</span>                 array(&#039;{route}&#039;=&gt;$route===&#039;&#039;?$this-&gt;defaultController:$route)));
+</pre></div>			</td>
+		</tr>
+						<tr class="trace core collapsed">
+			<td class="number">
+				#11			</td>
+			<td class="content">
+				<div class="trace-file">
+											<div class="plus">+</div>
+						<div class="minus">–</div>
+										&nbsp;/var/framework/web/CWebApplication.php(141): <strong>CWebApplication</strong>-><strong>runController</strong>(&quot;xmlUpload/createPreop&quot;)			</div>
+
+				<div class="code"><pre><span class="ln">136</span>             foreach(array_splice($this-&gt;catchAllRequest,1) as $name=&gt;$value)
+<span class="ln">137</span>                 $_GET[$name]=$value;
+<span class="ln">138</span>         }
+<span class="ln">139</span>         else
+<span class="ln">140</span>             $route=$this-&gt;getUrlManager()-&gt;parseUrl($this-&gt;getRequest());
+<span class="error"><span class="ln error-ln">141</span>         $this-&gt;runController($route);
+</span><span class="ln">142</span>     }
+<span class="ln">143</span> 
+<span class="ln">144</span>     /**
+<span class="ln">145</span>      * Registers the core application components.
+<span class="ln">146</span>      * This method overrides the parent implementation by registering additional core components.
+</pre></div>			</td>
+		</tr>
+						<tr class="trace core collapsed">
+			<td class="number">
+				#12			</td>
+			<td class="content">
+				<div class="trace-file">
+											<div class="plus">+</div>
+						<div class="minus">–</div>
+										&nbsp;/var/framework/base/CApplication.php(180): <strong>CWebApplication</strong>-><strong>processRequest</strong>()				</div>
+
+				<div class="code"><pre><span class="ln">175</span>     public function run()
+<span class="ln">176</span>     {
+<span class="ln">177</span>         if($this-&gt;hasEventHandler(&#039;onBeginRequest&#039;))
+<span class="ln">178</span>             $this-&gt;onBeginRequest(new CEvent($this));
+<span class="ln">179</span>         register_shutdown_function(array($this,&#039;end&#039;),0,false);
+<span class="error"><span class="ln error-ln">180</span>         $this-&gt;processRequest();
+</span><span class="ln">181</span>         if($this-&gt;hasEventHandler(&#039;onEndRequest&#039;))
+<span class="ln">182</span>             $this-&gt;onEndRequest(new CEvent($this));
+<span class="ln">183</span>     }
+<span class="ln">184</span> 
+<span class="ln">185</span>     /**
+</pre></div>			</td>
+		</tr>
+						<tr class="trace app expanded">
+			<td class="number">
+				#13			</td>
+			<td class="content">
+				<div class="trace-file">
+											<div class="plus">+</div>
+						<div class="minus">–</div>
+										&nbsp;/var/www/lenstar/index.php(13): <strong>CApplication</strong>-><strong>run</strong>()				</div>
+
+				<div class="code"><pre><span class="ln">08</span> defined(&#039;YII_DEBUG&#039;) or define(&#039;YII_DEBUG&#039;,true);
+<span class="ln">09</span> // specify how many levels of call stack should be shown in each log message
+<span class="ln">10</span> defined(&#039;YII_TRACE_LEVEL&#039;) or define(&#039;YII_TRACE_LEVEL&#039;,3);
+<span class="ln">11</span> 
+<span class="ln">12</span> require_once($yii);
+<span class="error"><span class="ln error-ln">13</span> Yii::createWebApplication($config)-&gt;run();
+</span></pre></div>			</td>
+		</tr>
+				</table>
+	</div>
+
+	<div class="version">
+		2014-05-26 09:27:40 Apache/2.4.7 (Ubuntu) <a href="http://www.yiiframework.com/">Yii Framework</a>/1.1.14</div>
+</div>
+
+<script type="text/javascript">
+/*<![CDATA[*/
+var traceReg = new RegExp("(^|\\s)trace-file(\\s|$)");
+var collapsedReg = new RegExp("(^|\\s)collapsed(\\s|$)");
+
+var e = document.getElementsByTagName("div");
+for(var j=0,len=e.length;j<len;j++){
+	if(traceReg.test(e[j].className)){
+		e[j].onclick = function(){
+			var trace = this.parentNode.parentNode;
+			if(collapsedReg.test(trace.className))
+				trace.className = trace.className.replace("collapsed", "expanded");
+			else
+				trace.className = trace.className.replace("expanded", "collapsed");
+		}
+	}
+}
+/*]]>*/
+</script>
+
+</body>
+</html>
+<!-- start log messages -->
+<table class="yiiLog" width="100%" cellpadding="2" style="border-spacing:1px;font:11px Verdana, Arial, Helvetica, sans-serif;background:#EEEEEE;color:#666666;">
+	<tr>
+		<th style="background:black;color:white;" colspan="5">
+			Application Log
+		</th>
+	</tr>
+	<tr style="background-color: #ccc;">
+	    <th style="width:120px">Timestamp</th>
+		<th>Level</th>
+		<th>Category</th>
+		<th>Message</th>
+	</tr>
+	<tr style="background:#FFFFDF">
+		<td align="center">09:27:40.601910</td>
+		<td>info</td>
+		<td>application</td>
+		<td><pre>[resq91e9u3kjk41k4qp20fm1i3] User: Guest (ID: )</pre></td>
+	</tr>	<tr style="background:#F5F5F5">
+		<td align="center">09:27:40.626616</td>
+		<td>trace</td>
+		<td>system.CModule</td>
+		<td><pre>[resq91e9u3kjk41k4qp20fm1i3] Loading &quot;log&quot; application component
+in /var/www/lenstar/index.php (13)</pre></td>
+	</tr>	<tr style="background:#FFFFFF">
+		<td align="center">09:27:40.626938</td>
+		<td>trace</td>
+		<td>system.CModule</td>
+		<td><pre>[resq91e9u3kjk41k4qp20fm1i3] Loading &quot;session&quot; application component
+in /var/www/lenstar/index.php (13)</pre></td>
+	</tr>	<tr style="background:#F5F5F5">
+		<td align="center">09:27:40.627113</td>
+		<td>trace</td>
+		<td>system.CModule</td>
+		<td><pre>[resq91e9u3kjk41k4qp20fm1i3] Loading &quot;request&quot; application component
+in /var/www/lenstar/index.php (13)</pre></td>
+	</tr>	<tr style="background:#FFFFFF">
+		<td align="center">09:27:40.627211</td>
+		<td>trace</td>
+		<td>system.CModule</td>
+		<td><pre>[resq91e9u3kjk41k4qp20fm1i3] Loading &quot;urlManager&quot; application component
+in /var/www/lenstar/index.php (13)</pre></td>
+	</tr>	<tr style="background:#F5F5F5">
+		<td align="center">09:27:40.627862</td>
+		<td>trace</td>
+		<td>system.web.filters.CFilterChain</td>
+		<td><pre>[resq91e9u3kjk41k4qp20fm1i3] Running filter
+XmlUploadController.filteraccessControl()
+in /var/www/lenstar/index.php (13)</pre></td>
+	</tr>	<tr style="background:#FFFFFF">
+		<td align="center">09:27:40.627979</td>
+		<td>trace</td>
+		<td>system.CModule</td>
+		<td><pre>[resq91e9u3kjk41k4qp20fm1i3] Loading &quot;user&quot; application component
+in /var/www/lenstar/index.php (13)</pre></td>
+	</tr>	<tr style="background:#F5F5F5">
+		<td align="center">09:27:40.635220</td>
+		<td>trace</td>
+		<td>system.CModule</td>
+		<td><pre>[resq91e9u3kjk41k4qp20fm1i3] Loading &quot;db&quot; application component
+in /var/www/lenstar/protected/controllers/XmlUploadController.php (65)
+in /var/www/lenstar/index.php (13)</pre></td>
+	</tr>	<tr style="background:#FFFFFF">
+		<td align="center">09:27:40.647208</td>
+		<td>trace</td>
+		<td>system.db.CDbConnection</td>
+		<td><pre>[resq91e9u3kjk41k4qp20fm1i3] Opening DB connection
+in /var/www/lenstar/protected/controllers/XmlUploadController.php (65)
+in /var/www/lenstar/index.php (13)</pre></td>
+	</tr>	<tr style="background:#F5F5F5">
+		<td align="center">09:27:40.648847</td>
+		<td>trace</td>
+		<td>system.db.CDbCommand</td>
+		<td><pre>[resq91e9u3kjk41k4qp20fm1i3] Querying SQL: SHOW FULL COLUMNS FROM
+`xmlUpload`
+in /var/www/lenstar/protected/controllers/XmlUploadController.php (65)
+in /var/www/lenstar/index.php (13)</pre></td>
+	</tr>	<tr style="background:#FFFFFF">
+		<td align="center">09:27:40.652365</td>
+		<td>trace</td>
+		<td>system.db.CDbCommand</td>
+		<td><pre>[resq91e9u3kjk41k4qp20fm1i3] Querying SQL: SHOW CREATE TABLE `xmlUpload`
+in /var/www/lenstar/protected/controllers/XmlUploadController.php (65)
+in /var/www/lenstar/index.php (13)</pre></td>
+	</tr>	<tr style="background:#F5F5F5">
+		<td align="center">09:27:40.652961</td>
+		<td>trace</td>
+		<td>application.models.XmlUpload</td>
+		<td><pre>[resq91e9u3kjk41k4qp20fm1i3] Entering xmlFile.uploadPreop
+in /var/www/lenstar/protected/models/XmlUpload.php (67)
+in /var/www/lenstar/protected/controllers/XmlUploadController.php (66)
+in /var/www/lenstar/index.php (13)</pre></td>
+	</tr>	<tr style="background:#FFFFFF">
+		<td align="center">09:27:40.653171</td>
+		<td>trace</td>
+		<td>application.models.xmlFile</td>
+		<td><pre>[resq91e9u3kjk41k4qp20fm1i3] $_FILES is set
+in /var/www/lenstar/protected/models/XmlUpload.php (70)
+in /var/www/lenstar/protected/controllers/XmlUploadController.php (66)
+in /var/www/lenstar/index.php (13)</pre></td>
+	</tr>	<tr style="background:#F5F5F5">
+		<td align="center">09:27:40.653316</td>
+		<td>trace</td>
+		<td>application</td>
+		<td><pre>[resq91e9u3kjk41k4qp20fm1i3] 
+in /var/www/lenstar/protected/models/XmlUpload.php (71)
+in /var/www/lenstar/protected/controllers/XmlUploadController.php (66)
+in /var/www/lenstar/index.php (13)</pre></td>
+	</tr>	<tr style="background:#FFFFFF">
+		<td align="center">09:27:40.653742</td>
+		<td>trace</td>
+		<td>application</td>
+		<td><pre>[resq91e9u3kjk41k4qp20fm1i3] 2014-05-26 09:27:40
+in /var/www/lenstar/protected/models/XmlUpload.php (115)
+in /var/www/lenstar/protected/controllers/XmlUploadController.php (67)
+in /var/www/lenstar/index.php (13)</pre></td>
+	</tr>	<tr style="background:#FFC0CB">
+		<td align="center">09:27:40.654002</td>
+		<td>error</td>
+		<td>php</td>
+		<td><pre>[resq91e9u3kjk41k4qp20fm1i3] Trying to get property of non-object
+(/var/www/lenstar/protected/models/XmlUpload.php:117)
+Stack trace:
+#0 /var/framework/web/CController.php(308): CInlineAction-&gt;runWithParams()
+#1 /var/framework/web/filters/CFilterChain.php(133):
+XmlUploadController-&gt;runAction()
+#2 /var/framework/web/filters/CFilter.php(40): CFilterChain-&gt;run()
+#3 /var/framework/web/CController.php(1145): CAccessControlFilter-&gt;filter()
+#4 /var/framework/web/filters/CInlineFilter.php(58):
+XmlUploadController-&gt;filterAccessControl()
+#5 /var/framework/web/filters/CFilterChain.php(130):
+CInlineFilter-&gt;filter()
+#6 /var/framework/web/CController.php(291): CFilterChain-&gt;run()
+#7 /var/framework/web/CController.php(265):
+XmlUploadController-&gt;runActionWithFilters()
+#8 /var/framework/web/CWebApplication.php(282): XmlUploadController-&gt;run()
+#9 /var/framework/web/CWebApplication.php(141):
+CWebApplication-&gt;runController()
+#10 /var/framework/base/CApplication.php(180):
+CWebApplication-&gt;processRequest()
+#11 /var/www/lenstar/index.php(13): CWebApplication-&gt;run()
+REQUEST_URI=/lenstar/index.php/xmlUpload/createPreop
+in /var/www/lenstar/protected/models/XmlUpload.php (117)
+in /var/www/lenstar/protected/controllers/XmlUploadController.php (67)
+in /var/www/lenstar/index.php (13)</pre></td>
+	</tr>	<tr style="background:#FFFFFF">
+		<td align="center">09:27:40.654267</td>
+		<td>trace</td>
+		<td>system.CModule</td>
+		<td><pre>[resq91e9u3kjk41k4qp20fm1i3] Loading &quot;errorHandler&quot; application component
+in /var/www/lenstar/protected/models/XmlUpload.php (117)
+in /var/www/lenstar/protected/controllers/XmlUploadController.php (67)
+in /var/www/lenstar/index.php (13)</pre></td>
+	</tr></table>
+* Closing connection 0
+
+

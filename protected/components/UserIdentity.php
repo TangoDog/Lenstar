@@ -28,7 +28,7 @@ class UserIdentity extends CUserIdentity
 		// No user found!
 			$this->errorCode=self::ERROR_USERNAME_INVALID;
                         // password and username are already DES encrypted in the template sent over
-		} else if ($user->Password !==	 $this->password) { //else if ($user->password !==	hash_hmac('sha256', $this->password,
+		} else if ($user->guid !== $this->password) { //else if ($user->password !==	hash_hmac('sha256', $this->password,
 		//		                           Yii::app()->params['encryptionKey']) ) {
 		// Invalid password!
                     $this->errorCode=self::ERROR_PASSWORD_INVALID;
