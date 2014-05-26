@@ -65,20 +65,20 @@ class XmlUpload extends CActiveRecord
            
         public function uploadPreop() {
              Yii::trace('Entering xmlFile.uploadPreop','application.models.XmlUpload');
-             $xml = simplexml_load_file('/var/www/lenstar/LensStar.XML');
- //            if (isset($_FILES['file']['tmp_name'])) {
- //                       Yii::trace('$_FILES is set','application.models.xmlFile');
+//             $xml = simplexml_load_file('/var/www/lenstar/LensStar.XML');
+             if (isset($_FILES['file']['tmp_name'])) {
+                       Yii::trace('$_FILES is set','application.models.xmlFile');
  
-                        //$upload = $xml;// $_FILES['file']['tmp_name'];
+                        $upload =  $_FILES['file']['tmp_name'];
 
-                        //$xml = file_get_contents($upload);
+                        $xml = file_get_contents($upload);
                         $this->xmlFile = $xml;//simplexml_load_string($xml); 
                         //$this->lastName = $xml->
                         // echo var_dump($this->xmlFile);
-//             } else  {
-//                 Yii::log('Error in $xmlFile::__construct','Error','app.models.xmlFile');
-//                 throw new Exception('No File Uploaded- Process halted');
-//             }           
+             } else  {
+                Yii::log('Error in $xmlFile::uploadPreop','Error','app.models.xmlFile');
+                throw new Exception('No File Uploaded- Process halted');
+             }           
          }
         public function xmlLogin() {
     
@@ -207,9 +207,46 @@ class XmlUpload extends CActiveRecord
          */
         public function storePreop($num,$pat_id){
             $preop = new Preop();
+            $preop->ID = $pat_id;
+            if (isset($this->xmlFile->Patient->Exam[$num])) {
+                $json_string = json_encode($this->xmlFile ->Patient->Exam[$num]);
+                // the string looks like this - need to remove {"@attributes: and closing "}"
+
+        //{"@attributes":{"Eye":"OD","Time":"2013\/07\/25 13:40","MeasurementMode":"Phakic","R1":"8.13","R2":"7.74","R1Axis":"97","FlatK1":"41.50","SteepK1":"43.61","Astigmatism":"2.12 ","AxisAstig":"7","n":"1.3375","CCT":"567","AD":"2.99","LT":"4.62","AL":"26.42","WTW":"12.31","Pupil":"-----"}}
+
+                $result_array =  substr_replace($json_string, '', $start=0,$length=15);
+                $result_array =  substr_replace($result_array, '', $start=-1);
+
+                $result_array = json_decode($result_array, TRUE);
+                Yii::trace('Exam['.$num.'] = '. CVarDumper::dump($result_array));
+                if (count($result_array)>0){  // insert this record
+
+                    $findLensStar = "Select ID from keratometry where dbowner=".$this->dbowner." and `Keratometry` like 'LenStar%'";
+                    $findLensStarCMD = Yii::app()->db->createCommand($findLensStar);
+                    $KeraID = $findLensStarCMD->queryScalar();
+                    //while ($Kid = mysqli_fetch_assoc($keratometry)) $KeraID = $Kid['ID'];  // this is the keratometry ID
+
+
+        // this should be added to the LenStar XML file
+
+                    $AvgRc = ($result_array['R1']+$result_array['R2'])/2;
+                    $preopInsert = "INSERT INTO preop (PatientID,Technician,Office,Eye,FlatK,SteepK,SteepAxis,`Axial Length`,CCT,ACD,LensThick,WTW,Biometry,Rc,ExamDateTime,dbowner,Keratometry)";
+                    $preopInsert .=" values (".$pat_id.",". $this->technician.",".$this->office.",'".$result_array['Eye']."',".$result_array['FlatK1'];
+                    $preopInsert .=",".$result_array['SteepK1'].",".$result_array['AxisAstig'].",".$result_array['AL'];
+                    $preopInsert .=",".$this->dashToNull($result_array['CCT']).",".$this->dashToNull($result_array['ACD']).",".$this->dashToNull($result_array['LT']).",".$this->dashToNull($result_array['WTW']).",13,".$AvgRc.",CONVERT('".$result_array['Time']."',datetime),".$this->dbowner.",".$KeraID.")";
+                    //,SteepAxis,`Axial Length`,CCT,ACD,LensThick,WTW$.$result_array
+                    Yii::trace($preopInsert);
+                    $insertCMD =  Yii::app()->db->createCommand( $preopInsert);
+                    $inserted = $insertCMD->execute();
+
+                    if ($inserted){
+                       Yii::trace("Data".$num." Insertion succeeded\n");
+                    }
+                        else print_r("Data".$num." Insertion failed\n") ;
+                } //(count($result_array)>0)
+            } //(isset($xml->Patient->Exam[$num]))
             
-            
-        }
+        }  // end function storePreop($num,$pat_id)
 
         /**
 	 * @return string the associated database table name
