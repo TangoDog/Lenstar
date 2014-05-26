@@ -14,6 +14,7 @@
  * @property string $birthDate
  * @property string $chartID
  * @property string $ethnicity
+ * @property string $sex
  * @property string $thisUser
  * @property string $thisPwd
  * @property integer $technician
@@ -34,28 +35,183 @@ class XmlUpload extends CActiveRecord
          *          
          * 
          */
-//         public function __construct() {
-//             Yii::trace('Entering xmlFile.__construct','application.models.xmlFile');
-//             parent::__construct();
-//         }
-         
-         public function uploadPreop() {
+    private function emptyToNull($val) {
+                return(empty($val)?'NULL':$val);
+            }
+    private function dashToNull($value) {return ( is_numeric($value)? $value :'NULL');}
+    private function getFirstNameMI($FirstName){
+        $space = strpos($FirstName," ");
+            if ($space!=false) {  // there is a middle initial 
+                    $FirstName1 = strrev( strchr(strrev($FirstName)," ") );  //ABE J. => .J EBA
+                    //print_r('FirstName1: '.$FirstName1."\n");
+                    $FirstName1 = str_ireplace(".","",$FirstName1);
+                    //print_r('FirstName1: '.$FirstName1."\n");
+                    $FirstName1 = str_ireplace(" ","",$FirstName1);
+                    //print_r('FirstName1: '.$FirstName1."\n");
+                    $FirstName1 = htmlspecialchars(strip_tags($FirstName1));
+                    //print_r('FirstName1: '.$FirstName1."\n");
+
+                    $Mi2 =  strstr($FirstName," ") ;  // gives false if no space, or space plus rest  --like " S." if exists
+                    if ($Mi2) $Mi = str_ireplace(" ","",$Mi2);
+                    $Mi = str_ireplace(".","",$Mi);  // remove periods
+                    $Mi = str_ireplace(",","",$Mi);  // remove commas
+                    //print_r( "MI = ".$Mi ."\n");
+                    $FirstName = $FirstName1;
+                    return(array('FirstName'=>$FirstName,
+                                 'Mi'       =>$Mi,
+                        ));
+            } // do not change and don't strip out the Middle Init
+    }
+           
+        public function uploadPreop() {
              Yii::trace('Entering xmlFile.uploadPreop','application.models.XmlUpload');
-             if (isset($_FILES['file']['tmp_name'])) {
-                        Yii::trace('$_FILES is set','application.models.xmlFile');
+             $xml = simplexml_load_file('/var/www/lenstar/LensStar.XML');
+ //            if (isset($_FILES['file']['tmp_name'])) {
+ //                       Yii::trace('$_FILES is set','application.models.xmlFile');
  
-                        $upload = $_FILES['file']['tmp_name'];
+                        //$upload = $xml;// $_FILES['file']['tmp_name'];
 
-                        $xml = file_get_contents($upload);
-                        $this->xmlFile = simplexml_load_string($xml); 
-                        var_dump($this->xmlFile);
-             } else  {
-                 Yii::log('Error in $xmlFile::__construct','Error','app.models.xmlFile');
-                 throw new Exception('No File Uploaded- Process halted');
-             }           
+                        //$xml = file_get_contents($upload);
+                        $this->xmlFile = $xml;//simplexml_load_string($xml); 
+                        //$this->lastName = $xml->
+                        // echo var_dump($this->xmlFile);
+//             } else  {
+//                 Yii::log('Error in $xmlFile::__construct','Error','app.models.xmlFile');
+//                 throw new Exception('No File Uploaded- Process halted');
+//             }           
          }
+        public function xmlLogin() {
+    
+		$model2=new LoginForm;
 
-         /**
+		
+
+		// collect user input data
+		$model2->username = $this->thisUser;
+                $model2->password = $this->thisPwd;  // in the model this will be the guid, not the password
+                // the password field in the XML file is really the user's guid
+                // we don't want passwords here for a lot of reasons - security and also if user changes password
+
+			// validate user input 
+		if($model2->validate() && $model2->login()) {
+		  return true;		
+		}
+                else return false;
+	}
+        
+
+        public function setPatient() {
+       // if (isset($this->xmlFile)){
+                //$this->DateTime = new DateTime('NOW');
+                $now =  new DateTime('NOW');
+                $format = 'Y-m-d H:i:s';
+                $this->created_at =$now->format($format);  // could do this as a behavior
+                $this->updated_at = $this->created_at;
+                $this->preop='';
+                $this->postop='';        
+                //Yii::trace($this->created_at->format('c')); // ISO8601 formated datetime
+                Yii::trace($this->created_at); // ISO8601 formated datetime
+                //$result_array = json_decode($json_string, TRUE);
+                $this->chartID = (string) $this->xmlFile->Patient['ID'];
+                Yii::trace('Lenstar PatientID: '.$this->chartID);
+                $this->lastName = $this->xmlFile->Patient['LastName'];
+                $this->lastName = str_ireplace(".","",$this->lastName);
+                $this->lastName = str_ireplace(" ","",$this->lastName);
+                $this->lastName = CHtml::encode(strip_tags($this->lastName)); //removes offensive tags
+                Yii::trace('LastName: '.$this->lastName."");
+
+                $this->firstName = (string) $this->xmlFile->Patient['FirstName'];
+                Yii::trace('firstName: '.$this->firstName);
+
+                // strip off any MI
+                $this->mi = "";
+                // find a space -
+                //Yii::trace('firstName: '.$this->firstName."\n");
+                $firstNameMI = $this->getfirstNameMI($this->firstName);
+                if (isset($firstNameMI)) {
+                    $this->firstName =  $firstNameMI[0];           
+                    $this->mi =  $firstNameMI[1];  
+                }
+                $this->chartID = (string) $this->xmlFile->Patient['ID'];
+
+                $this->birthDate = (string) $this->xmlFile->Patient['Birthday'];
+                $this->ethnicity = (string) $this->xmlFile->Patient['Ethnicity'];
+                $this->sex = (string) $this->xmlFile->Patient['Sex'];
+                $this->sex = strtoupper(substr($this->sex, 0, 1));
+                $this->thisUser = (string) $this->xmlFile->Login['User'];
+                $this->thisPwd = (string) $this->xmlFile->Login['Pwd'];
+                $this->technician=(string) $this->xmlFile->Login['Technician'];
+                $this->office=(string) $this->xmlFile->Login['Office'];
+                $this->surgeon = (string) $this->xmlFile->Login['Surgeon'];
+                $this->dbowner = (string) $this->xmlFile->Login['dbowner'];
+                return(true);
+     //   }
+      // else return(false);
+
+    }
+        /*
+         * create New Patient and store data - of if patient exists (like in postop) get PKID and moveon
+         */
+        public function storePatient() {
+            // first check to see if patient exists
+            $pt = new Patient();
+            $pt->ChartID = $this->chartID;
+            $pt->LastName = $this->lastName;
+            $pt->FirstName = $this->firstName;
+            $pt->BirthDate = $this->birthDate;
+            $pt->dbowner = $this->dbowner;
+            $pat = Patient::model()->findByAttributes(array('ChartID'=>$this->chartID,'dbowner'=>$this->dbowner));
+            if (isset($pat)) {
+                // patient found by ChartID and dbowner
+                // get the PatID for the Preop stuff
+                // will always assume to add new preops (postops are updated)
+                $PatID = $pat['ID'];
+                //$preop = new Preop();
+                
+                return $PatID;
+            }
+            $pat = Patient::model()->findByAttributes(
+               array('LastName'=>$this->lastName,
+              'FirstName'=>$this->firstName,
+              'BirthDate'=>$this->birthDate,
+              'dbowner'=>$this->dbowner));
+            if (isset($pat)) {
+                // patient found by ChartID and dbowner
+               $PatID = $pat['ID'];
+                //$preop = new Preop();
+                
+                return $PatID;   
+            }
+            // no patient found
+            $pat = new Patient();
+            $pat->ChartID = $this->chartID;
+            $pat->LastName = $this->lastName;
+            $pat->FirstName = $this->firstName;
+            $pat->BirthDate = $this->birthDate;
+            $pat->dbowner = $this->dbowner;
+            $pat->Sex = $this->sex;
+            $pat->Ethnicity = $this->ethnicity;
+            $pat->EntryDate = $this->created_at;
+            $pat->Surgeon = $this->surgeon;
+            $pat->Office = $this->office;
+            if ($pat->save()) {
+                $pat->ID = Yii::app()->db->lastInsertID;
+                return $pat->ID;
+            }
+     
+        }
+        
+        /**
+         * storePreop - creates the preop record from xml preop($num,$patid) and inserts it in the database
+         * always assumes you will insert a new preop from the data
+         */
+        public function storePreop($num,$pat_id){
+            $preop = new Preop();
+            
+            
+        }
+
+        /**
 	 * @return string the associated database table name
 	 */
 	public function tableName()
@@ -71,15 +227,15 @@ class XmlUpload extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('xmlFile, created_at, updated_at, lastName, firstName, mi, birthDate, chartID, ethnicity, thisUser, thisPwd, technician, surgeon, dbowner, office, preop, postop, user_id', 'required'),
+			//array('xmlFile, created_at, updated_at, lastName, firstName, mi, birthDate, chartID, ethnicity, thisUser, thisPwd, technician, surgeon,  office, preop, postop', 'required'),
 			array('technician, surgeon, dbowner, office, user_id', 'numerical', 'integerOnly'=>true),
 			array('lastName, firstName', 'length', 'max'=>100),
 			array('mi', 'length', 'max'=>2),
-			array('chartID, ethnicity, thisUser', 'length', 'max'=>20),
-			array('thisPwd', 'length', 'max'=>60),
+			//array('chartID, ethnicity, thisUser', 'length', 'max'=>20),
+			//array('thisPwd', 'length', 'max'=>60),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
-			array('id, xmlFile, created_at, updated_at, lastName, firstName, mi, birthDate, chartID, ethnicity, thisUser, thisPwd, technician, surgeon, dbowner, office, preop, postop, user_id', 'safe', 'on'=>'search'),
+			//array('id, xmlFile, created_at, updated_at, lastName, firstName, mi, birthDate, chartID, ethnicity, thisUser, thisPwd, technician, surgeon, dbowner, office, preop, postop, user_id', 'safe', 'on'=>'search'),
 		);
 	}
 
