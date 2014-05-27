@@ -224,7 +224,6 @@ class XmlUpload extends CActiveRecord
                     $findLensStar = "Select ID from keratometry where dbowner=".$this->dbowner." and `Keratometry` like 'LenStar%'";
                     $findLensStarCMD = Yii::app()->db->createCommand($findLensStar);
                     $KeraID = $findLensStarCMD->queryScalar();
-                    //while ($Kid = mysqli_fetch_assoc($keratometry)) $KeraID = $Kid['ID'];  // this is the keratometry ID
 
 
         // this should be added to the LenStar XML file
@@ -247,6 +246,70 @@ class XmlUpload extends CActiveRecord
             } //(isset($xml->Patient->Exam[$num]))
             
         }  // end function storePreop($num,$pat_id)
+
+       public function storePostop($num,$pat_id){
+           Yii::trace('entering storePostop','app.xmlUpload.storePostop','trece');
+           if (isset($this->xmlFile->Patient->Exam[$num])) {
+                $json_string = json_encode($this->xmlFile ->Patient->Exam[$num]);
+                // the string looks like this - need to remove {"@attributes: and closing "}"
+
+        //{"@attributes":{"Eye":"OD","Time":"2013\/07\/25 13:40","MeasurementMode":"Phakic","R1":"8.13","R2":"7.74","R1Axis":"97","FlatK1":"41.50","SteepK1":"43.61","Astigmatism":"2.12 ","AxisAstig":"7","n":"1.3375","CCT":"567","AD":"2.99","LT":"4.62","AL":"26.42","WTW":"12.31","Pupil":"-----"}}
+
+                $result_array =  substr_replace($json_string, '', $start=0,$length=15);  // removes {"@attributes
+                $result_array =  substr_replace($result_array, '', $start=-1);//and closing "}"
+
+                $result_array = json_decode($result_array, TRUE);
+                Yii::trace('Exam['.$num.'] = '. CVarDumper::dump($result_array));
+                if (count($result_array)>0 && is_numeric($result_array['FlatK1'])){  // insert or update this record
+
+                    $findLensStar = "Select ID from keratometry where dbowner=".$this->dbowner." and `Keratometry` like 'LenStar%'";
+                    $findLensStarCMD = Yii::app()->db->createCommand($findLensStar);
+                    $KeraID = $findLensStarCMD->queryScalar();
+                    // see if Postop already exists
+                    
+ 		    $findPostOp = "Select * from postop where PatientID = ".$pat_id ." AND Eye='".$result_array['Eye']."'"; 
+                    //// this should exist if postop was created from template
+                    //$postops = mysqli_query($conn, $findPostOp);
+                    Yii::trace($findPostOp,'application.xmlUpload.storePostop','trace');
+                    $findPostOpCMD =  Yii::app()->db->createCommand( $findPostOp);
+                    $postops = $findPostOpCMD->queryRow();
+		    if ($postops) {  // recored exists
+//					preprint('Entering Update Postop');
+                            $postopUpdate = "UPDATE postop set `PostopFlatK` = ".$this->dashToNull($result_array['FlatK1']).",`PostopSteepK` = ".$this->dashToNull($result_array['SteepK1']).",`PostopAxisK` = ".$this->dashToNull($result_array['AxisAstig']);
+                            $postopUpdate .= " Where postop.ID = ".$postops['ID'];
+                            Yii:trace($postopUpdate,'application.xmlUpload.updatePostop','trace');
+                            $updateCMD = Yii::app()->db->createCommand( $postopUpdate);
+                            $updateSuccess = $updateCMD->execute();	   
+                            if ($updateSuccess){
+                                Yii:trace("Postop Update succeeded");
+                            }
+                            else {
+                                Yii:trace("Postop Update failed") ;
+                            }	// end updateSuccess	
+                    }  //($record = mysqli_fetch_array($postops))
+                    else {		// must be an insertion
+
+                        // no postop exists so create one based on this data - however now the user's obligation to edit this to look like preop
+                        if (is_numeric($result_array['R1']) && is_numeric($result_array['R1']))
+                                $AvgRc = ($result_array['R1']+$result_array['R2'])/2;
+                        else $AvgRC = 'NULL';
+                        Yii:trace('Entering Insert Postop','application.xmlUpload.updatePostop','trace');//preprint('Entering Insert Postop');
+                        $postopInsert = "INSERT INTO postop (PatientID,BaseSurgeonID,SurgeonID,Eye,PostopFlatK,PostopSteepK,PostopAxisK,`Axial Length`,CCT,ACD,LensThick,WTW,Biometry,Rc,`Exam Date`,Pupil,dbowner,Keratometry)";
+                        $postopInsert .=" values (".$pat_id.",".$this->surgeon.",".$this->surgeon.",'".$result_array['Eye']."',".$this->dashToNull($result_array['FlatK1']);
+                        $postopInsert .=",".$this->dashToNull($result_array['SteepK1']).",".$this->dashToNull($result_array['AxisAstig']).",".$this->dashToNull($result_array['AL']);
+                        $postopInsert .=",".$this->dashToNull($result_array['CCT']).",".$this->dashToNull($result_array['ACD']).",".$this->dashToNull($result_array['LT']).","
+                                            .$this->dashToNull($result_array['WTW']).",13,".$AvgRc.",CONVERT('".$result_array['Time']."',datetime),".$this->emptyToNull($result_array['Pupil']).",".$this->dbowner."," .$KeraID .")";
+                        //,SteepAxis,`Axial Length`,CCT,ACD,LensThick,WTW$.$result_array
+                        $updateCMD = Yii::app()->db->createCommand( $postopInsert);
+                        $updateSuccess = $updateCMD->execute();
+                        if ($updateSuccess ){
+                            Yii::trace("PostopData".$num." Insertion succeeded\n");
+                        }
+                        else Yii::trace("PostopData".$num." Insertion failed\n") ;
+                    } //// must be an insertion
+                } //if (count($result_array)>0 && is_numeric($result_array['FlatK1']))
+             } //if (isset($this->xmlFile->Patient->Exam[$num]))
+        }  // end function storePostop($num,$pat_id)
 
         /**
 	 * @return string the associated database table name

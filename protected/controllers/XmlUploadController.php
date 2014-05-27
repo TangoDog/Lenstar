@@ -32,7 +32,7 @@ class XmlUploadController extends Controller
 				'users'=>array('*'),
 			),
 			array('allow', // allow authenticated user to perform 'create' and 'update' actions
-				'actions'=>array('create','createPreop','update'),
+				'actions'=>array('create','createPreop','createPostop','update'),
 				'users'=>array('@'),
 			),
 			array('allow', // allow admin user to perform 'admin' and 'delete' actions
@@ -70,6 +70,22 @@ class XmlUploadController extends Controller
                             if ($pat_id=$model->storePatient()) {
                             $model->storePreop(0,$pat_id);
                             $model->storePreop(1,$pat_id);
+                            }
+                        }
+                }
+			   
+	}
+
+	public function actionCreatePostop()
+	{
+		$model=new XmlUpload;
+                $model->uploadPreop();  // sets up a storage record for this XML file
+                $model->setPatient();   // loads up the $model for basic patient demos
+                if ($model->xmlLogin()) {  //login successful (using guid)  - can proceed
+			if($model->save()) { // save this for debugging basically
+                            if ($pat_id=$model->storePatient()) {
+                            $model->storePostop(0,$pat_id);
+                            $model->storePostop(1,$pat_id);
                             }
                         }
                 }
