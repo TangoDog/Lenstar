@@ -276,7 +276,30 @@ class XmlUpload extends CActiveRecord
                     if (is_numeric($result_array['R1']) && is_numeric($result_array['R1']))
                                 $AvgRc = ($result_array['R1']+$result_array['R2'])/2;
                     else $AvgRC = 'NULL';
-                    //Yii:trace('Entering Insert Postop','application.xmlUpload.updatePostop','trace');//preprint('Entering Insert Postop');
+                    // now check if this postop exists (created from IOLCalc page)
+		    $findPostOp = "Select * from postop where PatientID = ".$pat_id ." AND Eye='".$result_array['Eye']."'"; 
+//                    //// this should exist if postop was created from template
+//                    //$postops = mysqli_query($conn, $findPostOp);
+//                    //Yii::trace($findPostOp,'application.xmlUpload.storePostop','trace');
+                    $findPostOpCMD =  Yii::app()->db->createCommand( $findPostOp);
+                    $postops = $findPostOpCMD->queryRow();
+		    if ($postops) {  // record exists
+////					preprint('Entering Update Postop');
+                            $postopUpdate = "UPDATE postop set `PostopFlatK` = ".$this->dashToNull($result_array['FlatK1']).",`PostopSteepK` = ".$this->dashToNull($result_array['SteepK1']).",`PostopAxisK` = ".$this->dashToNull($result_array['AxisAstig']);
+                            $postopUpdate .= " Where postop.ID = ".$postops['ID'];
+//                            Yii:trace($postopUpdate,'application.xmlUpload.updatePostop','trace');
+                            $updateCMD = Yii::app()->db->createCommand( $postopUpdate);
+                            $updateSuccess = $updateCMD->execute();	   
+                            if ($updateSuccess){
+                                Yii:trace("Postop Update succeeded");
+                            }
+                            else {
+                                Yii:trace("Postop Update failed") ;
+                            }	// end updateSuccess	
+                            return $updateSuccess;
+                    }  //($postops) >0
+                    // if you get here you need to insert
+                    //preprint('Entering Insert Postop');
                     $postopInsert = "INSERT INTO postop (PatientID,BaseSurgeonID,SurgeonID,Eye,PostopFlatK,PostopSteepK,PostopAxisK,`Axial Length`,CCT,ACD,LensThick,WTW,Biometry,Rc,`Exam Date`,Pupil,dbowner,Keratometry)";
                     $postopInsert .=" values (".$pat_id.",".$this->surgeon.",".$this->surgeon.",'".$result_array['Eye']."',".$this->dashToNull($result_array['FlatK1']);
                     $postopInsert .=",".$this->dashToNull($result_array['SteepK1']).",".$this->dashToNull($result_array['AxisAstig']).",".$this->dashToNull($result_array['AL']);
