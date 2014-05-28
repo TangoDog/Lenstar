@@ -51,7 +51,10 @@ class Patient extends CActiveRecord
 			//array('ID, ChartID, LastName, FirstName, MI, BirthDate, Sex, Ethnicity, EntryDate, Surgeon, Office, Phone, Referral, CalcRightEye, CalcLeftEye, dbowner', 'safe', 'on'=>'search'),
 		);
 	}
-
+        public function save() {
+            // overrides parent save()
+            
+        }
 	/**
 	 * @return array relational rules.
 	 */

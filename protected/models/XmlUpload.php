@@ -62,14 +62,45 @@ class XmlUpload extends CActiveRecord
                         ));
             } // do not change and don't strip out the Middle Init
     }
+    public function __construct(){
+        libxml_use_internal_errors(true);
+        parent::__construct();
+    }
+    private function display_xml_error($error, $xml)
+{
+    $return  = $xml[$error->line - 1] . "\n";
+    $return .= str_repeat('-', $error->column) . "^\n";
+
+    switch ($error->level) {
+        case LIBXML_ERR_WARNING:
+            $return .= "Warning $error->code: ";
+            break;
+         case LIBXML_ERR_ERROR:
+            $return .= "Error $error->code: ";
+            break;
+        case LIBXML_ERR_FATAL:
+            $return .= "Fatal Error $error->code: ";
+            break;
+    }
+
+    $return .= trim($error->message) .
+               "\n  Line: $error->line" .
+               "\n  Column: $error->column";
+
+    if ($error->file) {
+        $return .= "\n  File: $error->file";
+    }
+
+    return $return;
+}
            
         public function uploadPreop() {
              Yii::trace('Entering xmlFile.uploadPreop','application.models.XmlUpload');
              // following 2 lines are for local testing
-//             $xml = simplexml_load_file('/var/www/lenstar/LensStar.XML');
-//             $this->xmlFile = $xml; 
+            $xml = simplexml_load_file('/var/www/lenstar/LensStar.XML');
+            $this->xmlFile = $xml; 
              // uncommentfollowing for remote use
-               
+             /*  
              if (isset($_FILES['file']['tmp_name'])) {
                        Yii::trace('$_FILES is set','application.models.xmlFile');
  
@@ -80,7 +111,7 @@ class XmlUpload extends CActiveRecord
              } else  {
                  Yii::log('Error in $xmlFile::uploadPreop','Error','app.models.xmlFile');
                  throw new Exception('No File Uploaded- Process halted');
-             }          
+             }  */        
          }
          
         public function xmlLogin() {
