@@ -289,12 +289,13 @@ class XmlUpload extends CActiveRecord
                             $postopUpdate .= " Where postop.ID = ".$postops['ID'];
 //                            Yii:trace($postopUpdate,'application.xmlUpload.updatePostop','trace');
                             $updateCMD = Yii::app()->db->createCommand( $postopUpdate);
+                
                             $updateSuccess = $updateCMD->execute();	   
                             if ($updateSuccess){
-                                Yii:trace("Postop Update succeeded");
+                                Yii::trace("Postop Update succeeded");
                             }
                             else {
-                                Yii:trace("Postop Update failed") ;
+                                Yii::trace("Postop Update failed") ;
                             }	// end updateSuccess	
                             return $updateSuccess;
                     }  //($postops) >0

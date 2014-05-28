@@ -2807,3 +2807,148 @@ in /var/www/lenstar/index.php (13)
 in /var/www/lenstar/protected/models/XmlUpload.php (312)
 in /var/www/lenstar/protected/controllers/XmlUploadController.php (88)
 in /var/www/lenstar/index.php (13)
+2014/05/27 20:42:38 [trace] [system.CModule] Loading "log" application component
+in /var/www/lenstar/index.php (13)
+2014/05/27 20:42:38 [trace] [system.CModule] Loading "session" application component
+in /var/www/lenstar/index.php (13)
+2014/05/27 20:42:38 [trace] [system.CModule] Loading "request" application component
+in /var/www/lenstar/index.php (13)
+2014/05/27 20:42:38 [trace] [system.CModule] Loading "urlManager" application component
+in /var/www/lenstar/index.php (13)
+2014/05/27 20:42:38 [trace] [system.web.filters.CFilterChain] Running filter XmlUploadController.filteraccessControl()
+in /var/www/lenstar/index.php (13)
+2014/05/27 20:42:38 [trace] [system.CModule] Loading "user" application component
+in /var/www/lenstar/index.php (13)
+2014/05/27 20:43:23 [trace] [system.CModule] Loading "log" application component
+in /var/www/lenstar/index.php (13)
+2014/05/27 20:43:23 [trace] [system.CModule] Loading "session" application component
+in /var/www/lenstar/index.php (13)
+2014/05/27 20:43:23 [trace] [system.CModule] Loading "request" application component
+in /var/www/lenstar/index.php (13)
+2014/05/27 20:43:23 [trace] [system.CModule] Loading "urlManager" application component
+in /var/www/lenstar/index.php (13)
+2014/05/27 20:43:23 [trace] [system.web.filters.CFilterChain] Running filter XmlUploadController.filteraccessControl()
+in /var/www/lenstar/index.php (13)
+2014/05/27 20:43:23 [trace] [system.CModule] Loading "user" application component
+in /var/www/lenstar/index.php (13)
+2014/05/27 20:43:27 [trace] [system.CModule] Loading "db" application component
+in /var/www/lenstar/protected/controllers/XmlUploadController.php (81)
+in /var/www/lenstar/index.php (13)
+2014/05/27 20:43:27 [trace] [system.db.CDbConnection] Opening DB connection
+in /var/www/lenstar/protected/controllers/XmlUploadController.php (81)
+in /var/www/lenstar/index.php (13)
+2014/05/27 20:43:27 [trace] [system.db.CDbCommand] Querying SQL: SHOW FULL COLUMNS FROM `xmlUpload`
+in /var/www/lenstar/protected/controllers/XmlUploadController.php (81)
+in /var/www/lenstar/index.php (13)
+2014/05/27 20:43:27 [trace] [system.db.CDbCommand] Querying SQL: SHOW CREATE TABLE `xmlUpload`
+in /var/www/lenstar/protected/controllers/XmlUploadController.php (81)
+in /var/www/lenstar/index.php (13)
+2014/05/27 20:43:27 [trace] [application.models.XmlUpload] Entering xmlFile.uploadPreop
+in /var/www/lenstar/protected/models/XmlUpload.php (67)
+in /var/www/lenstar/protected/controllers/XmlUploadController.php (82)
+in /var/www/lenstar/index.php (13)
+2014/05/27 20:43:33 [trace] [application] 2014-05-27 20:43:33
+in /var/www/lenstar/protected/models/XmlUpload.php (113)
+in /var/www/lenstar/protected/controllers/XmlUploadController.php (83)
+in /var/www/lenstar/index.php (13)
+2014/05/27 20:43:33 [trace] [application] Lenstar PatientID: 45387
+in /var/www/lenstar/protected/models/XmlUpload.php (116)
+in /var/www/lenstar/protected/controllers/XmlUploadController.php (83)
+in /var/www/lenstar/index.php (13)
+2014/05/27 20:43:33 [trace] [application] LastName: Johnson
+in /var/www/lenstar/protected/models/XmlUpload.php (121)
+in /var/www/lenstar/protected/controllers/XmlUploadController.php (83)
+in /var/www/lenstar/index.php (13)
+2014/05/27 20:43:33 [trace] [application] firstName: George
+in /var/www/lenstar/protected/models/XmlUpload.php (124)
+in /var/www/lenstar/protected/controllers/XmlUploadController.php (83)
+in /var/www/lenstar/index.php (13)
+2014/05/27 20:44:00 [trace] [system.db.ar.CActiveRecord] Operatorprefs.findByAttributes()
+in /var/www/lenstar/protected/components/UserIdentity.php (25)
+in /var/www/lenstar/protected/models/LoginForm.php (52)
+in /var/www/lenstar/protected/models/XmlUpload.php (96)
+2014/05/27 20:44:00 [trace] [system.db.CDbCommand] Querying SQL: SHOW FULL COLUMNS FROM `operatorprefs`
+in /var/www/lenstar/protected/components/UserIdentity.php (25)
+in /var/www/lenstar/protected/models/LoginForm.php (52)
+in /var/www/lenstar/protected/models/XmlUpload.php (96)
+2014/05/27 20:44:00 [trace] [system.db.CDbCommand] Querying SQL: SHOW CREATE TABLE `operatorprefs`
+in /var/www/lenstar/protected/components/UserIdentity.php (25)
+in /var/www/lenstar/protected/models/LoginForm.php (52)
+in /var/www/lenstar/protected/models/XmlUpload.php (96)
+2014/05/27 20:44:00 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `operatorprefs` `t` WHERE `t`.`Name`=:yp0 LIMIT 1. Bound with :yp0='FF6D813E5F7C84DFD7773F1F59D483EE37'
+in /var/www/lenstar/protected/components/UserIdentity.php (25)
+in /var/www/lenstar/protected/models/LoginForm.php (52)
+in /var/www/lenstar/protected/models/XmlUpload.php (96)
+2014/05/27 20:44:01 [trace] [system.db.ar.CActiveRecord] XmlUpload.insert()
+in /var/www/lenstar/protected/controllers/XmlUploadController.php (85)
+in /var/www/lenstar/index.php (13)
+2014/05/27 20:44:01 [trace] [system.db.CDbCommand] Executing SQL: INSERT INTO `xmlUpload` (`xmlFile`, `created_at`, `updated_at`, `preop`, `postop`, `chartID`, `lastName`, `firstName`, `mi`, `birthDate`, `ethnicity`, `sex`, `thisUser`, `thisPwd`, `technician`, `office`, `surgeon`, `dbowner`) VALUES (:yp0, :yp1, :yp2, :yp3, :yp4, :yp5, :yp6, :yp7, :yp8, :yp9, :yp10, :yp11, :yp12, :yp13, :yp14, :yp15, :yp16, :yp17). Bound with :yp0='
+ 
+ 
+', :yp1='2014-05-27 20:43:33', :yp2='2014-05-27 20:43:33', :yp3='', :yp4='', :yp5='45387', :yp6='Johnson', :yp7='George', :yp8='', :yp9='1943/11/16', :yp10='undefined', :yp11='M', :yp12='FF6D813E5F7C84DFD7773F1F59D483EE37', :yp13='07220ece-dc47-11e3-8fa8-12313d1b0539', :yp14=1, :yp15=1, :yp16=5, :yp17=1
+in /var/www/lenstar/protected/controllers/XmlUploadController.php (85)
+in /var/www/lenstar/index.php (13)
+2014/05/27 20:44:07 [trace] [system.db.CDbCommand] Querying SQL: SHOW FULL COLUMNS FROM `patients`
+in /var/www/lenstar/protected/models/XmlUpload.php (157)
+in /var/www/lenstar/protected/controllers/XmlUploadController.php (86)
+in /var/www/lenstar/index.php (13)
+2014/05/27 20:44:07 [trace] [system.db.CDbCommand] Querying SQL: SHOW CREATE TABLE `patients`
+in /var/www/lenstar/protected/models/XmlUpload.php (157)
+in /var/www/lenstar/protected/controllers/XmlUploadController.php (86)
+in /var/www/lenstar/index.php (13)
+2014/05/27 20:44:07 [trace] [system.db.ar.CActiveRecord] Patient.findByAttributes()
+in /var/www/lenstar/protected/models/XmlUpload.php (163)
+in /var/www/lenstar/protected/controllers/XmlUploadController.php (86)
+in /var/www/lenstar/index.php (13)
+2014/05/27 20:44:07 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `patients` `t` WHERE `t`.`ChartID`=:yp0 AND `t`.`dbowner`=:yp1 LIMIT 1. Bound with :yp0='45387', :yp1='1'
+in /var/www/lenstar/protected/models/XmlUpload.php (163)
+in /var/www/lenstar/protected/controllers/XmlUploadController.php (86)
+in /var/www/lenstar/index.php (13)
+2014/05/27 20:44:13 [trace] [system.db.CDbCommand] Querying SQL: SHOW FULL COLUMNS FROM `preop`
+in /var/www/lenstar/protected/models/XmlUpload.php (256)
+in /var/www/lenstar/protected/controllers/XmlUploadController.php (87)
+in /var/www/lenstar/index.php (13)
+2014/05/27 20:44:13 [trace] [system.db.CDbCommand] Querying SQL: SHOW CREATE TABLE `preop`
+in /var/www/lenstar/protected/models/XmlUpload.php (256)
+in /var/www/lenstar/protected/controllers/XmlUploadController.php (87)
+in /var/www/lenstar/index.php (13)
+2014/05/27 20:44:18 [trace] [application] Exam[0] = 
+in /var/www/lenstar/protected/models/XmlUpload.php (268)
+in /var/www/lenstar/protected/controllers/XmlUploadController.php (87)
+in /var/www/lenstar/index.php (13)
+2014/05/27 20:44:21 [trace] [system.db.CDbCommand] Querying SQL: Select ID from keratometry where dbowner=1 and `Keratometry` like 'LenStar%'
+in /var/www/lenstar/protected/models/XmlUpload.php (273)
+in /var/www/lenstar/protected/controllers/XmlUploadController.php (87)
+in /var/www/lenstar/index.php (13)
+2014/05/27 20:53:21 [trace] [system.db.CDbCommand] Querying SQL: Select * from postop where PatientID = 5261 AND Eye='OD'
+in /var/www/lenstar/protected/models/XmlUpload.php (285)
+in /var/www/lenstar/protected/controllers/XmlUploadController.php (87)
+in /var/www/lenstar/index.php (13)
+2014/05/27 20:53:32 [trace] [system.db.CDbCommand] Executing SQL: UPDATE postop set `PostopFlatK` = 40.31,`PostopSteepK` = 41.06,`PostopAxisK` = 116 Where postop.ID = 8892
+in /var/www/lenstar/protected/models/XmlUpload.php (292)
+in /var/www/lenstar/protected/controllers/XmlUploadController.php (87)
+in /var/www/lenstar/index.php (13)
+2014/05/27 20:54:00 [trace] [application] Postop Update failed
+in /var/www/lenstar/protected/models/XmlUpload.php (297)
+in /var/www/lenstar/protected/controllers/XmlUploadController.php (87)
+in /var/www/lenstar/index.php (13)
+2014/05/27 20:54:08 [trace] [application] Exam[1] = 
+in /var/www/lenstar/protected/models/XmlUpload.php (268)
+in /var/www/lenstar/protected/controllers/XmlUploadController.php (88)
+in /var/www/lenstar/index.php (13)
+2014/05/27 20:54:08 [trace] [system.db.CDbCommand] Querying SQL: Select ID from keratometry where dbowner=1 and `Keratometry` like 'LenStar%'
+in /var/www/lenstar/protected/models/XmlUpload.php (273)
+in /var/www/lenstar/protected/controllers/XmlUploadController.php (88)
+in /var/www/lenstar/index.php (13)
+2014/05/27 20:54:11 [trace] [system.db.CDbCommand] Querying SQL: Select * from postop where PatientID = 5261 AND Eye='OS'
+in /var/www/lenstar/protected/models/XmlUpload.php (285)
+in /var/www/lenstar/protected/controllers/XmlUploadController.php (88)
+in /var/www/lenstar/index.php (13)
+2014/05/27 20:54:11 [trace] [system.db.CDbCommand] Executing SQL: UPDATE postop set `PostopFlatK` = 42.87,`PostopSteepK` = 43.84,`PostopAxisK` = 151 Where postop.ID = 8893
+in /var/www/lenstar/protected/models/XmlUpload.php (292)
+in /var/www/lenstar/protected/controllers/XmlUploadController.php (88)
+in /var/www/lenstar/index.php (13)
+2014/05/27 20:54:11 [trace] [application] Postop Update failed
+in /var/www/lenstar/protected/models/XmlUpload.php (297)
+in /var/www/lenstar/protected/controllers/XmlUploadController.php (88)
+in /var/www/lenstar/index.php (13)
