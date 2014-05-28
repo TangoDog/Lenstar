@@ -28,7 +28,7 @@ class XmlUploadController extends Controller
 	{
 		return array(
 			array('allow',  // allow all users to perform 'index' and 'view' actions
-				'actions'=>array('index','view','createPreop'),
+				'actions'=>array('index','view','createPreop','createPostop'),  // allow to run by allow - but fila if no login
 				'users'=>array('*'),
 			),
 			array('allow', // allow authenticated user to perform 'create' and 'update' actions
@@ -72,7 +72,10 @@ class XmlUploadController extends Controller
                             $model->storePreop(1,$pat_id);
                             }
                         }
+                } else {
+                    Yii::trace('Login Failed');
                 }
+                    
 			   
 	}
 

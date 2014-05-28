@@ -65,21 +65,24 @@ class XmlUpload extends CActiveRecord
            
         public function uploadPreop() {
              Yii::trace('Entering xmlFile.uploadPreop','application.models.XmlUpload');
-             $xml = simplexml_load_file('/var/www/lenstar/LensStar.XML');
- //            if (isset($_FILES['file']['tmp_name'])) {
- //                       Yii::trace('$_FILES is set','application.models.xmlFile');
+             // following 2 lines are for local testing
+//             $xml = simplexml_load_file('/var/www/lenstar/LensStar.XML');
+//             $this->xmlFile = $xml; 
+             // uncommentfollowing for remote use
+               
+             if (isset($_FILES['file']['tmp_name'])) {
+                       Yii::trace('$_FILES is set','application.models.xmlFile');
  
-                        //$upload = $xml;// $_FILES['file']['tmp_name'];
+                        $upload =  $_FILES['file']['tmp_name'];
 
-                        //$xml = file_get_contents($upload);
-                        $this->xmlFile = $xml;//simplexml_load_string($xml); 
-                        //$this->lastName = $xml->
-                        // echo var_dump($this->xmlFile);
-//             } else  {
-//                 Yii::log('Error in $xmlFile::__construct','Error','app.models.xmlFile');
-//                 throw new Exception('No File Uploaded- Process halted');
-//             }           
+                        $xml = file_get_contents($upload);
+                        $this->xmlFile = simplexml_load_string($xml); 
+             } else  {
+                 Yii::log('Error in $xmlFile::uploadPreop','Error','app.models.xmlFile');
+                 throw new Exception('No File Uploaded- Process halted');
+             }          
          }
+         
         public function xmlLogin() {
     
 		$model2=new LoginForm;
@@ -160,7 +163,9 @@ class XmlUpload extends CActiveRecord
             $pt->FirstName = $this->firstName;
             $pt->BirthDate = $this->birthDate;
             $pt->dbowner = $this->dbowner;
-            $pat = Patient::model()->findByAttributes(array('ChartID'=>$this->chartID,'dbowner'=>$this->dbowner));
+            if(isset($this->chartID) &&  $this->chartID !== '') {
+                $pat = Patient::model()->findByAttributes(array('ChartID'=>$this->chartID,'dbowner'=>$this->dbowner));
+            }
             if (isset($pat)) {
                 // patient found by ChartID and dbowner
                 // get the PatID for the Preop stuff
